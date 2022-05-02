@@ -31,9 +31,8 @@ class ProfileManagementView extends GetView<ProfileManagementView> {
         unSelectedItemColor: Get.theme.appBarTheme.titleTextStyle!.color!.withOpacity(0.75),
       );
   CustomAppBar get _buildAppBar => CustomAppBar(
-        title: Text(
+        title: const Text(
           AppConstants.profileAppBar,
-          style: AppTextStyle.appBarTextStyle,
         ),
         showLeadingBackIcon: false,
         onLeadingPressed: () {},

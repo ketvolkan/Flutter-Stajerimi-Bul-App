@@ -1,64 +1,40 @@
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class Utils {
   //? İcon Size
-  static double iconSmall = 20;
-  static double iconNormal = 30;
-  static double iconHigh = 40;
+  static double iconSmall = Get.height * 0.03;
+  static double iconNormal = Get.height * 0.045;
+  static double iconHigh = Get.height * 0.06;
 
-  //?Padding
-  static double veryLowPadding = 2;
-  static double lowPadding = 5;
-  static double normalPadding = 10;
-  static double highPadding = 20;
-  static double veryHighPadding = 60;
-  static double veryVeryHighPadding = 100;
+  //? Padding
+  static double veryLowPadding = Get.height * 0.003;
+  static double lowPadding = Get.height * 0.0075;
+  static double normalPadding = Get.height * 0.015;
+  static double highPadding = Get.height * 0.03;
+  static double veryHighPadding = Get.height * 0.09;
+  static double veryVeryHighPadding = Get.height * 0.15;
 
   //? Text Size
-  static double textSizeLow = 10;
-  static double textSizeTitle = 16;
-  static double textSizeNormal = 20;
-  static double textSizeHigh = 24;
-  static double textSizeVeryHigh = 30;
+  static double textSizeLow = Get.height * 0.015;
+  static double textSizeTitle = Get.height * 0.024;
+  static double textSizeNormal = Get.height * 0.03;
+  static double textSizeHigh = Get.height * 0.036;
+  static double textSizeVeryHigh = Get.height * 0.045;
 
-  //?BorderRadius
-  static double lowBorderRadius = 5;
-  static double normalBorderRadius = 10;
-  static double highBorderRadius = 20;
-  static double veryHighBorderRadius = 30;
+  //? BorderRadius
+  static double lowBorderRadius = Get.height * 0.005;
+  static double normalBorderRadius = Get.height * 0.015;
+  static double highBorderRadius = Get.height * 0.03;
+  static double veryHighBorderRadius = Get.height * 0.045;
 
-  //?FontWeight
+  //? FontWeight
   static FontWeight lowFontWeight = FontWeight.w300;
   static FontWeight normalFontWeight = FontWeight.normal;
   static FontWeight boldFontWeight = FontWeight.bold;
 
-  //?Durations
+  //? Durations
   static const lowDuration = 200;
   static const normalDuration = 400;
   static const highDuration = 600;
-}
-
-class AppTextStyle {
-  //? APP BAR STYLE
-  static TextStyle appBarTextStyle = GoogleFonts.getFont('Josefin Sans').copyWith(
-    fontSize: Utils.textSizeVeryHigh,
-    fontWeight: Utils.boldFontWeight,
-  );
-  //? BASİC CARD STYLE
-  static TextStyle basicCardTitleTextStyle = TextStyle(
-    color: Get.theme.primaryColorDark,
-    fontSize: Utils.textSizeTitle,
-  );
-  static TextStyle basicCardSubTitleTextStyle = TextStyle(
-    color: Get.theme.primaryColorDark.withOpacity(0.50),
-  );
-  static TextStyle basicCardDescriptionTextStyle = TextStyle(
-    color: Get.theme.appBarTheme.titleTextStyle!.color,
-  );
-  static TextStyle basicCardTimeTextStyle = TextStyle(
-    color: Get.theme.appBarTheme.titleTextStyle!.color,
-    fontWeight: Utils.boldFontWeight,
-  );
 }

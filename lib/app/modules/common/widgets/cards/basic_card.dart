@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../../../../core/utils/utils.dart';
+import '../../../../../core/variables/style.dart';
 
 class BasicCard extends StatelessWidget {
   final String title;
@@ -10,7 +11,7 @@ class BasicCard extends StatelessWidget {
   final DateTime? createdAt;
   final bool goToCardDescription;
   final Widget? profileImage;
-
+  final bool backArrow;
   final Function()? onTap;
 
   const BasicCard({
@@ -22,6 +23,7 @@ class BasicCard extends StatelessWidget {
     this.onTap,
     this.goToCardDescription = false,
     this.profileImage,
+    this.backArrow = false,
   }) : super(key: key);
 
   @override
@@ -40,6 +42,9 @@ class BasicCard extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
+                  backArrow
+                      ? Expanded(flex: 1, child: Icon(Icons.arrow_back_ios, color: Get.theme.primaryColor))
+                      : const SizedBox(),
                   profileImage != null ? Expanded(flex: 1, child: profileImage!) : const SizedBox(),
                   SizedBox(width: Utils.lowPadding),
                   Expanded(

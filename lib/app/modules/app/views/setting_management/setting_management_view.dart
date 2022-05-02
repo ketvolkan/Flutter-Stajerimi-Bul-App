@@ -6,7 +6,6 @@ import '../../../../../core/utils/utils.dart';
 import '../../../common/widgets/appBar/custom_app_bar.dart';
 import '../../../common/widgets/body/custom_body.dart';
 import '../../../common/widgets/bottomNavigationBar/custom_botton_navigation_bar.dart';
-import '../../../common/widgets/cards/basic_card.dart';
 import '../../../common/widgets/fabButton/CustomFloatingActionButton.dart';
 import '../../../common/widgets/scaffold/custom_scaffold.dart';
 import 'setting_management_controller.dart';
@@ -19,60 +18,15 @@ class SettingManagementView extends GetView<SettingManagementController> {
     return CustomScaffold(
       appBar: _buildAppBar,
       body: CustomBody(
-        child: SingleChildScrollView(
-          child: Column(
-            children: [
-              SizedBox(
-                height: Utils.highPadding,
-              ),
-              BasicCard(
-                title: "Ayarlar",
-                goToCardDescription: true,
-                onTap: () {},
-              ),
-              SizedBox(
-                height: Utils.lowPadding,
-              ),
-              BasicCard(
-                title: "İletişim",
-                goToCardDescription: true,
-                onTap: () {},
-              ),
-              SizedBox(
-                height: Utils.lowPadding,
-              ),
-              BasicCard(
-                title: "Sistem Logları",
-                goToCardDescription: true,
-                onTap: () {},
-              ),
-              SizedBox(
-                height: Utils.lowPadding,
-              ),
-              BasicCard(
-                title: "Temalar",
-                goToCardDescription: true,
-                onTap: () {},
-              ),
-              SizedBox(
-                height: Utils.lowPadding,
-              ),
-              BasicCard(
-                title: "İlanlar",
-                goToCardDescription: true,
-                onTap: () {},
-              ),
-              SizedBox(
-                height: Utils.lowPadding,
-              ),
-              BasicCard(
-                title: "Sayfa",
-                onTap: () {},
-              ),
-              SizedBox(
-                height: Utils.veryVeryHighPadding,
-              ),
-            ],
+        child: Obx(
+          () => ListView.separated(
+            itemBuilder: (context, index) {
+              return index == 0 ? SizedBox(height: Utils.normalPadding) : controller.selectedMenuItems[index - 1];
+            },
+            separatorBuilder: (context, index) {
+              return SizedBox(height: Utils.highPadding);
+            },
+            itemCount: controller.selectedMenuItems.length + 1,
           ),
         ),
       ),
@@ -88,9 +42,8 @@ class SettingManagementView extends GetView<SettingManagementController> {
         unSelectedItemColor: Get.theme.appBarTheme.titleTextStyle!.color!.withOpacity(0.75),
       );
   CustomAppBar get _buildAppBar => CustomAppBar(
-        title: Text(
+        title: const Text(
           AppConstants.settingAppBar,
-          style: AppTextStyle.appBarTextStyle,
         ),
         showLeadingBackIcon: false,
         onLeadingPressed: () {},

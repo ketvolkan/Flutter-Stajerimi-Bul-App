@@ -1,19 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:stajyerimibul/core/variables/color.dart';
+import 'package:stajyerimibul/core/variables/style.dart';
+
+import '../../core/variables/color.dart';
 
 final ThemeData lightTheme = ThemeData.light().copyWith(
-    iconTheme: const IconThemeData().copyWith(
-      color: AppColor.iconColor,
-    ),
+    iconTheme: const IconThemeData().copyWith(color: AppColor.iconColor),
     primaryColorDark: AppColor.cardColor,
     floatingActionButtonTheme: const FloatingActionButtonThemeData().copyWith(backgroundColor: AppColor.fabButtonColor),
-    appBarTheme: const AppBarTheme(
+    appBarTheme: AppBarTheme(
       systemOverlayStyle: SystemUiOverlayStyle.light,
       centerTitle: true,
-      titleTextStyle: TextStyle(
-        color: AppColor.bottomNavBarItemColor,
-      ),
+      titleTextStyle: AppTextStyle.appBarTextStyle.copyWith(color: AppColor.bottomNavBarItemColor),
       backgroundColor: Colors.transparent,
       elevation: 0,
     ),
@@ -22,19 +20,15 @@ final ThemeData lightTheme = ThemeData.light().copyWith(
 
 //TODO Dark Tema Tasarlanıcak
 final ThemeData darkTheme = ThemeData.dark().copyWith(
-    iconTheme: const IconThemeData().copyWith(
-      color: AppColor.iconColorDark,
-    ),
+    iconTheme: const IconThemeData().copyWith(color: AppColor.iconColorDark),
     primaryColorDark: AppColor.cardColorDark,
     floatingActionButtonTheme: const FloatingActionButtonThemeData().copyWith(
       backgroundColor: AppColor.fabButtonColorDark,
     ),
-    appBarTheme: const AppBarTheme(
+    appBarTheme: AppBarTheme(
       systemOverlayStyle: SystemUiOverlayStyle.light,
       centerTitle: true,
-      titleTextStyle: TextStyle(
-        color: AppColor.bottomNavBarItemColor,
-      ),
+      titleTextStyle: AppTextStyle.appBarTextStyle.copyWith(color: AppColor.bottomNavBarItemColor),
       backgroundColor: Colors.transparent,
       elevation: 0,
     ),

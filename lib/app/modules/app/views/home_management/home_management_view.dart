@@ -32,11 +32,9 @@ class HomeManagementView extends GetView<HomeManagementController> {
         unSelectedItemColor: Get.theme.appBarTheme.titleTextStyle!.color!.withOpacity(0.75),
       );
   CustomAppBar get _buildAppBar => CustomAppBar(
-        title: Text(
+        title: const Text(
           AppConstants.homeAppBar,
-          style: AppTextStyle.appBarTextStyle,
         ),
-        centerTitle: true,
         showLeadingBackIcon: false,
         onLeadingPressed: () {},
         actions: const [],

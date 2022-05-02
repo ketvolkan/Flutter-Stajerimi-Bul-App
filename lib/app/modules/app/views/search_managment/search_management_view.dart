@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:stajyerimibul/app/modules/common/widgets/buttons/custom_icon_button.dart';
+import 'package:stajyerimibul/core/variables/icons.dart';
 
 import '../../../../../core/constants/app_constants.dart';
 import '../../../../../core/utils/utils.dart';
@@ -109,13 +111,14 @@ class SearchManagementView extends GetView<SearchManagementController> {
         unSelectedItemColor: Get.theme.appBarTheme.titleTextStyle!.color!.withOpacity(0.75),
       );
   CustomAppBar get _buildAppBar => CustomAppBar(
-        title: Text(
+        title: const Text(
           AppConstants.searchAppBar,
-          style: AppTextStyle.appBarTextStyle,
         ),
-        centerTitle: true,
         showLeadingBackIcon: false,
         onLeadingPressed: () {},
-        actions: const [],
+        actions: [filterButton],
+      );
+  CustomIconButton get filterButton => const CustomIconButton(
+        icon: AppIcons.appBarFilterIcon,
       );
 }

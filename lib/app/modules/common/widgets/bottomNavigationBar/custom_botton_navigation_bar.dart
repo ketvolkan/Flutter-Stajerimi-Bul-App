@@ -6,9 +6,14 @@ import '../../../../../core/utils/utils.dart';
 import '../../../../../core/variables/icons.dart';
 
 class CustomNavigationBar extends StatelessWidget implements PreferredSizeWidget {
-  const CustomNavigationBar(
-      {Key? key, required this.currentIndex, this.backgroundColor, this.selectedItemColor, this.unSelectedItemColor, this.onTap})
-      : super(key: key);
+  const CustomNavigationBar({
+    Key? key,
+    required this.currentIndex,
+    this.backgroundColor,
+    this.selectedItemColor,
+    this.unSelectedItemColor,
+    this.onTap,
+  }) : super(key: key);
   final int currentIndex;
   final Function(int)? onTap;
 

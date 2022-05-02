@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class AppColor {
-  //? LİGHT
+  //? Light
   static const Color primaryColor = Color.fromARGB(255, 236, 63, 63);
   static const Color fabButtonColor = primaryColor;
   static const Color backgroundColor = Color.fromARGB(255, 247, 247, 247);
@@ -9,7 +9,7 @@ class AppColor {
   static const Color cardColor = Color.fromARGB(255, 0, 0, 0);
   static const Color iconColor = Color.fromARGB(255, 255, 255, 255);
 
-  //? DARK
+  //? Dark
   static const Color primaryColorDark = Color.fromARGB(255, 58, 13, 13);
   static const Color fabButtonColorDark = primaryColorDark;
   static const Color backgroundColorDark = Color.fromARGB(255, 94, 56, 56);
