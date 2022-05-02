@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-
+import 'package:get/get.dart';
+import 'package:stajyerimibul/app/routes/app_routes.dart';
 import '../../../../../core/constants/app_constants.dart';
 import '../../../../../core/utils/utils.dart';
 import '../../../../../core/variables/icons.dart';
@@ -21,11 +22,11 @@ class CustomNavigationBar extends StatelessWidget implements PreferredSizeWidget
       child: ClipRRect(
         borderRadius: BorderRadius.circular(Utils.highPadding),
         child: Container(
-          color: Colors.white,
+          color: Get.theme.backgroundColor,
           child: BottomAppBar(
             shape: const CircularNotchedRectangle(),
             notchMargin: 5,
-            color: backgroundColor ?? Theme.of(context).primaryColor,
+            color: backgroundColor ?? Get.theme.primaryColor,
             child: BottomNavigationBar(
               showUnselectedLabels: false,
               showSelectedLabels: false,
@@ -35,7 +36,25 @@ class CustomNavigationBar extends StatelessWidget implements PreferredSizeWidget
               currentIndex: currentIndex,
               selectedItemColor: selectedItemColor,
               unselectedItemColor: unSelectedItemColor,
-              onTap: onTap ?? (value) {},
+              onTap: onTap ??
+                  (value) {
+                    switch (value) {
+                      case 0:
+                        Get.offAndToNamed(AppRoutes.PROFILE);
+                        break;
+                      case 1:
+                        Get.offAndToNamed(AppRoutes.HOME);
+                        break;
+                      case 2:
+                        Get.offAndToNamed(AppRoutes.SEARCH);
+                        break;
+                      case 3:
+                        Get.offAndToNamed(AppRoutes.SETTING);
+                        break;
+
+                      default:
+                    }
+                  },
               items: const [
                 BottomNavigationBarItem(
                     icon: Icon(AppIcons.bottomNavigationBarAccount), label: AppConstants.bottomNavigationBarAccount),

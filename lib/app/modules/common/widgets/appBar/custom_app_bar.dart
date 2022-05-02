@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
-import '../../../../../core/variables/color.dart';
 import '../../../../../core/variables/icons.dart';
 
 class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
@@ -23,13 +23,13 @@ class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      backgroundColor: Theme.of(context).primaryColor,
+      backgroundColor: Get.theme.primaryColor,
       title: title ?? const SizedBox(),
       leading: showLeadingBackIcon
           ? IconButton(
-              icon: const Icon(
+              icon: Icon(
                 AppIcons.appBarLeadingIcon,
-                color: AppColor.bottomNavBarItemColor,
+                color: Get.theme.appBarTheme.titleTextStyle!.color,
               ),
               onPressed: onLeadingPressed ?? () {},
             )

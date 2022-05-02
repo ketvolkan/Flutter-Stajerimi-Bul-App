@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '../../../../../core/utils/utils.dart';
-import '../../../../../core/variables/color.dart';
 
 class CustomBody extends StatelessWidget {
   final Widget? child;
@@ -10,10 +10,10 @@ class CustomBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: AppColor.primaryColor,
+      color: Get.theme.primaryColor,
       child: ClipRRect(
         borderRadius: BorderRadius.vertical(top: Radius.circular(Utils.veryHighBorderRadius)),
-        child: Container(color: AppColor.backgroundColor, child: child ?? const SizedBox()),
+        child: Container(color: Get.theme.backgroundColor, child: child ?? const SizedBox()),
       ),
     );
   }

@@ -1,9 +1,10 @@
 class AppConstants {
   static const String appTitle = "Stajerimi Bul";
 
-  static const String profileNavigationBar = "Profile";
-  static const String homeNavigationBar = "Home";
-  static const String firstExample = "Örnek 1";
+  static const String profileAppBar = "Profil";
+  static const String searchAppBar = "İlan Ara";
+  static const String homeAppBar = "Stajerimi Bul";
+  static const String settingAppBar = "Ayarlar";
 
   static const String textButtonText = "Kaydet";
   static const String elevetadButtonText = "Data";

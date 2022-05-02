@@ -1,4 +1,5 @@
 import 'package:flutter/widgets.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class Utils {
@@ -17,6 +18,7 @@ class Utils {
 
   //? Text Size
   static double textSizeLow = 10;
+  static double textSizeTitle = 16;
   static double textSizeNormal = 20;
   static double textSizeHigh = 24;
   static double textSizeVeryHigh = 30;
@@ -39,8 +41,24 @@ class Utils {
 }
 
 class AppTextStyle {
+  //? APP BAR STYLE
   static TextStyle appBarTextStyle = GoogleFonts.getFont('Josefin Sans').copyWith(
     fontSize: Utils.textSizeVeryHigh,
+    fontWeight: Utils.boldFontWeight,
+  );
+  //? BASİC CARD STYLE
+  static TextStyle basicCardTitleTextStyle = TextStyle(
+    color: Get.theme.primaryColorDark,
+    fontSize: Utils.textSizeTitle,
+  );
+  static TextStyle basicCardSubTitleTextStyle = TextStyle(
+    color: Get.theme.primaryColorDark.withOpacity(0.50),
+  );
+  static TextStyle basicCardDescriptionTextStyle = TextStyle(
+    color: Get.theme.appBarTheme.titleTextStyle!.color,
+  );
+  static TextStyle basicCardTimeTextStyle = TextStyle(
+    color: Get.theme.appBarTheme.titleTextStyle!.color,
     fontWeight: Utils.boldFontWeight,
   );
 }
