@@ -9,7 +9,7 @@ import '../../../common/widgets/appBar/custom_app_bar.dart';
 import '../../../common/widgets/body/custom_body.dart';
 import '../../../common/widgets/bottomNavigationBar/custom_botton_navigation_bar.dart';
 import '../../../common/widgets/cards/basic_card.dart';
-import '../../../common/widgets/fabButton/CustomFloatingActionButton.dart';
+import '../../../common/widgets/fabButton/custom_floating_action_button.dart';
 import '../../../common/widgets/image/random_circle_image.dart';
 import '../../../common/widgets/scaffold/custom_scaffold.dart';
 import 'search_management_controller.dart';
