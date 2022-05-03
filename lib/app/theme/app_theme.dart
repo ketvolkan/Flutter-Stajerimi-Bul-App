@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:stajyerimibul/core/variables/style.dart';
 
 import '../../core/variables/color.dart';
+import '../../core/variables/style.dart';
 
 final ThemeData lightTheme = ThemeData.light().copyWith(
     iconTheme: const IconThemeData().copyWith(color: AppColor.iconColor),

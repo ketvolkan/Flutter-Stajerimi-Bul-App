@@ -14,11 +14,7 @@ import 'app_routes.dart';
 
 class AppPages {
   static var PAGES = [
-    GetPage(
-      name: AppRoutes.SPLASH,
-      page: () => const SplashView(),
-      binding: SplashViewBinding(),
-    ),
+    GetPage(name: AppRoutes.SPLASH, page: () => const SplashView(), binding: SplashViewBinding()),
     GetPage(
       name: AppRoutes.HOME,
       page: () => const HomeManagementView(),

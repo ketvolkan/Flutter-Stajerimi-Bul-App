@@ -1,5 +1,6 @@
 import 'package:get/get.dart';
-import 'package:stajyerimibul/app/routes/app_routes.dart';
+
+import '../../../../routes/app_routes.dart';
 
 class SplashViewController extends GetxController {
   void splashEnd() {

@@ -1,4 +1,4 @@
-import 'package:stajyerimibul/app/modules/app/views/setting_management/menu_buttons/menu_button.dart';
+import 'menu_button.dart';
 
 enum MenuEnums {
   Base, //? Başlangıç

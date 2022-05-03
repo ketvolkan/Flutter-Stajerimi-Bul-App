@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:stajyerimibul/app/modules/app/views/setting_management/menu_buttons/menu_enum.dart';
-import 'package:stajyerimibul/app/modules/app/views/setting_management/setting_management_controller.dart';
-import 'package:stajyerimibul/app/modules/common/widgets/cards/basic_card.dart';
+
+import '../../../../common/widgets/cards/basic_card.dart';
+import '../setting_management_controller.dart';
+import 'menu_enum.dart';
 
 class MenuButton extends StatelessWidget {
   final String title;

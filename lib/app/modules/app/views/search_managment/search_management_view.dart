@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:stajyerimibul/app/modules/common/widgets/buttons/custom_icon_button.dart';
-import 'package:stajyerimibul/core/variables/icons.dart';
 
 import '../../../../../core/constants/app_constants.dart';
 import '../../../../../core/utils/utils.dart';
+import '../../../../../core/variables/icons.dart';
 import '../../../common/widgets/appBar/custom_app_bar.dart';
 import '../../../common/widgets/body/custom_body.dart';
 import '../../../common/widgets/bottomNavigationBar/custom_botton_navigation_bar.dart';
+import '../../../common/widgets/buttons/custom_icon_button.dart';
 import '../../../common/widgets/cards/basic_card.dart';
 import '../../../common/widgets/fabButton/custom_floating_action_button.dart';
 import '../../../common/widgets/image/random_circle_image.dart';
@@ -27,9 +27,7 @@ class SearchManagementView extends GetView<SearchManagementController> {
           child: SingleChildScrollView(
             child: Column(
               children: [
-                SizedBox(
-                  height: Utils.lowPadding,
-                ),
+                SizedBox(height: Utils.lowPadding),
                 BasicCard(
                   title: "Volkan Ket",
                   subtitle: "Flutter Developer",
@@ -38,9 +36,7 @@ class SearchManagementView extends GetView<SearchManagementController> {
                   goToCardDescription: true,
                   onTap: () {},
                 ),
-                SizedBox(
-                  height: Utils.lowPadding,
-                ),
+                SizedBox(height: Utils.lowPadding),
                 BasicCard(
                   title: "Merve Demirtaş",
                   subtitle: "Tasarımcı",
@@ -49,9 +45,7 @@ class SearchManagementView extends GetView<SearchManagementController> {
                   goToCardDescription: true,
                   onTap: () {},
                 ),
-                SizedBox(
-                  height: Utils.lowPadding,
-                ),
+                SizedBox(height: Utils.lowPadding),
                 BasicCard(
                   title: "Baki Baran Özel",
                   subtitle: "Frontend Developer",
@@ -60,9 +54,7 @@ class SearchManagementView extends GetView<SearchManagementController> {
                   goToCardDescription: true,
                   onTap: () {},
                 ),
-                SizedBox(
-                  height: Utils.lowPadding,
-                ),
+                SizedBox(height: Utils.lowPadding),
                 BasicCard(
                   title: "Hanifi Can Seven",
                   subtitle: "Backend Developer",
@@ -71,9 +63,7 @@ class SearchManagementView extends GetView<SearchManagementController> {
                   goToCardDescription: true,
                   onTap: () {},
                 ),
-                SizedBox(
-                  height: Utils.lowPadding,
-                ),
+                SizedBox(height: Utils.lowPadding),
                 BasicCard(
                   title: "Utku Göneş",
                   subtitle: "Tercuman",
@@ -81,9 +71,7 @@ class SearchManagementView extends GetView<SearchManagementController> {
                   goToCardDescription: true,
                   onTap: () {},
                 ),
-                SizedBox(
-                  height: Utils.lowPadding,
-                ),
+                SizedBox(height: Utils.lowPadding),
                 BasicCard(
                   title: "Sude Taşoyan",
                   subtitle: "Gazeteci",
@@ -91,9 +79,7 @@ class SearchManagementView extends GetView<SearchManagementController> {
                   goToCardDescription: true,
                   onTap: () {},
                 ),
-                SizedBox(
-                  height: Utils.veryVeryHighPadding,
-                ),
+                SizedBox(height: Utils.veryVeryHighPadding),
               ],
             ),
           ),
@@ -111,14 +97,10 @@ class SearchManagementView extends GetView<SearchManagementController> {
         unSelectedItemColor: Get.theme.appBarTheme.titleTextStyle!.color!.withOpacity(0.75),
       );
   CustomAppBar get _buildAppBar => CustomAppBar(
-        title: const Text(
-          AppConstants.searchAppBar,
-        ),
+        title: const Text(AppConstants.searchAppBar),
         showLeadingBackIcon: false,
         onLeadingPressed: () {},
         actions: [filterButton],
       );
-  CustomIconButton get filterButton => const CustomIconButton(
-        icon: AppIcons.appBarFilterIcon,
-      );
+  CustomIconButton get filterButton => const CustomIconButton(icon: AppIcons.appBarFilterIcon);
 }

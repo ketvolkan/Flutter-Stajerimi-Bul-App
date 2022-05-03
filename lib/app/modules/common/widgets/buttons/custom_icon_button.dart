@@ -10,9 +10,16 @@ class CustomIconButton extends StatelessWidget {
   final Color? color;
   final Color? backgroundColor;
   final double borderRadius;
-  const CustomIconButton(
-      {Key? key, required this.icon, this.onTap, this.size, this.color, this.backgroundColor, this.borderRadius = 0})
-      : super(key: key);
+
+  const CustomIconButton({
+    Key? key,
+    required this.icon,
+    this.onTap,
+    this.size,
+    this.color,
+    this.backgroundColor,
+    this.borderRadius = 0,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -20,16 +27,10 @@ class CustomIconButton extends StatelessWidget {
       onTap: onTap ?? () {},
       child: Container(
         margin: EdgeInsets.all(Utils.normalPadding),
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(borderRadius),
-          color: backgroundColor ?? Colors.transparent,
-        ),
+        decoration:
+            BoxDecoration(borderRadius: BorderRadius.circular(borderRadius), color: backgroundColor ?? Colors.transparent),
         padding: EdgeInsets.all(Utils.veryLowPadding),
-        child: Icon(
-          icon,
-          size: size ?? Utils.iconNormal,
-          color: color ?? AppColor.bottomNavBarItemColor,
-        ),
+        child: Icon(icon, size: size ?? Utils.iconNormal, color: color ?? AppColor.bottomNavBarItemColor),
       ),
     );
   }

@@ -16,9 +16,7 @@ class HomeManagementView extends GetView<HomeManagementController> {
   Widget build(BuildContext context) {
     return CustomScaffold(
       appBar: _buildAppBar,
-      body: CustomBody(
-        child: Container(),
-      ),
+      body: CustomBody(child: Container()),
       bottomNavigationBar: _buildNavigationBar,
       floatingActionButton: const CustomFloatingActionButton(),
     );
@@ -31,9 +29,7 @@ class HomeManagementView extends GetView<HomeManagementController> {
         unSelectedItemColor: Get.theme.appBarTheme.titleTextStyle!.color!.withOpacity(0.75),
       );
   CustomAppBar get _buildAppBar => CustomAppBar(
-        title: const Text(
-          AppConstants.homeAppBar,
-        ),
+        title: const Text(AppConstants.homeAppBar),
         showLeadingBackIcon: false,
         onLeadingPressed: () {},
         actions: const [],

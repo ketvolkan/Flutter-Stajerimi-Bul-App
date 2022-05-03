@@ -42,9 +42,7 @@ class SettingManagementView extends GetView<SettingManagementController> {
         unSelectedItemColor: Get.theme.appBarTheme.titleTextStyle!.color!.withOpacity(0.75),
       );
   CustomAppBar get _buildAppBar => CustomAppBar(
-        title: const Text(
-          AppConstants.settingAppBar,
-        ),
+        title: const Text(AppConstants.settingAppBar),
         showLeadingBackIcon: false,
         onLeadingPressed: () {},
         actions: const [],

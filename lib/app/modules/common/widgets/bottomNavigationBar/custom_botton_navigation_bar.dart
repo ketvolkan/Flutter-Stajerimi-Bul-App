@@ -1,11 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:stajyerimibul/app/routes/app_routes.dart';
+
 import '../../../../../core/constants/app_constants.dart';
 import '../../../../../core/utils/utils.dart';
 import '../../../../../core/variables/icons.dart';
+import '../../../../routes/app_routes.dart';
 
 class CustomNavigationBar extends StatelessWidget implements PreferredSizeWidget {
+  final int currentIndex;
+  final Function(int)? onTap;
+  final Color? backgroundColor;
+  final Color? selectedItemColor;
+  final Color? unSelectedItemColor;
+
   const CustomNavigationBar({
     Key? key,
     required this.currentIndex,
@@ -14,12 +21,7 @@ class CustomNavigationBar extends StatelessWidget implements PreferredSizeWidget
     this.unSelectedItemColor,
     this.onTap,
   }) : super(key: key);
-  final int currentIndex;
-  final Function(int)? onTap;
 
-  final Color? backgroundColor;
-  final Color? selectedItemColor;
-  final Color? unSelectedItemColor;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -62,13 +64,21 @@ class CustomNavigationBar extends StatelessWidget implements PreferredSizeWidget
                   },
               items: const [
                 BottomNavigationBarItem(
-                    icon: Icon(AppIcons.bottomNavigationBarAccount), label: AppConstants.bottomNavigationBarAccount),
+                  icon: Icon(AppIcons.bottomNavigationBarAccount),
+                  label: AppConstants.bottomNavigationBarAccount,
+                ),
                 BottomNavigationBarItem(
-                    icon: Icon(AppIcons.bottomNavigationBarHome), label: AppConstants.bottomNavigationBarHome),
+                  icon: Icon(AppIcons.bottomNavigationBarHome),
+                  label: AppConstants.bottomNavigationBarHome,
+                ),
                 BottomNavigationBarItem(
-                    icon: Icon(AppIcons.bottomNavigationBarSearch), label: AppConstants.bottomNavigationBarSearch),
+                  icon: Icon(AppIcons.bottomNavigationBarSearch),
+                  label: AppConstants.bottomNavigationBarSearch,
+                ),
                 BottomNavigationBarItem(
-                    icon: Icon(AppIcons.bottomNavigationBarSetting), label: AppConstants.bottomNavigationBarSetting),
+                  icon: Icon(AppIcons.bottomNavigationBarSetting),
+                  label: AppConstants.bottomNavigationBarSetting,
+                ),
               ],
             ),
           ),

@@ -31,9 +31,7 @@ class BasicCard extends StatelessWidget {
     return InkWell(
       onTap: onTap ?? () {},
       child: Card(
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(Utils.veryHighBorderRadius),
-        ),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(Utils.veryHighBorderRadius)),
         child: Column(
           children: [
             Container(
@@ -77,19 +75,13 @@ class BasicCard extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     description != null
-                        ? Text(
-                            description!,
-                            style: AppTextStyle.basicCardDescriptionTextStyle,
-                          )
+                        ? Text(description!, style: AppTextStyle.basicCardDescriptionTextStyle)
                         : const SizedBox(),
                     createdAt != null
                         ? Container(
                             padding: description != null ? EdgeInsets.only(top: Utils.normalPadding) : EdgeInsets.zero,
                             alignment: description != null ? Alignment.centerLeft : Alignment.center,
-                            child: Text(
-                              createdAt.toString().substring(0, 10),
-                              style: AppTextStyle.basicCardTimeTextStyle,
-                            ),
+                            child: Text(createdAt.toString().substring(0, 10), style: AppTextStyle.basicCardTimeTextStyle),
                           )
                         : const SizedBox(),
                   ],

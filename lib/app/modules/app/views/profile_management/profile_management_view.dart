@@ -15,9 +15,7 @@ class ProfileManagementView extends GetView<ProfileManagementView> {
   Widget build(BuildContext context) {
     return CustomScaffold(
       appBar: _buildAppBar,
-      body: CustomBody(
-        child: Container(),
-      ),
+      body: CustomBody(child: Container()),
       bottomNavigationBar: _buildNavigationBar,
       floatingActionButton: const CustomFloatingActionButton(),
     );
@@ -30,9 +28,7 @@ class ProfileManagementView extends GetView<ProfileManagementView> {
         unSelectedItemColor: Get.theme.appBarTheme.titleTextStyle!.color!.withOpacity(0.75),
       );
   CustomAppBar get _buildAppBar => CustomAppBar(
-        title: const Text(
-          AppConstants.profileAppBar,
-        ),
+        title: const Text(AppConstants.profileAppBar),
         showLeadingBackIcon: false,
         onLeadingPressed: () {},
         actions: const [],
