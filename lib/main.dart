@@ -19,12 +19,12 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: AppConstants.appTitle,
       theme: lightTheme,
-      darkTheme: darkTheme,
+      // darkTheme: darkTheme,
       defaultTransition: Transition.noTransition,
-      supportedLocales: const [
+      /*   supportedLocales: const [
         Locale('tr', 'TR'),
         Locale('en', 'US'),
-      ],
+      ],*/
       initialRoute: AppRoutes.HOME,
       initialBinding: HomeManagementBinding(),
       getPages: AppPages.PAGES,
