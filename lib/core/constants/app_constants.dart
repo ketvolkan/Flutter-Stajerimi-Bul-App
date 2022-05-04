@@ -19,4 +19,6 @@ class AppConstants {
   static const String jobExperienceCvCardTitle = "İş Tecrübelerim";
   static const String languageCvCardTitle = "Bildiğim Diller";
   static const String schoolCvCardTitle = "Okuduğum Okullar";
+  static const String isNotComplated = "Devam Ediyor";
+  static const String editCv = "Cv Düzenle";
 }

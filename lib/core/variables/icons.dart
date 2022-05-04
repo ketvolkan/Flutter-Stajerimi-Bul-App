@@ -25,4 +25,6 @@ class AppIcons {
   static const IconData schoolCvCardIcon = Icons.school_outlined;
   static const IconData jobExperienceCvCardIcon = Icons.draw_outlined;
   static const IconData languageCvCardIcon = Icons.language_outlined;
+  static const IconData cvCardLeadingIcon = Icons.arrow_right;
+  static const IconData editCvIcon = Icons.edit_note_outlined;
 }

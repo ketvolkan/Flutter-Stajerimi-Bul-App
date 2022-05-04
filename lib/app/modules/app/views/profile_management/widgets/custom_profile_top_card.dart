@@ -10,60 +10,41 @@ class CustomProfileTopCard extends StatelessWidget {
     Key? key,
   }) : super(key: key);
 
+  //TODO Apiden gelen verilere göre model Oluşturulacak
+  final name = "Volkan Ket";
+  final birthDate = "15 Nisan 2002";
+  final country = "Bursa";
+  final bio = "Mobil Uygulama Geliştirici ";
+
   @override
   Widget build(BuildContext context) {
     return Stack(
       children: [
         Container(color: Get.theme.primaryColor),
-        Padding(
+        Container(
           padding: EdgeInsets.all(Utils.normalPadding),
-          child: SizedBox(
-            width: Get.size.width,
-            child: Row(
-              children: [
-                RandomCircleImage(height: Get.size.width),
-                SizedBox(width: Utils.highPadding),
-                Column(
+          width: Get.size.width,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              Expanded(flex: 4, child: RandomCircleImage(height: Get.size.width)),
+              Expanded(
+                flex: 9,
+                child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Expanded(flex: 2, child: Text("Volkan Ket", style: AppTextStyle.profilPageAboutTextStyle)),
-                    Expanded(
-                      flex: 2,
-                      child: Text(
-                        "15 Nisan 2002",
-                        style: AppTextStyle.profilPageAboutTextStyle.copyWith(
-                          fontSize: Utils.textSizeSubtitle,
-                          color: Get.theme.appBarTheme.titleTextStyle!.color!.withOpacity(0.75),
-                        ),
-                      ),
-                    ),
+                    Expanded(flex: 4, child: FittedBox(child: Text(name, style: AppTextStyle.profilPageAboutTextStyle))),
                     const Spacer(flex: 1),
+                    Expanded(flex: 4, child: Text(birthDate, style: AppTextStyle.profilPageDateTimeTextStyle)),
+                    Expanded(flex: 2, child: Text(country, style: AppTextStyle.profilPageCountryTextStyle)),
+                    const Spacer(flex: 4),
                     Expanded(
-                      flex: 2,
-                      child: Row(
-                        children: [
-                          Text(
-                            "Mobil Uygulama Geliştirici",
-                            style: AppTextStyle.profilPageAboutTextStyle.copyWith(
-                              fontSize: Utils.textSizeTitle,
-                              color: Get.theme.appBarTheme.titleTextStyle!.color!.withOpacity(0.75),
-                            ),
-                          ),
-                          SizedBox(width: Utils.highPadding),
-                          Text(
-                            "Bursa",
-                            style: AppTextStyle.profilPageAboutTextStyle.copyWith(
-                              fontSize: Utils.textSizeTitle,
-                              color: Get.theme.appBarTheme.titleTextStyle!.color!.withOpacity(0.75),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
+                        flex: 4,
+                        child: FittedBox(fit: BoxFit.scaleDown, child: Text(bio, style: AppTextStyle.profilePageBioTextStyle))),
                   ],
-                )
-              ],
-            ),
+                ),
+              ),
+            ],
           ),
         ),
       ],
