@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '../../../../../core/utils/utils.dart';
-import '../../../../../core/variables/color.dart';
 
 class CustomIconButton extends StatelessWidget {
   final IconData icon;
@@ -27,10 +27,12 @@ class CustomIconButton extends StatelessWidget {
       onTap: onTap ?? () {},
       child: Container(
         margin: EdgeInsets.all(Utils.normalPadding),
-        decoration:
-            BoxDecoration(borderRadius: BorderRadius.circular(borderRadius), color: backgroundColor ?? Colors.transparent),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(borderRadius),
+          color: backgroundColor ?? Colors.transparent,
+        ),
         padding: EdgeInsets.all(Utils.veryLowPadding),
-        child: Icon(icon, size: size ?? Utils.iconNormal, color: color ?? AppColor.bottomNavBarItemColor),
+        child: Icon(icon, size: size ?? Utils.iconNormal, color: color ?? Get.theme.appBarTheme.titleTextStyle!.color),
       ),
     );
   }

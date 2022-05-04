@@ -5,6 +5,7 @@ enum MenuEnums {
   Setting, //? Ayarlar
   Contact, //? İletişim
 }
+enum BottomNavbars { Profile, Home, Search, Setting }
 
 //? Ayarlardaki Sayfalara Giden Butonlar Burdan Ayarlanır(Giticeği sayfa,açıcağı buton grubu vb)
 class MenuList {

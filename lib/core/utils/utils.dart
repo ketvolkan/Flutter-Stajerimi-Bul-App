@@ -17,6 +17,7 @@ class Utils {
 
   //? Text Size
   static double textSizeLow = Get.height * 0.015;
+  static double textSizeSubtitle = Get.height * 0.020;
   static double textSizeTitle = Get.height * 0.024;
   static double textSizeNormal = Get.height * 0.03;
   static double textSizeHigh = Get.height * 0.036;

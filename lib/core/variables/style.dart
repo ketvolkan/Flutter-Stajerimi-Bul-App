@@ -25,4 +25,9 @@ class AppTextStyle {
     color: Get.theme.appBarTheme.titleTextStyle!.color,
     fontWeight: Utils.boldFontWeight,
   );
+  //? Profile Page Styles
+  static TextStyle profilPageAboutTextStyle =
+      AppTextStyle.appBarTextStyle.copyWith(fontSize: Utils.textSizeNormal, color: Get.theme.appBarTheme.titleTextStyle!.color);
+  static TextStyle baseCvCardTextStyle =
+      AppTextStyle.appBarTextStyle.copyWith(fontSize: Utils.textSizeNormal, color: Get.theme.primaryColorDark);
 }

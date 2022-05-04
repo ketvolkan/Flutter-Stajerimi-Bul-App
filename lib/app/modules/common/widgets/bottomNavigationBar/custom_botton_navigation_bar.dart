@@ -12,6 +12,7 @@ class CustomNavigationBar extends StatelessWidget implements PreferredSizeWidget
   final Color? backgroundColor;
   final Color? selectedItemColor;
   final Color? unSelectedItemColor;
+  final double notchMargin;
 
   const CustomNavigationBar({
     Key? key,
@@ -20,6 +21,7 @@ class CustomNavigationBar extends StatelessWidget implements PreferredSizeWidget
     this.selectedItemColor,
     this.unSelectedItemColor,
     this.onTap,
+    this.notchMargin = 5,
   }) : super(key: key);
 
   @override
@@ -32,7 +34,7 @@ class CustomNavigationBar extends StatelessWidget implements PreferredSizeWidget
           color: Get.theme.backgroundColor,
           child: BottomAppBar(
             shape: const CircularNotchedRectangle(),
-            notchMargin: 5,
+            notchMargin: notchMargin,
             color: backgroundColor ?? Get.theme.primaryColor,
             child: BottomNavigationBar(
               showUnselectedLabels: false,
@@ -41,8 +43,8 @@ class CustomNavigationBar extends StatelessWidget implements PreferredSizeWidget
               backgroundColor: Colors.transparent,
               elevation: 0,
               currentIndex: currentIndex,
-              selectedItemColor: selectedItemColor,
-              unselectedItemColor: unSelectedItemColor,
+              selectedItemColor: selectedItemColor ?? Get.theme.appBarTheme.titleTextStyle!.color,
+              unselectedItemColor: unSelectedItemColor ?? Get.theme.appBarTheme.titleTextStyle!.color!.withOpacity(0.75),
               onTap: onTap ??
                   (value) {
                     switch (value) {
@@ -58,8 +60,8 @@ class CustomNavigationBar extends StatelessWidget implements PreferredSizeWidget
                       case 3:
                         Get.offAndToNamed(AppRoutes.SETTING);
                         break;
-
                       default:
+                        Get.offAndToNamed(AppRoutes.HOME);
                     }
                   },
               items: const [

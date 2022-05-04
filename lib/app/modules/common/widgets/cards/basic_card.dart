@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../../../../core/utils/utils.dart';
+import '../../../../../core/variables/icons.dart';
 import '../../../../../core/variables/style.dart';
 
 class BasicCard extends StatelessWidget {
@@ -12,6 +13,7 @@ class BasicCard extends StatelessWidget {
   final bool goToCardDescription;
   final Widget? profileImage;
   final bool backArrow;
+  final int descriptionMaxLines;
   final Function()? onTap;
 
   const BasicCard({
@@ -24,6 +26,7 @@ class BasicCard extends StatelessWidget {
     this.goToCardDescription = false,
     this.profileImage,
     this.backArrow = false,
+    this.descriptionMaxLines = 3,
   }) : super(key: key);
 
   @override
@@ -41,7 +44,7 @@ class BasicCard extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   backArrow
-                      ? Expanded(flex: 1, child: Icon(Icons.arrow_back_ios, color: Get.theme.primaryColor))
+                      ? Expanded(flex: 1, child: Icon(AppIcons.basicCardGoToBack, color: Get.theme.primaryColor))
                       : const SizedBox(),
                   profileImage != null ? Expanded(flex: 1, child: profileImage!) : const SizedBox(),
                   SizedBox(width: Utils.lowPadding),
@@ -56,7 +59,10 @@ class BasicCard extends StatelessWidget {
                     ),
                   ),
                   goToCardDescription
-                      ? Expanded(flex: 1, child: Center(child: Icon(Icons.arrow_forward_ios, color: Get.theme.primaryColor)))
+                      ? Expanded(
+                          flex: 1,
+                          child: Center(child: Icon(AppIcons.basicCardGoToCardDescriptionIcon, color: Get.theme.primaryColor)),
+                        )
                       : const SizedBox()
                 ],
               ),
@@ -75,7 +81,12 @@ class BasicCard extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     description != null
-                        ? Text(description!, style: AppTextStyle.basicCardDescriptionTextStyle)
+                        ? Text(
+                            description!,
+                            style: AppTextStyle.basicCardDescriptionTextStyle,
+                            maxLines: descriptionMaxLines,
+                            overflow: TextOverflow.ellipsis,
+                          )
                         : const SizedBox(),
                     createdAt != null
                         ? Container(

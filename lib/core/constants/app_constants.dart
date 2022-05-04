@@ -13,4 +13,10 @@ class AppConstants {
   static const String bottomNavigationBarAccount = "Account";
   static const String bottomNavigationBarSetting = "Setting";
   static const String bottomNavigationBarSearch = "Search";
+
+  //?Cv Card
+  static const String aboutCvCardTitle = "Hakkımda";
+  static const String jobExperienceCvCardTitle = "İş Tecrübelerim";
+  static const String languageCvCardTitle = "Bildiğim Diller";
+  static const String schoolCvCardTitle = "Okuduğum Okullar";
 }

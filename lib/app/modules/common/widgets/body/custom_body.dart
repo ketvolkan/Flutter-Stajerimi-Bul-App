@@ -5,7 +5,8 @@ import '../../../../../core/utils/utils.dart';
 
 class CustomBody extends StatelessWidget {
   final Widget? child;
-  const CustomBody({Key? key, this.child}) : super(key: key);
+  final double? height;
+  const CustomBody({Key? key, this.child, this.height}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +14,11 @@ class CustomBody extends StatelessWidget {
       color: Get.theme.primaryColor,
       child: ClipRRect(
         borderRadius: BorderRadius.vertical(top: Radius.circular(Utils.veryHighBorderRadius)),
-        child: Container(color: Get.theme.backgroundColor, child: child ?? const SizedBox()),
+        child: Container(
+            width: Get.size.width,
+            height: height ?? Get.size.height,
+            color: Get.theme.backgroundColor,
+            child: child ?? const SizedBox()),
       ),
     );
   }

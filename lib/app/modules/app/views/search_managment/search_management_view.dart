@@ -12,6 +12,7 @@ import '../../../common/widgets/cards/basic_card.dart';
 import '../../../common/widgets/fabButton/custom_floating_action_button.dart';
 import '../../../common/widgets/image/random_circle_image.dart';
 import '../../../common/widgets/scaffold/custom_scaffold.dart';
+import '../setting_management/menu_buttons/menu_enum.dart';
 import 'search_management_controller.dart';
 
 class SearchManagementView extends GetView<SearchManagementController> {
@@ -90,17 +91,14 @@ class SearchManagementView extends GetView<SearchManagementController> {
     );
   }
 
-  CustomNavigationBar get _buildNavigationBar => CustomNavigationBar(
-        currentIndex: 2,
-        backgroundColor: Get.theme.primaryColor,
-        selectedItemColor: Get.theme.appBarTheme.titleTextStyle!.color,
-        unSelectedItemColor: Get.theme.appBarTheme.titleTextStyle!.color!.withOpacity(0.75),
-      );
   CustomAppBar get _buildAppBar => CustomAppBar(
         title: const Text(AppConstants.searchAppBar),
         showLeadingBackIcon: false,
         onLeadingPressed: () {},
         actions: [filterButton],
       );
+
   CustomIconButton get filterButton => const CustomIconButton(icon: AppIcons.appBarFilterIcon);
+
+  CustomNavigationBar get _buildNavigationBar => CustomNavigationBar(currentIndex: BottomNavbars.Search.index);
 }

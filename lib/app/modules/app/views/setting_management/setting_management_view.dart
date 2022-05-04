@@ -8,6 +8,7 @@ import '../../../common/widgets/body/custom_body.dart';
 import '../../../common/widgets/bottomNavigationBar/custom_botton_navigation_bar.dart';
 import '../../../common/widgets/fabButton/custom_floating_action_button.dart';
 import '../../../common/widgets/scaffold/custom_scaffold.dart';
+import 'menu_buttons/menu_enum.dart';
 import 'setting_management_controller.dart';
 
 class SettingManagementView extends GetView<SettingManagementController> {
@@ -35,16 +36,12 @@ class SettingManagementView extends GetView<SettingManagementController> {
     );
   }
 
-  CustomNavigationBar get _buildNavigationBar => CustomNavigationBar(
-        currentIndex: 3,
-        backgroundColor: Get.theme.primaryColor,
-        selectedItemColor: Get.theme.appBarTheme.titleTextStyle!.color,
-        unSelectedItemColor: Get.theme.appBarTheme.titleTextStyle!.color!.withOpacity(0.75),
-      );
   CustomAppBar get _buildAppBar => CustomAppBar(
         title: const Text(AppConstants.settingAppBar),
         showLeadingBackIcon: false,
         onLeadingPressed: () {},
         actions: const [],
       );
+
+  CustomNavigationBar get _buildNavigationBar => CustomNavigationBar(currentIndex: BottomNavbars.Setting.index);
 }
