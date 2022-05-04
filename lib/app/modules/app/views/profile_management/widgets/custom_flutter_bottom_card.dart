@@ -17,7 +17,7 @@ class CustomProfileBottomCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return CustomBody(
       child: Padding(
-        padding: EdgeInsets.symmetric(horizontal: Utils.highPadding),
+        padding: EdgeInsets.symmetric(horizontal: Utils.highPadding) + EdgeInsets.only(top: Utils.highPadding),
         child: ListView(
           children: [
             SizedBox(height: Utils.normalPadding),

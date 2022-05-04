@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:stajyerimibul/app/routes/app_routes.dart';
 
 import '../../../../../core/constants/app_constants.dart';
 import '../../../common/widgets/appBar/custom_app_bar.dart';
@@ -19,7 +20,11 @@ class HomeManagementView extends GetView<HomeManagementController> {
       appBar: _buildAppBar,
       body: CustomBody(child: Container()),
       bottomNavigationBar: _buildNavigationBar,
-      floatingActionButton: const CustomFloatingActionButton(),
+      floatingActionButton: CustomFloatingActionButton(
+          onPressed: () => Get.toNamed(
+                AppRoutes.PROFILE,
+                arguments: {'isJustShow': true},
+              )),
     );
   }
 

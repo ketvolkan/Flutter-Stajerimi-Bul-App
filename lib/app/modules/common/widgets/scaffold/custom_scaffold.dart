@@ -4,6 +4,7 @@ class CustomScaffold extends StatelessWidget {
   final PreferredSizeWidget? appBar;
   final Widget body;
   final Widget? drawer;
+  final Key? globalKey;
   final Widget? floatingActionButton;
   final FloatingActionButtonLocation? floatingActionButtonLocation;
   final PreferredSizeWidget? bottomNavigationBar;
@@ -15,12 +16,14 @@ class CustomScaffold extends StatelessWidget {
     this.floatingActionButtonLocation = FloatingActionButtonLocation.centerDocked,
     this.bottomNavigationBar,
     this.drawer,
+    this.globalKey,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return appBar != null
         ? Scaffold(
+            key: globalKey,
             extendBody: true,
             appBar: appBar,
             drawer: drawer,
@@ -30,6 +33,7 @@ class CustomScaffold extends StatelessWidget {
             bottomNavigationBar: bottomNavigationBar ?? const SizedBox(),
           )
         : Scaffold(
+            key: key,
             extendBody: true,
             body: body,
             drawer: drawer,

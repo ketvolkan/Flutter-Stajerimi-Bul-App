@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class AppIcons {
   //? AppBar
-  static const IconData appBarLeadingIcon = Icons.arrow_back_ios;
+  static const IconData appBarLeadingIcon = Icons.arrow_back;
   static const IconData appBarFilterIcon = Icons.filter_alt_outlined;
   static const IconData appBarSearchIcon = Icons.search;
   static const IconData appBarHamburgerMenuIcon = Icons.menu;

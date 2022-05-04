@@ -7,7 +7,17 @@ class CustomTextButton extends StatelessWidget {
   final IconData? icon;
   final String text;
   final Function()? onTap;
-  const CustomTextButton({Key? key, this.icon, required this.text, this.onTap}) : super(key: key);
+  final Color? textColor;
+  final Color? iconColor;
+
+  const CustomTextButton({
+    Key? key,
+    this.icon,
+    required this.text,
+    this.onTap,
+    this.textColor,
+    this.iconColor,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -16,9 +26,13 @@ class CustomTextButton extends StatelessWidget {
       child: Row(
         children: [
           icon != null
-              ? Icon(icon, color: Get.theme.appBarTheme.titleTextStyle!.color, size: Utils.iconNormal)
+              ? Icon(icon, color: iconColor ?? Get.theme.appBarTheme.titleTextStyle!.color, size: Utils.iconNormal)
               : const SizedBox(),
-          Text(text, style: AppTextStyle.appBarCustomTextButtonTextStyle),
+          SizedBox(width: Utils.normalPadding),
+          Text(text,
+              style: textColor != null
+                  ? AppTextStyle.appBarCustomTextButtonTextStyle.copyWith(color: textColor)
+                  : AppTextStyle.appBarCustomTextButtonTextStyle),
         ],
       ),
     );

@@ -10,6 +10,7 @@ class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
   final Widget? customLeadingButton;
   final bool centerTitle;
   final Function()? onLeadingPressed;
+  final bool? automaticallyImplyLeading;
   const CustomAppBar({
     Key? key,
     this.actions,
@@ -18,17 +19,22 @@ class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
     this.centerTitle = false,
     this.onLeadingPressed,
     this.customLeadingButton,
+    this.automaticallyImplyLeading,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return AppBar(
+      automaticallyImplyLeading: automaticallyImplyLeading ?? true,
       backgroundColor: Get.theme.primaryColor,
       title: title ?? const SizedBox(),
       leading: showLeadingBackIcon
           ? IconButton(
               icon: Icon(AppIcons.appBarLeadingIcon, color: Get.theme.appBarTheme.titleTextStyle!.color),
-              onPressed: onLeadingPressed ?? () {},
+              onPressed: onLeadingPressed ??
+                  () {
+                    Get.back();
+                  },
             )
           //Todo Burasını Sor
           : customLeadingButton,
