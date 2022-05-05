@@ -31,8 +31,8 @@ class CustomTextButton extends StatelessWidget {
           SizedBox(width: Utils.normalPadding),
           Text(text,
               style: textColor != null
-                  ? AppTextStyle.appBarCustomTextButtonTextStyle.copyWith(color: textColor)
-                  : AppTextStyle.appBarCustomTextButtonTextStyle),
+                  ? AppTextStyle.appBarCustomTextButtonTextStyle.copyWith(color: textColor, fontSize: Utils.textSizeNormal)
+                  : AppTextStyle.appBarCustomTextButtonTextStyle.copyWith(fontSize: Utils.textSizeNormal)),
         ],
       ),
     );

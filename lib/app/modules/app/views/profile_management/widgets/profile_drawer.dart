@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:stajyerimibul/app/modules/common/widgets/buttons/custom_text_button.dart';
+import 'package:stajyerimibul/core/utils/utils.dart';
 import 'package:stajyerimibul/core/variables/icons.dart';
 import 'package:stajyerimibul/core/variables/style.dart';
 
@@ -31,44 +32,51 @@ class ProfileDrawer extends StatelessWidget {
           ),
           Expanded(
             flex: 13,
-            child: Column(
-              children: [
-                CustomTextButton(
-                  onTap: () {},
-                  text: "Profil Bilgileri",
-                  textColor: Get.theme.primaryColorDark,
-                  icon: AppIcons.bottomNavigationBarAccount,
-                  iconColor: Get.theme.primaryColor,
-                ),
-                CustomTextButton(
-                  onTap: () {},
-                  text: "Hakkımda ",
-                  textColor: Get.theme.primaryColorDark,
-                  icon: AppIcons.aboutCvCardIcon,
-                  iconColor: Get.theme.primaryColor,
-                ),
-                CustomTextButton(
-                  onTap: () {},
-                  text: "Okul Bilgileri",
-                  textColor: Get.theme.primaryColorDark,
-                  icon: AppIcons.schoolCvCardIcon,
-                  iconColor: Get.theme.primaryColor,
-                ),
-                CustomTextButton(
-                  onTap: () {},
-                  text: "İş Tecrübeleri",
-                  textColor: Get.theme.primaryColorDark,
-                  icon: AppIcons.jobExperienceCvCardIcon,
-                  iconColor: Get.theme.primaryColor,
-                ),
-                CustomTextButton(
-                  onTap: () {},
-                  text: "Bildiğim Diller",
-                  textColor: Get.theme.primaryColorDark,
-                  icon: AppIcons.languageCvCardIcon,
-                  iconColor: Get.theme.primaryColor,
-                ),
-              ],
+            child: Padding(
+              padding: EdgeInsets.all(Utils.normalPadding),
+              child: Column(
+                children: [
+                  CustomTextButton(
+                    onTap: () {},
+                    text: "Profil Bilgileri",
+                    textColor: Get.theme.primaryColorDark,
+                    icon: AppIcons.bottomNavigationBarAccount,
+                    iconColor: Get.theme.primaryColor,
+                  ),
+                  SizedBox(height: Utils.normalPadding),
+                  CustomTextButton(
+                    onTap: () {},
+                    text: "Hakkımda ",
+                    textColor: Get.theme.primaryColorDark,
+                    icon: AppIcons.aboutCvCardIcon,
+                    iconColor: Get.theme.primaryColor,
+                  ),
+                  SizedBox(height: Utils.normalPadding),
+                  CustomTextButton(
+                    onTap: () {},
+                    text: "Okul Bilgileri",
+                    textColor: Get.theme.primaryColorDark,
+                    icon: AppIcons.schoolCvCardIcon,
+                    iconColor: Get.theme.primaryColor,
+                  ),
+                  SizedBox(height: Utils.normalPadding),
+                  CustomTextButton(
+                    onTap: () {},
+                    text: "İş Tecrübeleri",
+                    textColor: Get.theme.primaryColorDark,
+                    icon: AppIcons.jobExperienceCvCardIcon,
+                    iconColor: Get.theme.primaryColor,
+                  ),
+                  SizedBox(height: Utils.normalPadding),
+                  CustomTextButton(
+                    onTap: () {},
+                    text: "Bildiğim Diller",
+                    textColor: Get.theme.primaryColorDark,
+                    icon: AppIcons.languageCvCardIcon,
+                    iconColor: Get.theme.primaryColor,
+                  ),
+                ],
+              ),
             ),
           )
         ],
