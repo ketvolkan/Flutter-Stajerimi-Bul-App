@@ -1,9 +1,9 @@
 import 'package:get/get_navigation/get_navigation.dart';
 
+import '../modules/app/views/employee_profile_management/employee_profile_management_binding.dart';
+import '../modules/app/views/employee_profile_management/employee_profile_management_view.dart';
 import '../modules/app/views/home_management/home_management_binding.dart';
 import '../modules/app/views/home_management/home_management_view.dart';
-import '../modules/app/views/profile_management/profile_management_binding.dart';
-import '../modules/app/views/profile_management/profile_management_view.dart';
 import '../modules/app/views/search_managment/search_management_binding.dart';
 import '../modules/app/views/search_managment/search_management_view.dart';
 import '../modules/app/views/setting_management/setting_management_binding.dart';
@@ -22,8 +22,8 @@ class AppPages {
     ),
     GetPage(
       name: AppRoutes.PROFILE,
-      page: () => const ProfileManagementView(),
-      binding: ProfileManagementBinding(),
+      page: () => const EmployeeProfileManagementView(),
+      binding: EmployeeProfileManagementBinding(),
     ),
     GetPage(
       name: AppRoutes.SEARCH,

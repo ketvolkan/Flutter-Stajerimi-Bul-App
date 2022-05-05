@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get_navigation/get_navigation.dart';
-import 'package:stajyerimibul/app/modules/app/views/home_management/home_management_binding.dart';
+import 'app/modules/app/views/home_management/home_management_binding.dart';
 
 import 'app/routes/app_pages.dart';
 import 'app/routes/app_routes.dart';

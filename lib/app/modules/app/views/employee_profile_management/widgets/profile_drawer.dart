@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:stajyerimibul/app/modules/common/widgets/buttons/custom_text_button.dart';
-import 'package:stajyerimibul/core/utils/utils.dart';
-import 'package:stajyerimibul/core/variables/icons.dart';
-import 'package:stajyerimibul/core/variables/style.dart';
+
+import '../../../../../../core/utils/utils.dart';
+import '../../../../../../core/variables/icons.dart';
+import '../../../../../../core/variables/style.dart';
+import '../../../../common/widgets/buttons/custom_text_button.dart';
 
 class ProfileDrawer extends StatelessWidget {
   final Function()? closeOnTap;

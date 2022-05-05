@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:stajyerimibul/core/constants/app_constants.dart';
-import 'package:stajyerimibul/core/variables/icons.dart';
+import '../../../../../../../core/constants/app_constants.dart';
+import '../../../../../../../core/variables/icons.dart';
 
 class CustomJobSchoolListTile extends StatelessWidget {
   final String title;

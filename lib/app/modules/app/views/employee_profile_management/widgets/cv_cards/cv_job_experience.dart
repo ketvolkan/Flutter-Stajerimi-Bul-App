@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 
-import 'package:stajyerimibul/app/modules/app/views/profile_management/widgets/cv_cards/custom_job_school_list_tile.dart';
-import 'package:stajyerimibul/core/constants/app_constants.dart';
-import 'package:stajyerimibul/core/utils/utils.dart';
-import 'package:stajyerimibul/core/variables/icons.dart';
-
+import '../../../../../../../core/constants/app_constants.dart';
+import '../../../../../../../core/utils/utils.dart';
+import '../../../../../../../core/variables/icons.dart';
+import '../../../employee_profile_management/widgets/cv_cards/custom_job_school_list_tile.dart';
 import 'cv_base_card.dart';
 
 class CvJobExperienceCard extends StatelessWidget {

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class ProfileManagementController extends GetxController {
+class EmployeeProfileManagementController extends GetxController {
   //TODO Eğer başkasının sayfası ise buraya o kullanıcının modeli yollanıcak ve isJustShow true olacak
   final RxBool isJustShow = false.obs;
   var scaffoldKey = GlobalKey<ScaffoldState>();

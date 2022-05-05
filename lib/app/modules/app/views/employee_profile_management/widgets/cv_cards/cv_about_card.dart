@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:stajyerimibul/core/constants/app_constants.dart';
-import 'package:stajyerimibul/core/utils/utils.dart';
-import 'package:stajyerimibul/core/variables/icons.dart';
 
+import '../../../../../../../core/constants/app_constants.dart';
+import '../../../../../../../core/utils/utils.dart';
+import '../../../../../../../core/variables/icons.dart';
 import 'cv_base_card.dart';
 
 class CvAboutCard extends StatelessWidget {

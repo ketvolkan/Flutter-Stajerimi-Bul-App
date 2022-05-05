@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:stajyerimibul/core/utils/utils.dart';
-import 'package:stajyerimibul/core/variables/style.dart';
+
+import '../../../../../../../core/utils/utils.dart';
+import '../../../../../../../core/variables/style.dart';
 
 class CvBaseCard extends StatelessWidget {
   final String title;
