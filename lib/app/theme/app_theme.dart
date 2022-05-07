@@ -15,15 +15,25 @@ final ThemeData lightTheme = ThemeData.light().copyWith(
       backgroundColor: Colors.transparent,
       elevation: 0,
     ),
+    colorScheme: const ColorScheme.light(
+      primary: AppColor.primaryColor, // header background color
+      onPrimary: AppColor.iconColor, // header text color
+      onSurface: AppColor.cardColor, // body text color
+    ),
     backgroundColor: AppColor.backgroundColor,
     primaryColor: AppColor.primaryColor);
 
 //TODO Dark Tema Tasarlanıcak
-final ThemeData darkTheme = ThemeData.dark().copyWith(
+final ThemeData darkTheme = ThemeData.light().copyWith(
     iconTheme: const IconThemeData().copyWith(color: AppColor.iconColorDark),
     primaryColorDark: AppColor.cardColorDark,
     floatingActionButtonTheme: const FloatingActionButtonThemeData().copyWith(
       backgroundColor: AppColor.fabButtonColorDark,
+    ),
+    colorScheme: const ColorScheme.light(
+      primary: AppColor.primaryColorDark, // header background color
+      onPrimary: AppColor.iconColorDark, // header text color
+      onSurface: AppColor.cardColorDark, // body text color
     ),
     appBarTheme: AppBarTheme(
       systemOverlayStyle: SystemUiOverlayStyle.light,
