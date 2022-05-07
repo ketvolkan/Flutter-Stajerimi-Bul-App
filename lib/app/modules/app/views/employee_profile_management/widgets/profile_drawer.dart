@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import '../../../../../../core/constants/app_constants.dart';
 
 import '../../../../../../core/utils/utils.dart';
 import '../../../../../../core/variables/icons.dart';
@@ -21,7 +22,7 @@ class ProfileDrawer extends StatelessWidget {
               child: SizedBox(
                 width: Get.size.width,
                 child: Text(
-                  'Profil Güncelle',
+                  AppConstants.updateProfileDrawer,
                   style:
                       AppTextStyle.appBarTextStyle.copyWith(color: Get.theme.appBarTheme.titleTextStyle!.color ?? Colors.white),
                 ),
@@ -39,42 +40,47 @@ class ProfileDrawer extends StatelessWidget {
                 children: [
                   CustomTextButton(
                     onTap: () {},
-                    text: "Profil Bilgileri",
+                    text: AppConstants.profileAboutDrawer,
                     textColor: Get.theme.primaryColorDark,
                     icon: AppIcons.bottomNavigationBarAccount,
                     iconColor: Get.theme.primaryColor,
+                    backgroundColor: Colors.white,
                   ),
                   SizedBox(height: Utils.normalPadding),
                   CustomTextButton(
                     onTap: () {},
-                    text: "Hakkımda ",
+                    text: AppConstants.aboutMeDrawer,
                     textColor: Get.theme.primaryColorDark,
                     icon: AppIcons.aboutCvCardIcon,
                     iconColor: Get.theme.primaryColor,
+                    backgroundColor: Colors.white,
                   ),
                   SizedBox(height: Utils.normalPadding),
                   CustomTextButton(
                     onTap: () {},
-                    text: "Okul Bilgileri",
+                    text: AppConstants.schoolCvDrawer,
                     textColor: Get.theme.primaryColorDark,
                     icon: AppIcons.schoolCvCardIcon,
                     iconColor: Get.theme.primaryColor,
+                    backgroundColor: Colors.white,
                   ),
                   SizedBox(height: Utils.normalPadding),
                   CustomTextButton(
                     onTap: () {},
-                    text: "İş Tecrübeleri",
+                    text: AppConstants.jobCvDrawer,
                     textColor: Get.theme.primaryColorDark,
                     icon: AppIcons.jobExperienceCvCardIcon,
                     iconColor: Get.theme.primaryColor,
+                    backgroundColor: Colors.white,
                   ),
                   SizedBox(height: Utils.normalPadding),
                   CustomTextButton(
                     onTap: () {},
-                    text: "Bildiğim Diller",
+                    text: AppConstants.languageCvDrawer,
                     textColor: Get.theme.primaryColorDark,
                     icon: AppIcons.languageCvCardIcon,
                     iconColor: Get.theme.primaryColor,
+                    backgroundColor: Colors.white,
                   ),
                 ],
               ),

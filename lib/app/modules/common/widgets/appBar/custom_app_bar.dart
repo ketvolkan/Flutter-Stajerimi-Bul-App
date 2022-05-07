@@ -36,7 +36,6 @@ class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
                     Get.back();
                   },
             )
-          //Todo Burasını Sor
           : customLeadingButton,
       actions: actions ?? [],
       centerTitle: centerTitle,

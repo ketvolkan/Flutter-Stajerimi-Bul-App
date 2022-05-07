@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:stajyerimibul/core/utils/utils.dart';
-import 'package:stajyerimibul/core/variables/style.dart';
+
+import '../../../../../core/utils/utils.dart';
+import '../../../../../core/variables/style.dart';
 
 class CustomTextButton extends StatelessWidget {
   final IconData? icon;
@@ -9,6 +10,7 @@ class CustomTextButton extends StatelessWidget {
   final Function()? onTap;
   final Color? textColor;
   final Color? iconColor;
+  final Color? backgroundColor;
 
   const CustomTextButton({
     Key? key,
@@ -17,23 +19,28 @@ class CustomTextButton extends StatelessWidget {
     this.onTap,
     this.textColor,
     this.iconColor,
+    this.backgroundColor,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return TextButton(
-      onPressed: onTap ?? () {},
-      child: Row(
-        children: [
-          icon != null
-              ? Icon(icon, color: iconColor ?? Get.theme.appBarTheme.titleTextStyle!.color, size: Utils.iconNormal)
-              : const SizedBox(),
-          SizedBox(width: Utils.normalPadding),
-          Text(text,
-              style: textColor != null
-                  ? AppTextStyle.appBarCustomTextButtonTextStyle.copyWith(color: textColor, fontSize: Utils.textSizeNormal)
-                  : AppTextStyle.appBarCustomTextButtonTextStyle.copyWith(fontSize: Utils.textSizeNormal)),
-        ],
+    return Card(
+      color: backgroundColor ?? Colors.transparent,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(Utils.veryHighBorderRadius)),
+      child: TextButton(
+        onPressed: onTap ?? () {},
+        child: Row(
+          children: [
+            icon != null
+                ? Icon(icon, color: iconColor ?? Get.theme.appBarTheme.titleTextStyle!.color, size: Utils.iconNormal)
+                : const SizedBox(),
+            SizedBox(width: Utils.normalPadding),
+            Text(text,
+                style: textColor != null
+                    ? AppTextStyle.appBarCustomTextButtonTextStyle.copyWith(color: textColor, fontSize: Utils.textSizeNormal)
+                    : AppTextStyle.appBarCustomTextButtonTextStyle.copyWith(fontSize: Utils.textSizeNormal)),
+          ],
+        ),
       ),
     );
   }

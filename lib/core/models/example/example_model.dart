@@ -1,4 +1,4 @@
-import 'package:stajyerimibul/core/service/base_model.dart';
+import '../../service/base_model.dart';
 
 class ExampleModel extends BaseModel {
   final int? id;

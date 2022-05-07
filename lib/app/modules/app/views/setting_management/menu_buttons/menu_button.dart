@@ -11,6 +11,8 @@ class MenuButton extends StatelessWidget {
   final String? pageReferance;
   final bool onLeading;
   final bool isBack;
+  final Function()? onTap;
+  final IconData? customLeadingIcon;
   MenuButton({
     Key? key,
     required this.title,
@@ -18,6 +20,8 @@ class MenuButton extends StatelessWidget {
     this.onLeading = true,
     this.menuReferance,
     this.isBack = false,
+    this.customLeadingIcon,
+    this.onTap,
   }) : super(key: key);
   SettingManagementController settingManagementController = Get.find<SettingManagementController>();
   @override
@@ -25,11 +29,13 @@ class MenuButton extends StatelessWidget {
     return BasicCard(
       title: title,
       backArrow: isBack,
-      onTap: () {
-        if (pageReferance != null) Get.toNamed(pageReferance!);
-        if (menuReferance != null) settingManagementController.selectedMenuListName = menuReferance!;
-      },
+      onTap: onTap ??
+          () {
+            if (pageReferance != null) Get.toNamed(pageReferance!);
+            if (menuReferance != null) settingManagementController.selectedMenuListName = menuReferance!;
+          },
       goToCardDescription: onLeading,
+      customLeadingIcon: customLeadingIcon,
     );
   }
 }

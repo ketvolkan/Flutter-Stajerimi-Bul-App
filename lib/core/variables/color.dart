@@ -10,11 +10,11 @@ class AppColor {
   static const Color iconColor = Color.fromARGB(255, 255, 255, 255);
 
   //? Dark
-  static const Color primaryColorDark = Color.fromARGB(255, 58, 13, 13);
+  static const Color primaryColorDark = Color.fromARGB(255, 17, 16, 16);
   static const Color fabButtonColorDark = primaryColorDark;
-  static const Color backgroundColorDark = Color.fromARGB(255, 94, 56, 56);
+  static const Color backgroundColorDark = Color.fromARGB(255, 247, 247, 247);
   static const Color bottomNavBarItemColorDark = Color.fromARGB(255, 167, 167, 167);
-  static const Color cardColorDark = Color.fromARGB(255, 255, 255, 255);
-  static const Color cardBackgroundColorDark = Color.fromARGB(255, 105, 12, 12);
+  static const Color cardColorDark = Color.fromARGB(255, 0, 0, 0);
+  static const Color cardBackgroundColorDark = Color.fromARGB(255, 247, 247, 247);
   static const Color iconColorDark = Color.fromARGB(255, 255, 255, 255);
 }

@@ -98,7 +98,11 @@ class SearchManagementView extends GetView<SearchManagementController> {
         actions: [filterButton],
       );
 
-  CustomIconButton get filterButton => const CustomIconButton(icon: AppIcons.appBarFilterIcon);
+  CustomIconButton get filterButton => CustomIconButton(
+      icon: AppIcons.appBarFilterIcon,
+      onTap: () {
+        controller.filterButtonTap();
+      });
 
   CustomNavigationBar get _buildNavigationBar => CustomNavigationBar(currentIndex: BottomNavbars.Search.index);
 }

@@ -15,6 +15,7 @@ class BasicCard extends StatelessWidget {
   final bool backArrow;
   final int descriptionMaxLines;
   final Function()? onTap;
+  final IconData? customLeadingIcon;
 
   const BasicCard({
     Key? key,
@@ -27,6 +28,7 @@ class BasicCard extends StatelessWidget {
     this.profileImage,
     this.backArrow = false,
     this.descriptionMaxLines = 3,
+    this.customLeadingIcon,
   }) : super(key: key);
 
   @override
@@ -61,7 +63,9 @@ class BasicCard extends StatelessWidget {
                   goToCardDescription
                       ? Expanded(
                           flex: 1,
-                          child: Center(child: Icon(AppIcons.basicCardGoToCardDescriptionIcon, color: Get.theme.primaryColor)),
+                          child: Center(
+                              child: Icon(customLeadingIcon ?? AppIcons.basicCardGoToCardDescriptionIcon,
+                                  color: Get.theme.primaryColor)),
                         )
                       : const SizedBox()
                 ],

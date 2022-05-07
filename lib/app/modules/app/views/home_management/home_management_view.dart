@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:stajyerimibul/app/routes/app_routes.dart';
 
 import '../../../../../core/constants/app_constants.dart';
+import '../../../../routes/app_routes.dart';
 import '../../../common/widgets/appBar/custom_app_bar.dart';
 import '../../../common/widgets/body/custom_body.dart';
 import '../../../common/widgets/bottomNavigationBar/custom_botton_navigation_bar.dart';
@@ -21,6 +21,7 @@ class HomeManagementView extends GetView<HomeManagementController> {
       body: CustomBody(child: Container()),
       bottomNavigationBar: _buildNavigationBar,
       floatingActionButton: CustomFloatingActionButton(
+          //!Deneme Amaçlı Yazıldı Normalde Yok
           onPressed: () => Get.toNamed(
                 AppRoutes.PROFILE,
                 arguments: {'isJustShow': true},
