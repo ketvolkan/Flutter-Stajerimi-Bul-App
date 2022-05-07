@@ -5,6 +5,9 @@ import '../../../common/widgets/bottomSheet/filter_bottom_sheet/filter_bottom_sh
 
 class SearchManagementController extends GetxController {
   FilterModel? filterModel;
+  final RxBool _selectedCategory = false.obs;
+  bool get selectedCategory => _selectedCategory.value;
+  set selectedCategory(bool val) => _selectedCategory.value = val;
   void filterButtonTap() async {
     final result = await Get.bottomSheet(FilterBottomSheet(initialValues: filterModel));
     if (result == null) return;

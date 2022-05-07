@@ -30,7 +30,7 @@ class AppTextStyle {
     color: Get.theme.appBarTheme.titleTextStyle!.color ?? Colors.white,
     fontWeight: Utils.boldFontWeight,
   );
-  //? Profile Page Styles
+  //? Profile Page Style
   static TextStyle profilPageAboutTextStyle = AppTextStyle.appBarTextStyle
       .copyWith(fontSize: Utils.textSizeNormal, color: Get.theme.appBarTheme.titleTextStyle!.color ?? Colors.white);
   static TextStyle baseCvCardTextStyle =
@@ -47,4 +47,9 @@ class AppTextStyle {
     fontSize: Utils.textSizeTitle,
     color: Get.theme.appBarTheme.titleTextStyle!.color!.withOpacity(0.75),
   );
+  //? Drawer Style
+  static TextStyle drawerTitleTextStyle =
+      AppTextStyle.appBarTextStyle.copyWith(color: Get.theme.appBarTheme.titleTextStyle!.color ?? Colors.white);
+  //? Toggle Button Style
+  static TextStyle togglebuttonTextStyle = TextStyle(color: Get.theme.primaryColor, fontWeight: Utils.boldFontWeight);
 }

@@ -62,4 +62,8 @@ class AppConstants {
   static const String endDateFilter = "Bitiş Tarihi";
   static const String jobTitleFilter = "İş Alanı";
   static const String submitFilter = "Kaydet";
+
+  //? Search Toggle Button
+  static const String employeeFind = "Stajyer Bul";
+  static const String employerFind = "Staj Yeri Bul";
 }

@@ -20,11 +20,18 @@ class AppIcons {
   static const IconData basicCardGoToCardDescriptionIcon = Icons.arrow_forward_ios;
   static const IconData basicCardGoToBack = Icons.arrow_back_ios;
 
-  //?Cv Card
+  //? Cv Card
   static const IconData aboutCvCardIcon = Icons.person_outline;
   static const IconData schoolCvCardIcon = Icons.school_outlined;
   static const IconData jobExperienceCvCardIcon = Icons.draw_outlined;
   static const IconData languageCvCardIcon = Icons.language_outlined;
   static const IconData cvCardLeadingIcon = Icons.arrow_right;
   static const IconData editCvIcon = Icons.edit_note_outlined;
+
+  //? Search Toggle
+  static const IconData employeeIcon = Icons.account_circle_outlined;
+  static const IconData employerIcon = Icons.message_outlined;
+  //? Filter Bottom Sheet
+  static const IconData dateIcon = Icons.event;
+  static const IconData jobIcon = Icons.person_pin_circle_outlined;
 }

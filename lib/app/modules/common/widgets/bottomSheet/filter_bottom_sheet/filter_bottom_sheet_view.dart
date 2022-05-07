@@ -1,6 +1,7 @@
 import 'package:date_time_picker/date_time_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:stajyerimibul/core/variables/icons.dart';
 import '../../../../../../core/constants/app_constants.dart';
 import 'filter_bottom_sheet_controller.dart';
 
@@ -36,7 +37,7 @@ class FilterBottomSheet extends StatelessWidget {
                         decoration: InputDecoration(
                           focusedBorder: UnderlineInputBorder(borderSide: BorderSide(color: Get.theme.primaryColor)),
                           hintText: AppConstants.startDateFilter,
-                          icon: Icon(Icons.event, color: Get.theme.primaryColor),
+                          icon: Icon(AppIcons.dateIcon, color: Get.theme.primaryColor),
                         ),
                         type: DateTimePickerType.date,
                         firstDate: DateTime(2000),
@@ -50,7 +51,7 @@ class FilterBottomSheet extends StatelessWidget {
                         decoration: InputDecoration(
                           focusedBorder: UnderlineInputBorder(borderSide: BorderSide(color: Get.theme.primaryColor)),
                           hintText: AppConstants.endDateFilter,
-                          icon: Icon(Icons.event, color: Get.theme.primaryColor),
+                          icon: Icon(AppIcons.dateIcon, color: Get.theme.primaryColor),
                         ),
                         type: DateTimePickerType.date,
                         firstDate: DateTime(2000),
@@ -65,7 +66,7 @@ class FilterBottomSheet extends StatelessWidget {
                               decoration: InputDecoration(
                                 focusedBorder: UnderlineInputBorder(borderSide: BorderSide(color: Get.theme.primaryColor)),
                                 hintText: AppConstants.jobTitleFilter,
-                                icon: Icon(Icons.person_pin_circle_outlined, color: Get.theme.primaryColor),
+                                icon: Icon(AppIcons.jobIcon, color: Get.theme.primaryColor),
                               ),
                               onChanged: (val) {
                                 controller.filterModel!.jobTitle = val;

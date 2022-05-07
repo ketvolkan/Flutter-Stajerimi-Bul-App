@@ -3,5 +3,9 @@ class FilterModel {
   DateTime end;
   String? jobTitle;
 
-  FilterModel({required this.start, required this.end, this.jobTitle});
+  FilterModel({
+    required this.start,
+    required this.end,
+    this.jobTitle,
+  });
 }

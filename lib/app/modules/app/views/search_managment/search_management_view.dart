@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:stajyerimibul/app/modules/common/widgets/buttons/custom_toggle_button.dart';
 
 import '../../../../../core/constants/app_constants.dart';
 import '../../../../../core/utils/utils.dart';
@@ -95,7 +96,7 @@ class SearchManagementView extends GetView<SearchManagementController> {
         title: const Text(AppConstants.searchAppBar),
         showLeadingBackIcon: false,
         onLeadingPressed: () {},
-        actions: [filterButton],
+        actions: [toggleButton, filterButton],
       );
 
   CustomIconButton get filterButton => CustomIconButton(
@@ -103,6 +104,14 @@ class SearchManagementView extends GetView<SearchManagementController> {
       onTap: () {
         controller.filterButtonTap();
       });
-
+  Obx get toggleButton => Obx(() => CustomToggleButton(
+      firstText: AppConstants.employeeFind,
+      secondText: AppConstants.employerFind,
+      firstIcon: AppIcons.employeeIcon,
+      secondIcon: AppIcons.employerIcon,
+      current: controller.selectedCategory,
+      onChanged: (val) {
+        controller.selectedCategory = val;
+      }));
   CustomNavigationBar get _buildNavigationBar => CustomNavigationBar(currentIndex: BottomNavbars.Search.index);
 }

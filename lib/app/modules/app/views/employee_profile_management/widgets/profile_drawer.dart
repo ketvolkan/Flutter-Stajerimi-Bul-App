@@ -21,15 +21,9 @@ class ProfileDrawer extends StatelessWidget {
             child: DrawerHeader(
               child: SizedBox(
                 width: Get.size.width,
-                child: Text(
-                  AppConstants.updateProfileDrawer,
-                  style:
-                      AppTextStyle.appBarTextStyle.copyWith(color: Get.theme.appBarTheme.titleTextStyle!.color ?? Colors.white),
-                ),
+                child: Text(AppConstants.updateProfileDrawer, style: AppTextStyle.drawerTitleTextStyle),
               ),
-              decoration: BoxDecoration(
-                color: Get.theme.primaryColor,
-              ),
+              decoration: BoxDecoration(color: Get.theme.primaryColor),
             ),
           ),
           Expanded(
