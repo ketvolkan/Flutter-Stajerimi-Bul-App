@@ -13,6 +13,7 @@ class MenuButton extends StatelessWidget {
   final bool isBack;
   final Function()? onTap;
   final IconData? customLeadingIcon;
+  final Widget? customLeadingWidget;
   MenuButton({
     Key? key,
     required this.title,
@@ -22,6 +23,7 @@ class MenuButton extends StatelessWidget {
     this.isBack = false,
     this.customLeadingIcon,
     this.onTap,
+    this.customLeadingWidget,
   }) : super(key: key);
   SettingManagementController settingManagementController = Get.find<SettingManagementController>();
   @override
@@ -36,6 +38,7 @@ class MenuButton extends StatelessWidget {
           },
       goToCardDescription: onLeading,
       customLeadingIcon: customLeadingIcon,
+      customLeadingWidget: customLeadingWidget,
     );
   }
 }

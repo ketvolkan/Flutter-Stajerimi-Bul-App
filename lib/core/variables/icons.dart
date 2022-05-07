@@ -31,7 +31,12 @@ class AppIcons {
   //? Search Toggle
   static const IconData employeeIcon = Icons.account_circle_outlined;
   static const IconData employerIcon = Icons.message_outlined;
+
   //? Filter Bottom Sheet
   static const IconData dateIcon = Icons.event;
   static const IconData jobIcon = Icons.person_pin_circle_outlined;
+
+  //? Theme Toggle
+  static const IconData darkIcon = Icons.dark_mode_outlined;
+  static const IconData lightIcon = Icons.light_mode_outlined;
 }

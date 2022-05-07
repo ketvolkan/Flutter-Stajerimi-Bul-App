@@ -14,6 +14,7 @@ class SettingManagementController extends GetxController {
 
   @override
   void onInit() {
+    selectedMenuListName = MenuEnums.Base;
     ever(_selectedMenuListName, (MenuEnums value) {
       selectedMenuItems = MenuList.getCurrentMenuItem(selectedMenuListName);
       _selectedMenuItems.refresh();

@@ -66,4 +66,8 @@ class AppConstants {
   //? Search Toggle Button
   static const String employeeFind = "Stajyer Bul";
   static const String employerFind = "Staj Yeri Bul";
+
+  //? Theme Toggle Button
+  static const String darkTheme = "Koyu Tema";
+  static const String lightTheme = "Açık Tema";
 }
