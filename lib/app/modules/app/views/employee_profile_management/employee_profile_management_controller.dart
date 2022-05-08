@@ -12,20 +12,30 @@ class EmployeeProfileManagementController extends GetxController {
   bool get currentThemeIsLight => _currentThemeIsLight.value;
   set currentThemeIsLight(bool val) => _currentThemeIsLight.value = val;
 
+  final RxBool _currentLocal = true.obs;
+  bool get currentLocal => _currentLocal.value;
+  set currentLocal(bool val) => _currentLocal.value = val;
+
   void openDrawer() {
     scaffoldKey.currentState!.openDrawer();
   }
 
-  void changeTheme(bool val) {
+  void changeTheme(bool val) async {
     Get.changeThemeMode(currentThemeIsLight ? ThemeMode.dark : ThemeMode.light);
     currentThemeIsLight = val;
     box.write("theme", currentThemeIsLight);
   }
 
+  void changeLocal(bool val) {
+    Get.updateLocale(!val ? const Locale('en', 'US') : const Locale('tr', 'TR'));
+    currentLocal = val;
+    box.write("local", currentLocal);
+  }
+
   @override
   void onInit() {
     currentThemeIsLight = box.read("theme") ?? true;
-
+    currentLocal = box.read('local') ?? true;
     dynamic argumentData = Get.arguments;
     final _data = argumentData?['isJustShow'];
     if (_data != null) {

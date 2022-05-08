@@ -6,8 +6,8 @@ import 'package:stajyerimibul/app/modules/common/widgets/buttons/custom_toggle_b
 import '../../../../../../../../core/constants/app_constants.dart';
 import '../../../../../../../../core/variables/icons.dart';
 
-class ThemeChangeButton extends StatelessWidget {
-  ThemeChangeButton({Key? key}) : super(key: key);
+class LanguageChangeButton extends StatelessWidget {
+  LanguageChangeButton({Key? key}) : super(key: key);
   EmployeeProfileManagementController controller = Get.find<EmployeeProfileManagementController>();
   @override
   Widget build(BuildContext context) {
@@ -15,13 +15,13 @@ class ThemeChangeButton extends StatelessWidget {
       () => SizedBox(
         width: Get.size.width / 2.4,
         child: CustomToggleButton(
-          current: controller.currentThemeIsLight,
-          firstText: AppConstants.lightTheme.tr,
-          secondText: AppConstants.darkTheme.tr,
-          firstIcon: AppIcons.lightIcon,
-          secondIcon: AppIcons.darkIcon,
+          current: controller.currentLocal,
+          firstText: AppConstants.turkish.tr,
+          secondText: AppConstants.english.tr,
+          firstIcon: AppIcons.turkishLanguageIcon,
+          secondIcon: AppIcons.englishLanguageIcon,
           onChanged: (val) {
-            controller.changeTheme(val);
+            controller.changeLocal(val);
           },
         ),
       ),

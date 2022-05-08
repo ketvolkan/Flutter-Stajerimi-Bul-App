@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:stajyerimibul/core/constants/app_constants.dart';
-
+import 'package:get/get.dart';
 import 'menu_button.dart';
 
 enum MenuEnums {
@@ -23,23 +23,23 @@ class MenuList {
       case MenuEnums.Base:
         currentMenuItems = <MenuButton>[
           MenuButton(
-            title: AppConstants.contact,
+            title: AppConstants.contact.tr,
             menuReferance: MenuEnums.Contact,
           ),
           MenuButton(
-            title: AppConstants.appSetting,
+            title: AppConstants.appSetting.tr,
             menuReferance: MenuEnums.Setting,
           ),
           MenuButton(
-            title: AppConstants.aboutApp,
+            title: AppConstants.aboutApp.tr,
             onLeading: false,
           ),
           MenuButton(
-            title: AppConstants.accountSetting,
+            title: AppConstants.accountSetting.tr,
             menuReferance: MenuEnums.AccountSetting,
           ),
           MenuButton(
-            title: AppConstants.exitAccount,
+            title: AppConstants.exitAccount.tr,
             customLeadingIcon: Icons.close,
             onTap: () {},
           ),
@@ -48,29 +48,29 @@ class MenuList {
       case MenuEnums.Setting:
         currentMenuItems = <MenuButton>[
           MenuButton(
-            title: AppConstants.getBack,
+            title: AppConstants.getBack.tr,
             onLeading: false,
             menuReferance: MenuEnums.Base,
             isBack: true,
           ),
-          MenuButton(title: AppConstants.notificationSetting, onLeading: false),
+          MenuButton(title: AppConstants.notificationSetting.tr, onLeading: false),
         ];
         break;
       case MenuEnums.AccountSetting:
         currentMenuItems = <MenuButton>[
           MenuButton(
-            title: AppConstants.getBack,
+            title: AppConstants.getBack.tr,
             onLeading: false,
             menuReferance: MenuEnums.Base,
             isBack: true,
           ),
           MenuButton(
-            title: AppConstants.freezeAccount,
+            title: AppConstants.freezeAccount.tr,
             customLeadingIcon: Icons.icecream_outlined,
             onTap: () {},
           ),
           MenuButton(
-            title: AppConstants.deleteAccount,
+            title: AppConstants.deleteAccount.tr,
             customLeadingIcon: Icons.delete_forever_outlined,
             onTap: () {},
           ),
@@ -79,17 +79,17 @@ class MenuList {
       case MenuEnums.Contact:
         currentMenuItems = <MenuButton>[
           MenuButton(
-            title: AppConstants.getBack,
+            title: AppConstants.getBack.tr,
             onLeading: false,
             menuReferance: MenuEnums.Base,
             isBack: true,
           ),
           MenuButton(
-            title: AppConstants.socailNetwork,
+            title: AppConstants.socailNetwork.tr,
             menuReferance: MenuEnums.ContactMore,
           ),
           MenuButton(
-            title: AppConstants.contactNetwork,
+            title: AppConstants.contactNetwork.tr,
             onLeading: false,
           ),
         ];
@@ -97,14 +97,14 @@ class MenuList {
       case MenuEnums.ContactMore:
         currentMenuItems = <MenuButton>[
           MenuButton(
-            title: AppConstants.getBack,
+            title: AppConstants.getBack.tr,
             onLeading: false,
             menuReferance: MenuEnums.Contact,
             isBack: true,
           ),
-          MenuButton(title: AppConstants.instagram, onLeading: false),
-          MenuButton(title: AppConstants.twitter, onLeading: false),
-          MenuButton(title: AppConstants.website, onLeading: false),
+          MenuButton(title: AppConstants.instagram.tr, onLeading: false),
+          MenuButton(title: AppConstants.twitter.tr, onLeading: false),
+          MenuButton(title: AppConstants.website.tr, onLeading: false),
         ];
         break;
       default:

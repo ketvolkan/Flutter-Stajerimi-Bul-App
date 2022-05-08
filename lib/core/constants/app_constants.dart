@@ -1,75 +1,77 @@
-import 'package:get/get.dart';
-
 class AppConstants {
   //? Conf
-  static String appTitle = "Stajyerimi Bul".tr;
+  static String appTitle = "Stajyerimi Bul";
 
   //? AppBar
-  static String profileAppBar = "Profil".tr;
-  static String searchAppBar = "İlan Ara".tr;
-  static String homeAppBar = "Stajyerimi Bul".tr;
-  static String settingAppBar = "Ayarlar".tr;
+  static String profileAppBar = "Profil";
+  static String searchAppBar = "İlan Ara";
+  static String homeAppBar = "Stajyerimi Bul";
+  static String settingAppBar = "Ayarlar";
 
   //? BottomNavBar Label
-  static String bottomNavigationBarHome = "Home".tr;
-  static String bottomNavigationBarAccount = "Account".tr;
-  static String bottomNavigationBarSetting = "Setting".tr;
-  static String bottomNavigationBarSearch = "Search".tr;
+  static String bottomNavigationBarHome = "Home";
+  static String bottomNavigationBarAccount = "Account";
+  static String bottomNavigationBarSetting = "Setting";
+  static String bottomNavigationBarSearch = "Search";
 
   //? Cv Card
-  static String aboutCvCardTitle = "Hakkımda".tr;
-  static String jobExperienceCvCardTitle = "İş Tecrübelerim".tr;
-  static String languageCvCardTitle = "Bildiğim Diller".tr;
-  static String schoolCvCardTitle = "Okuduğum Okullar".tr;
-  static String isNotComplated = "Devam Ediyor".tr;
-  static String editCv = "Cv Düzenle".tr;
+  static String aboutCvCardTitle = "Hakkımda";
+  static String jobExperienceCvCardTitle = "İş Tecrübelerim";
+  static String languageCvCardTitle = "Bildiğim Diller";
+  static String schoolCvCardTitle = "Okuduğum Okullar";
+  static String isNotComplated = "Devam Ediyor";
+  static String editCv = "Cv Düzenle";
 
   //? Ayarlar => ???
-  static String getBack = "Geri Dön".tr;
+  static String getBack = "Geri Dön";
 
   //? Ayarlar => Base
-  static String contact = "İletişim".tr;
-  static String appSetting = "Uygulama Ayarları".tr;
-  static String aboutApp = "Uygulama Hakkında".tr;
-  static String accountSetting = "Hesap Ayarları".tr;
-  static String exitAccount = "Çıkış Yap".tr;
+  static String contact = "İletişim";
+  static String appSetting = "Uygulama Ayarları";
+  static String aboutApp = "Uygulama Hakkında";
+  static String accountSetting = "Hesap Ayarları";
+  static String exitAccount = "Çıkış Yap";
 
   //? Ayarlar => Setting
-  static String themeSetting = "Tema Ayarları".tr;
-  static String notificationSetting = "Bildirim Ayarları".tr;
+  static String themeSetting = "Tema Ayarları";
+  static String notificationSetting = "Bildirim Ayarları";
 
   //? Ayarlar => Account Setting
-  static String freezeAccount = "Hesabı Dondur".tr;
-  static String deleteAccount = "Hesabı Sil".tr;
+  static String freezeAccount = "Hesabı Dondur";
+  static String deleteAccount = "Hesabı Sil";
 
   //? Ayarlar => Contact
-  static String socailNetwork = "Sosyal Kanallar".tr;
-  static String contactNetwork = "İletişim Hattı".tr;
+  static String socailNetwork = "Sosyal Kanallar";
+  static String contactNetwork = "İletişim Hattı";
 
   //? Ayarlar => Social Network
-  static String instagram = "İnstagram".tr;
-  static String twitter = "Twitter".tr;
-  static String website = "Website".tr;
+  static String instagram = "İnstagram";
+  static String twitter = "Twitter";
+  static String website = "Website";
 
   //? Employee Profile Drawer
-  static String updateProfileDrawer = "Profil Güncelle".tr;
-  static String profileAboutDrawer = "Profil Bilgileri".tr;
-  static String aboutMeDrawer = "Hakkımda".tr;
-  static String schoolCvDrawer = "Okul Bilgileri".tr;
-  static String jobCvDrawer = "İş Tecrübeleri".tr;
-  static String languageCvDrawer = "Bildiğim Diller".tr;
+  static String updateProfileDrawer = "Profil Güncelle";
+  static String profileAboutDrawer = "Profil Bilgileri";
+  static String aboutMeDrawer = "Hakkımda";
+  static String schoolCvDrawer = "Okul Bilgileri";
+  static String jobCvDrawer = "İş Tecrübeleri";
+  static String languageCvDrawer = "Bildiğim Diller";
 
   //? Filter Bottom Sheet
-  static String startDateFilter = "Başlangıç Tarihi".tr;
-  static String endDateFilter = "Bitiş Tarihi".tr;
-  static String jobTitleFilter = "İş Alanı".tr;
-  static String submitFilter = "Kaydet".tr;
+  static String startDateFilter = "Başlangıç Tarihi";
+  static String endDateFilter = "Bitiş Tarihi";
+  static String jobTitleFilter = "İş Alanı";
+  static String submitFilter = "Kaydet";
 
   //? Search Toggle Button
-  static String employeeFind = "Stajyer Bul".tr;
-  static String employerFind = "Staj Yeri Bul".tr;
+  static String employeeFind = "Stajyer Bul";
+  static String employerFind = "Staj Yeri Bul";
 
   //? Theme Toggle Button
-  static String darkTheme = "Koyu Tema".tr;
-  static String lightTheme = "Açık Tema".tr;
+  static String darkTheme = "Koyu Tema";
+  static String lightTheme = "Açık Tema";
+
+  //? Language
+  static String turkish = "Türkçe";
+  static String english = "İngilizce";
 }

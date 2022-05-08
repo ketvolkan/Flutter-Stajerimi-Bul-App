@@ -1,10 +1,14 @@
 // ignore_for_file: constant_identifier_names
 
-class AppTranslation {
-  static Map<String, Map<String, String>> translations = {
-    'en_US': Locales.en_US,
-    'tr_TR': Locales.tr_TR,
-  };
+import 'package:get/get_navigation/get_navigation.dart';
+
+class AppTranslation extends Translations {
+  @override
+  // TODO: implement keys
+  Map<String, Map<String, String>> get keys => {
+        'en_US': Locales.en_US,
+        'tr_TR': Locales.tr_TR,
+      };
 }
 
 class Locales {
@@ -49,6 +53,8 @@ class Locales {
     'Staj Yeri Bul': 'Staj Yeri Bul',
     'Koyu Tema': 'Koyu Tema',
     'Açık Tema': 'Açık Tema',
+    'Türkçe': 'Türkçe',
+    'İngilizce': 'İngilizce',
   };
   static const en_US = {
     'Stajyerimi Bul': 'Find My Intern',
@@ -91,5 +97,7 @@ class Locales {
     'Staj Yeri Bul': 'Find Job',
     'Koyu Tema': 'Dark Theme',
     'Açık Tema': 'Light Theme',
+    'Türkçe': 'Turkish',
+    'İngilizce': 'English',
   };
 }

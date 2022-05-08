@@ -93,7 +93,7 @@ class SearchManagementView extends GetView<SearchManagementController> {
   }
 
   CustomAppBar get _buildAppBar => CustomAppBar(
-        title: Text(AppConstants.searchAppBar),
+        title: Text(AppConstants.searchAppBar.tr),
         showLeadingBackIcon: false,
         onLeadingPressed: () {},
         actions: [toggleButton, filterButton],
@@ -105,8 +105,8 @@ class SearchManagementView extends GetView<SearchManagementController> {
         controller.filterButtonTap();
       });
   Obx get toggleButton => Obx(() => CustomToggleButton(
-      firstText: AppConstants.employeeFind,
-      secondText: AppConstants.employerFind,
+      firstText: AppConstants.employeeFind.tr,
+      secondText: AppConstants.employerFind.tr,
       firstIcon: AppIcons.employeeIcon,
       secondIcon: AppIcons.employerIcon,
       current: controller.selectedCategory,

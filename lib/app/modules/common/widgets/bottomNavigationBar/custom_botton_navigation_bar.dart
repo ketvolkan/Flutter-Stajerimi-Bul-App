@@ -75,19 +75,19 @@ class CustomNavigationBar extends StatelessWidget implements PreferredSizeWidget
               items: [
                 BottomNavigationBarItem(
                   icon: const Icon(AppIcons.bottomNavigationBarAccount),
-                  label: AppConstants.bottomNavigationBarAccount,
+                  label: AppConstants.bottomNavigationBarAccount.tr,
                 ),
                 BottomNavigationBarItem(
                   icon: const Icon(AppIcons.bottomNavigationBarHome),
-                  label: AppConstants.bottomNavigationBarHome,
+                  label: AppConstants.bottomNavigationBarHome.tr,
                 ),
                 BottomNavigationBarItem(
                   icon: const Icon(AppIcons.bottomNavigationBarSearch),
-                  label: AppConstants.bottomNavigationBarSearch,
+                  label: AppConstants.bottomNavigationBarSearch.tr,
                 ),
                 BottomNavigationBarItem(
                   icon: const Icon(AppIcons.bottomNavigationBarSetting),
-                  label: AppConstants.bottomNavigationBarSetting,
+                  label: AppConstants.bottomNavigationBarSetting.tr,
                 ),
               ],
             ),

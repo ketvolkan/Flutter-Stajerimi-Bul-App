@@ -31,13 +31,15 @@ class EmployeeProfileManagementView extends GetView<EmployeeProfileManagementCon
         ],
       ),
       bottomNavigationBar: _buildNavigationBar,
-      floatingActionButton: const CustomFloatingActionButton(),
+      floatingActionButton: CustomFloatingActionButton(onPressed: () {
+        Get.updateLocale(const Locale('en', 'US'));
+      }),
     );
   }
 
   CustomAppBar get _buildAppBar => CustomAppBar(
         automaticallyImplyLeading: controller.isJustShow.value,
-        title: Text(AppConstants.profileAppBar),
+        title: Text(AppConstants.profileAppBar.tr),
         showLeadingBackIcon: controller.isJustShow.value,
         actions: [!controller.isJustShow.value ? editCvButton : const SizedBox()],
       );

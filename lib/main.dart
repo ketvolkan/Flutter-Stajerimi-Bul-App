@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:get/get_navigation/get_navigation.dart';
+import 'package:get/get.dart';
 
 import 'package:get_storage/get_storage.dart';
+import 'package:stajyerimibul/generated/locales.g.dart';
 
 import 'app/modules/app/views/home_management/home_management_binding.dart';
 import 'app/routes/app_pages.dart';
@@ -22,18 +23,17 @@ class MyApp extends StatelessWidget {
     final box = GetStorage();
     bool themeMode = true;
     themeMode = box.read('theme') ?? true;
+    bool currentLocal = true;
+    currentLocal = box.read('local') ?? true;
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      title: AppConstants.appTitle,
-      theme: lightTheme,
-      darkTheme: darkTheme,
+      title: AppConstants.appTitle.tr,
+      theme: AppTheme.lightTheme,
+      darkTheme: AppTheme.darkTheme,
       themeMode: themeMode ? ThemeMode.light : ThemeMode.dark,
       defaultTransition: Transition.noTransition,
-      supportedLocales: const [
-        Locale('tr', 'TR'),
-        Locale('en', 'US'),
-      ],
-      locale: const Locale('en', 'US'),
+      translations: AppTranslation(),
+      locale: currentLocal ? const Locale('tr', 'TR') : const Locale('en', 'US'),
       initialRoute: AppRoutes.HOME,
       initialBinding: HomeManagementBinding(),
       getPages: AppPages.PAGES,

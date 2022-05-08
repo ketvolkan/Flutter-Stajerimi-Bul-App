@@ -37,7 +37,7 @@ class SettingManagementView extends GetView<SettingManagementController> {
   }
 
   CustomAppBar get _buildAppBar => CustomAppBar(
-        title: Text(AppConstants.settingAppBar),
+        title: Text(AppConstants.settingAppBar.tr),
         showLeadingBackIcon: false,
         onLeadingPressed: () {},
         actions: const [],

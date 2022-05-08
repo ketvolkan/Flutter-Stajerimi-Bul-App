@@ -1,20 +1,22 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
 
 class AppColor {
   //? Light
-  static const Color primaryColor = Color.fromARGB(255, 236, 63, 63);
-  static const Color fabButtonColor = primaryColor;
-  static const Color backgroundColor = Color.fromARGB(255, 247, 247, 247);
-  static const Color bottomNavBarItemColor = Color.fromARGB(255, 255, 255, 255);
-  static const Color cardColor = Color.fromARGB(255, 0, 0, 0);
-  static const Color iconColor = Color.fromARGB(255, 255, 255, 255);
+  static Color primaryColor = Color.fromARGB(255, 236, 63, 63);
+  static Color fabButtonColor = primaryColor;
+  static Color backgroundColor = Color.fromARGB(255, 247, 247, 247);
+  static Color bottomNavBarItemColor = Color.fromARGB(255, 255, 255, 255);
+  static Color cardColor = Color.fromARGB(255, 0, 0, 0);
+  static Color iconColor = Color.fromARGB(255, 255, 255, 255);
 
   //? Dark
-  static const Color primaryColorDark = Color.fromARGB(255, 17, 16, 16);
-  static const Color fabButtonColorDark = primaryColorDark;
-  static const Color backgroundColorDark = Color.fromARGB(255, 247, 247, 247);
-  static const Color bottomNavBarItemColorDark = Color.fromARGB(255, 167, 167, 167);
-  static const Color cardColorDark = Color.fromARGB(255, 0, 0, 0);
-  static const Color cardBackgroundColorDark = Color.fromARGB(255, 247, 247, 247);
-  static const Color iconColorDark = Color.fromARGB(255, 255, 255, 255);
+  static Color primaryColorDark = Color.fromARGB(255, 17, 16, 16);
+  static Color fabButtonColorDark = primaryColorDark;
+  static Color backgroundColorDark = Color.fromARGB(255, 247, 247, 247);
+  static Color bottomNavBarItemColorDark = Color.fromARGB(255, 167, 167, 167);
+  static Color cardColorDark = Color.fromARGB(255, 0, 0, 0);
+  static Color cardBackgroundColorDark = Color.fromARGB(255, 247, 247, 247);
+  static Color iconColorDark = Color.fromARGB(255, 255, 255, 255);
 }

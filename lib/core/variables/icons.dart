@@ -39,4 +39,9 @@ class AppIcons {
   //? Theme Toggle
   static const IconData darkIcon = Icons.dark_mode_outlined;
   static const IconData lightIcon = Icons.light_mode_outlined;
+
+  //? Language
+
+  static const IconData turkishLanguageIcon = Icons.flag_outlined;
+  static const IconData englishLanguageIcon = Icons.south_america;
 }

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:get/get.dart';
 import '../../../../../../../core/constants/app_constants.dart';
 import '../../../../../../../core/utils/utils.dart';
 import '../../../../../../../core/variables/icons.dart';
@@ -12,7 +12,7 @@ class CvLanguageCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CvBaseCard(
-      title: AppConstants.languageCvCardTitle,
+      title: AppConstants.languageCvCardTitle.tr,
       child: Padding(
         padding: EdgeInsets.all(Utils.normalPadding),
         child: ListView.separated(

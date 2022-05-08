@@ -36,7 +36,7 @@ class FilterBottomSheet extends StatelessWidget {
                       DateTimePicker(
                         decoration: InputDecoration(
                           focusedBorder: UnderlineInputBorder(borderSide: BorderSide(color: Get.theme.primaryColor)),
-                          hintText: AppConstants.startDateFilter,
+                          hintText: AppConstants.startDateFilter.tr,
                           icon: Icon(AppIcons.dateIcon, color: Get.theme.primaryColor),
                         ),
                         type: DateTimePickerType.date,
@@ -50,7 +50,7 @@ class FilterBottomSheet extends StatelessWidget {
                       DateTimePicker(
                         decoration: InputDecoration(
                           focusedBorder: UnderlineInputBorder(borderSide: BorderSide(color: Get.theme.primaryColor)),
-                          hintText: AppConstants.endDateFilter,
+                          hintText: AppConstants.endDateFilter.tr,
                           icon: Icon(AppIcons.dateIcon, color: Get.theme.primaryColor),
                         ),
                         type: DateTimePickerType.date,
@@ -65,7 +65,7 @@ class FilterBottomSheet extends StatelessWidget {
                           ? TextField(
                               decoration: InputDecoration(
                                 focusedBorder: UnderlineInputBorder(borderSide: BorderSide(color: Get.theme.primaryColor)),
-                                hintText: AppConstants.jobTitleFilter,
+                                hintText: AppConstants.jobTitleFilter.tr,
                                 icon: Icon(AppIcons.jobIcon, color: Get.theme.primaryColor),
                               ),
                               onChanged: (val) {
@@ -77,7 +77,7 @@ class FilterBottomSheet extends StatelessWidget {
                         height: Utils.highPadding,
                       ),
                       CustomTextButton(
-                        text: AppConstants.submitFilter,
+                        text: AppConstants.submitFilter.tr,
                         onTap: () {
                           controller.saveFilterButton();
                         },
