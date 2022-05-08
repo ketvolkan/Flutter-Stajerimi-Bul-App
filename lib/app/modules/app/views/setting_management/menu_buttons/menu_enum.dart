@@ -1,7 +1,6 @@
 // ignore_for_file: constant_identifier_names
 
 import 'package:flutter/material.dart';
-import 'package:stajyerimibul/app/modules/app/views/setting_management/menu_buttons/widgets/theme_change_button/theme_change_button.dart';
 import 'package:stajyerimibul/core/constants/app_constants.dart';
 
 import 'menu_button.dart';
@@ -53,11 +52,6 @@ class MenuList {
             onLeading: false,
             menuReferance: MenuEnums.Base,
             isBack: true,
-          ),
-          MenuButton(
-            title: AppConstants.themeSetting,
-            onLeading: false,
-            customLeadingWidget: const ThemeChangeButton(),
           ),
           MenuButton(title: AppConstants.notificationSetting, onLeading: false),
         ];

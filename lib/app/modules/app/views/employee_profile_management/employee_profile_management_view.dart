@@ -20,7 +20,7 @@ class EmployeeProfileManagementView extends GetView<EmployeeProfileManagementCon
   @override
   Widget build(BuildContext context) {
     return CustomScaffold(
-      drawer: ProfileDrawer(closeOnTap: () => controller.closeDrawer()),
+      drawer: const ProfileDrawer(),
       globalKey: controller.scaffoldKey,
       appBar: _buildAppBar,
       body: ListView(
@@ -37,7 +37,7 @@ class EmployeeProfileManagementView extends GetView<EmployeeProfileManagementCon
 
   CustomAppBar get _buildAppBar => CustomAppBar(
         automaticallyImplyLeading: controller.isJustShow.value,
-        title: const Text(AppConstants.profileAppBar),
+        title: Text(AppConstants.profileAppBar),
         showLeadingBackIcon: controller.isJustShow.value,
         actions: [!controller.isJustShow.value ? editCvButton : const SizedBox()],
       );

@@ -11,29 +11,29 @@ import 'core/constants/app_constants.dart';
 
 void main() async {
   await GetStorage.init();
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  final box = GetStorage('theme');
+  const MyApp({Key? key}) : super(key: key);
 
-  MyApp({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    if (box.read('theme') == null) {
-      box.write('theme', true);
-    }
+    final box = GetStorage();
+    bool themeMode = true;
+    themeMode = box.read('theme') ?? true;
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       title: AppConstants.appTitle,
       theme: lightTheme,
       darkTheme: darkTheme,
-      themeMode: box.read('theme') ? ThemeMode.light : ThemeMode.dark,
+      themeMode: themeMode ? ThemeMode.light : ThemeMode.dark,
       defaultTransition: Transition.noTransition,
-      /*   supportedLocales: const [
+      supportedLocales: const [
         Locale('tr', 'TR'),
         Locale('en', 'US'),
-      ],*/
+      ],
+      locale: const Locale('en', 'US'),
       initialRoute: AppRoutes.HOME,
       initialBinding: HomeManagementBinding(),
       getPages: AppPages.PAGES,

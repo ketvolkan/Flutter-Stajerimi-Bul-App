@@ -1,73 +1,75 @@
+import 'package:get/get.dart';
+
 class AppConstants {
   //? Conf
-  static const String appTitle = "Stajyerimi Bul";
+  static String appTitle = "Stajyerimi Bul".tr;
 
   //? AppBar
-  static const String profileAppBar = "Profil";
-  static const String searchAppBar = "İlan Ara";
-  static const String homeAppBar = "Stajyerimi Bul";
-  static const String settingAppBar = "Ayarlar";
+  static String profileAppBar = "Profil".tr;
+  static String searchAppBar = "İlan Ara".tr;
+  static String homeAppBar = "Stajyerimi Bul".tr;
+  static String settingAppBar = "Ayarlar".tr;
 
   //? BottomNavBar Label
-  static const String bottomNavigationBarHome = "Home";
-  static const String bottomNavigationBarAccount = "Account";
-  static const String bottomNavigationBarSetting = "Setting";
-  static const String bottomNavigationBarSearch = "Search";
+  static String bottomNavigationBarHome = "Home".tr;
+  static String bottomNavigationBarAccount = "Account".tr;
+  static String bottomNavigationBarSetting = "Setting".tr;
+  static String bottomNavigationBarSearch = "Search".tr;
 
   //? Cv Card
-  static const String aboutCvCardTitle = "Hakkımda";
-  static const String jobExperienceCvCardTitle = "İş Tecrübelerim";
-  static const String languageCvCardTitle = "Bildiğim Diller";
-  static const String schoolCvCardTitle = "Okuduğum Okullar";
-  static const String isNotComplated = "Devam Ediyor";
-  static const String editCv = "Cv Düzenle";
+  static String aboutCvCardTitle = "Hakkımda".tr;
+  static String jobExperienceCvCardTitle = "İş Tecrübelerim".tr;
+  static String languageCvCardTitle = "Bildiğim Diller".tr;
+  static String schoolCvCardTitle = "Okuduğum Okullar".tr;
+  static String isNotComplated = "Devam Ediyor".tr;
+  static String editCv = "Cv Düzenle".tr;
 
   //? Ayarlar => ???
-  static const String getBack = "Geri Dön";
+  static String getBack = "Geri Dön".tr;
 
   //? Ayarlar => Base
-  static const String contact = "İletişim";
-  static const String appSetting = "Uygulama Ayarları";
-  static const String aboutApp = "Uygulama Hakkında";
-  static const String accountSetting = "Hesap Ayarları";
-  static const String exitAccount = "Çıkış Yap";
+  static String contact = "İletişim".tr;
+  static String appSetting = "Uygulama Ayarları".tr;
+  static String aboutApp = "Uygulama Hakkında".tr;
+  static String accountSetting = "Hesap Ayarları".tr;
+  static String exitAccount = "Çıkış Yap".tr;
 
   //? Ayarlar => Setting
-  static const String themeSetting = "Tema Ayarları";
-  static const String notificationSetting = "Bildirim Ayarları";
+  static String themeSetting = "Tema Ayarları".tr;
+  static String notificationSetting = "Bildirim Ayarları".tr;
 
   //? Ayarlar => Account Setting
-  static const String freezeAccount = "Hesabı Dondur";
-  static const String deleteAccount = "Hesabı Sil";
+  static String freezeAccount = "Hesabı Dondur".tr;
+  static String deleteAccount = "Hesabı Sil".tr;
 
   //? Ayarlar => Contact
-  static const String socailNetwork = "Sosyal Kanallar";
-  static const String contactNetwork = "İletişim Hattı";
+  static String socailNetwork = "Sosyal Kanallar".tr;
+  static String contactNetwork = "İletişim Hattı".tr;
 
   //? Ayarlar => Social Network
-  static const String instagram = "İnstagram";
-  static const String twitter = "Twitter";
-  static const String website = "Website";
+  static String instagram = "İnstagram".tr;
+  static String twitter = "Twitter".tr;
+  static String website = "Website".tr;
 
   //? Employee Profile Drawer
-  static const String updateProfileDrawer = "Profil Güncelle";
-  static const String profileAboutDrawer = "Profil Bilgileri";
-  static const String aboutMeDrawer = "Hakkımda";
-  static const String schoolCvDrawer = "Okul Bilgileri";
-  static const String jobCvDrawer = "İş Tecrübeleri";
-  static const String languageCvDrawer = "Bildiğim Diller";
+  static String updateProfileDrawer = "Profil Güncelle".tr;
+  static String profileAboutDrawer = "Profil Bilgileri".tr;
+  static String aboutMeDrawer = "Hakkımda".tr;
+  static String schoolCvDrawer = "Okul Bilgileri".tr;
+  static String jobCvDrawer = "İş Tecrübeleri".tr;
+  static String languageCvDrawer = "Bildiğim Diller".tr;
 
   //? Filter Bottom Sheet
-  static const String startDateFilter = "Başlangıç Tarihi";
-  static const String endDateFilter = "Bitiş Tarihi";
-  static const String jobTitleFilter = "İş Alanı";
-  static const String submitFilter = "Kaydet";
+  static String startDateFilter = "Başlangıç Tarihi".tr;
+  static String endDateFilter = "Bitiş Tarihi".tr;
+  static String jobTitleFilter = "İş Alanı".tr;
+  static String submitFilter = "Kaydet".tr;
 
   //? Search Toggle Button
-  static const String employeeFind = "Stajyer Bul";
-  static const String employerFind = "Staj Yeri Bul";
+  static String employeeFind = "Stajyer Bul".tr;
+  static String employerFind = "Staj Yeri Bul".tr;
 
   //? Theme Toggle Button
-  static const String darkTheme = "Koyu Tema";
-  static const String lightTheme = "Açık Tema";
+  static String darkTheme = "Koyu Tema".tr;
+  static String lightTheme = "Açık Tema".tr;
 }

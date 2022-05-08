@@ -93,7 +93,7 @@ class SearchManagementView extends GetView<SearchManagementController> {
   }
 
   CustomAppBar get _buildAppBar => CustomAppBar(
-        title: const Text(AppConstants.searchAppBar),
+        title: Text(AppConstants.searchAppBar),
         showLeadingBackIcon: false,
         onLeadingPressed: () {},
         actions: [toggleButton, filterButton],

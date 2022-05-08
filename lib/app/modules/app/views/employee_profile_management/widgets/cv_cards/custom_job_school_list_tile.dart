@@ -27,7 +27,7 @@ class CustomJobSchoolListTile extends StatelessWidget {
       subtitle: Text(subtitle),
       trailing: Column(
         mainAxisAlignment: MainAxisAlignment.center,
-        children: [Text(start), end != null ? Text(end!) : const Text(AppConstants.isNotComplated)],
+        children: [Text(start), end != null ? Text(end!) : Text(AppConstants.isNotComplated)],
       ),
     );
   }

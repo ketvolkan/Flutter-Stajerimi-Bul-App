@@ -49,36 +49,44 @@ class CustomNavigationBar extends StatelessWidget implements PreferredSizeWidget
                   (value) {
                     switch (value) {
                       case 0:
-                        Get.offAndToNamed(AppRoutes.PROFILE);
+                        if (Get.currentRoute != AppRoutes.PROFILE) {
+                          Get.offAllNamed(AppRoutes.PROFILE);
+                        }
                         break;
                       case 1:
-                        Get.offAndToNamed(AppRoutes.HOME);
+                        if (Get.currentRoute != AppRoutes.HOME) {
+                          Get.offAllNamed(AppRoutes.HOME);
+                        }
                         break;
                       case 2:
-                        Get.offAndToNamed(AppRoutes.SEARCH);
+                        if (Get.currentRoute != AppRoutes.SEARCH) {
+                          Get.offAllNamed(AppRoutes.SEARCH);
+                        }
                         break;
                       case 3:
-                        Get.offAndToNamed(AppRoutes.SETTING);
+                        if (Get.currentRoute != AppRoutes.SETTING) {
+                          Get.offAllNamed(AppRoutes.SETTING);
+                        }
                         break;
                       default:
-                        Get.offAndToNamed(AppRoutes.HOME);
+                        Get.offAllNamed(AppRoutes.HOME);
                     }
                   },
-              items: const [
+              items: [
                 BottomNavigationBarItem(
-                  icon: Icon(AppIcons.bottomNavigationBarAccount),
+                  icon: const Icon(AppIcons.bottomNavigationBarAccount),
                   label: AppConstants.bottomNavigationBarAccount,
                 ),
                 BottomNavigationBarItem(
-                  icon: Icon(AppIcons.bottomNavigationBarHome),
+                  icon: const Icon(AppIcons.bottomNavigationBarHome),
                   label: AppConstants.bottomNavigationBarHome,
                 ),
                 BottomNavigationBarItem(
-                  icon: Icon(AppIcons.bottomNavigationBarSearch),
+                  icon: const Icon(AppIcons.bottomNavigationBarSearch),
                   label: AppConstants.bottomNavigationBarSearch,
                 ),
                 BottomNavigationBarItem(
-                  icon: Icon(AppIcons.bottomNavigationBarSetting),
+                  icon: const Icon(AppIcons.bottomNavigationBarSetting),
                   label: AppConstants.bottomNavigationBarSetting,
                 ),
               ],

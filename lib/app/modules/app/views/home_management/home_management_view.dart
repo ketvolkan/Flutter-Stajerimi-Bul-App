@@ -30,7 +30,7 @@ class HomeManagementView extends GetView<HomeManagementController> {
   }
 
   CustomAppBar get _buildAppBar => CustomAppBar(
-        title: const Text(AppConstants.homeAppBar),
+        title: Text(AppConstants.homeAppBar),
         showLeadingBackIcon: false,
         onLeadingPressed: () {},
         actions: const [],

@@ -1,4 +1,4 @@
-import 'package:get/get_navigation/get_navigation.dart';
+import 'package:get/get.dart';
 
 import '../modules/app/views/employee_profile_management/employee_profile_management_binding.dart';
 import '../modules/app/views/employee_profile_management/employee_profile_management_view.dart';
