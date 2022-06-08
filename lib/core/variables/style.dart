@@ -31,25 +31,30 @@ class AppTextStyle {
     fontWeight: Utils.boldFontWeight,
   );
   //? Profile Page Style
-  static TextStyle profilPageAboutTextStyle = AppTextStyle.appBarTextStyle
-      .copyWith(fontSize: Utils.textSizeNormal, color: Get.theme.appBarTheme.titleTextStyle!.color ?? Colors.white);
-  static TextStyle baseCvCardTextStyle =
-      AppTextStyle.appBarTextStyle.copyWith(fontSize: Utils.textSizeNormal, color: Get.theme.primaryColorDark);
+  static TextStyle profilPageAboutTextStyle = AppTextStyle.appBarTextStyle.copyWith(
+    fontSize: Utils.textSizeNormal,
+    color: Get.theme.appBarTheme.titleTextStyle!.color ?? Colors.white,
+  );
+  static TextStyle baseCvCardTextStyle = AppTextStyle.appBarTextStyle.copyWith(
+    fontSize: Utils.textSizeTitle,
+    color: Get.theme.primaryColorDark,
+  );
   static TextStyle profilPageDateTimeTextStyle = AppTextStyle.profilPageAboutTextStyle.copyWith(
     fontSize: Utils.textSizeSubtitle,
-    color: Get.theme.appBarTheme.titleTextStyle!.color!.withOpacity(0.75),
+    color: Get.theme.appBarTheme.titleTextStyle!.color,
   );
   static TextStyle profilPageCountryTextStyle = AppTextStyle.profilPageAboutTextStyle.copyWith(
     fontSize: Utils.textSizeSubtitle,
-    color: Get.theme.appBarTheme.titleTextStyle!.color!.withOpacity(0.75),
+    color: Get.theme.appBarTheme.titleTextStyle!.color,
   );
   static TextStyle profilePageBioTextStyle = AppTextStyle.profilPageAboutTextStyle.copyWith(
     fontSize: Utils.textSizeTitle,
-    color: Get.theme.appBarTheme.titleTextStyle!.color!.withOpacity(0.75),
+    color: Get.theme.appBarTheme.titleTextStyle!.color,
   );
   //? Drawer Style
-  static TextStyle drawerTitleTextStyle =
-      AppTextStyle.appBarTextStyle.copyWith(color: Get.theme.appBarTheme.titleTextStyle!.color ?? Colors.white);
+  static TextStyle drawerTitleTextStyle = AppTextStyle.appBarTextStyle.copyWith(
+    color: Get.theme.appBarTheme.titleTextStyle!.color ?? Colors.white,
+  );
   //? Toggle Button Style
   static TextStyle togglebuttonTextStyle = TextStyle(color: Get.theme.primaryColor, fontWeight: Utils.boldFontWeight);
 }

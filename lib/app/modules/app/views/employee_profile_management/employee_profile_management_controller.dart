@@ -8,6 +8,9 @@ class EmployeeProfileManagementController extends GetxController {
   GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
   final box = GetStorage();
 
+  //Todo User Model den Gelice
+  final name = "Volkan Ket";
+
   final RxBool _currentThemeIsLight = true.obs;
   bool get currentThemeIsLight => _currentThemeIsLight.value;
   set currentThemeIsLight(bool val) => _currentThemeIsLight.value = val;

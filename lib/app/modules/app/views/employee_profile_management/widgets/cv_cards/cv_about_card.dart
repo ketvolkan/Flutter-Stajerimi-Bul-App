@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import '../../../../../common/widgets/custom_text.dart';
 import '../../../../../../../core/constants/app_constants.dart';
 import '../../../../../../../core/utils/utils.dart';
 import '../../../../../../../core/variables/icons.dart';
@@ -15,7 +16,7 @@ class CvAboutCard extends StatelessWidget {
       title: AppConstants.aboutCvCardTitle.tr,
       child: Padding(
         padding: EdgeInsets.all(Utils.normalPadding),
-        child: const Text(
+        child: const CustomText(
             "20 Yaşındayım cart curt şunlarla bunlarla ilgileniyorum girişkenim kendi çapımda hedeflerim var bla bla bla iyi bir insanım insan ilişkilerim iyi"),
       ),
       icon: AppIcons.aboutCvCardIcon,

@@ -39,6 +39,7 @@ dependencies:
   date_time_picker: ^2.1.0
   animated_toggle_switch: ^0.5.2
   get_storage: ^2.0.3
+  fluttertoast: ^8.0.9
 dev_dependencies:
   flutter_test:
     sdk: flutter

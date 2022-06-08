@@ -20,12 +20,10 @@ class HomeManagementView extends GetView<HomeManagementController> {
       appBar: _buildAppBar,
       body: CustomBody(child: Container()),
       bottomNavigationBar: _buildNavigationBar,
+      //!Deneme Amaçlı Yazıldı Normalde Yok
       floatingActionButton: CustomFloatingActionButton(
-          //!Deneme Amaçlı Yazıldı Normalde Yok
-          onPressed: () => Get.toNamed(
-                AppRoutes.PROFILE,
-                arguments: {'isJustShow': true},
-              )),
+        onPressed: () => Get.toNamed(AppRoutes.PROFILE, arguments: {'isJustShow': true}),
+      ),
     );
   }
 

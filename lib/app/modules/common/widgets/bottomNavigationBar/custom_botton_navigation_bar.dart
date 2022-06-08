@@ -30,8 +30,10 @@ class CustomNavigationBar extends StatelessWidget implements PreferredSizeWidget
       padding: EdgeInsets.only(bottom: Utils.normalPadding),
       child: ClipRRect(
         borderRadius: BorderRadius.circular(Utils.highPadding),
-        child: Container(
-          color: Get.theme.backgroundColor,
+        child: DecoratedBox(
+          decoration: BoxDecoration(
+            color: Get.theme.backgroundColor,
+          ),
           child: BottomAppBar(
             shape: const CircularNotchedRectangle(),
             notchMargin: notchMargin,

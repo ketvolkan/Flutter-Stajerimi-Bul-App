@@ -10,15 +10,18 @@ class CustomBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Get.theme.primaryColor,
-      child: ClipRRect(
-        borderRadius: BorderRadius.vertical(top: Radius.circular(Utils.veryHighBorderRadius)),
-        child: Container(
-            width: Get.size.width,
-            height: height ?? Get.size.height,
+    return DecoratedBox(
+      decoration: BoxDecoration(color: Get.theme.primaryColor),
+      child: SizedBox(
+        width: Get.size.width,
+        height: height ?? Get.size.height,
+        child: DecoratedBox(
+          decoration: BoxDecoration(
             color: Get.theme.backgroundColor,
-            child: child ?? const SizedBox()),
+            borderRadius: BorderRadius.vertical(top: Radius.circular(Utils.veryHighBorderRadius)),
+          ),
+          child: child ?? const SizedBox(),
+        ),
       ),
     );
   }

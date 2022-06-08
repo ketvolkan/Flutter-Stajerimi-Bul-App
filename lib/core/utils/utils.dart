@@ -2,10 +2,10 @@ import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 
 class Utils {
-  //? İcon Size
-  static double iconSmall = Get.height * 0.03;
-  static double iconNormal = Get.height * 0.045;
-  static double iconHigh = Get.height * 0.06;
+  //? Icon Size
+  static double iconSmall = Get.height * 0.02;
+  static double iconNormal = Get.height * 0.03;
+  static double iconHigh = Get.height * 0.045;
 
   //? Padding
   static double veryLowPadding = Get.height * 0.003;
@@ -19,7 +19,7 @@ class Utils {
   static double textSizeLow = Get.height * 0.015;
   static double textSizeSubtitle = Get.height * 0.020;
   static double textSizeTitle = Get.height * 0.024;
-  static double textSizeNormal = Get.height * 0.03;
+  static double textSizeNormal = Get.height * 0.02;
   static double textSizeHigh = Get.height * 0.036;
   static double textSizeVeryHigh = Get.height * 0.045;
 

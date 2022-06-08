@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:stajyerimibul/app/modules/common/widgets/buttons/custom_toggle_button.dart';
+import '../../../common/widgets/buttons/custom_toggle_button.dart';
 
 import '../../../../../core/constants/app_constants.dart';
 import '../../../../../core/utils/utils.dart';
@@ -99,11 +99,7 @@ class SearchManagementView extends GetView<SearchManagementController> {
         actions: [toggleButton, filterButton],
       );
 
-  CustomIconButton get filterButton => CustomIconButton(
-      icon: AppIcons.appBarFilterIcon,
-      onTap: () {
-        controller.filterButtonTap();
-      });
+  CustomIconButton get filterButton => CustomIconButton(icon: AppIcons.appBarFilterIcon, onTap: controller.filterButtonTap);
   Obx get toggleButton => Obx(() => CustomToggleButton(
       firstText: AppConstants.employeeFind.tr,
       secondText: AppConstants.employerFind.tr,

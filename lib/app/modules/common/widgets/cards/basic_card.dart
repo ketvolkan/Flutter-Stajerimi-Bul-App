@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import '../custom_text.dart';
 
 import '../../../../../core/utils/utils.dart';
 import '../../../../../core/variables/icons.dart';
@@ -41,37 +42,39 @@ class BasicCard extends StatelessWidget {
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(Utils.veryHighBorderRadius)),
         child: Column(
           children: [
-            Container(
+            Padding(
               padding: EdgeInsets.all(Utils.highPadding),
-              width: Get.size.width,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  backArrow
-                      ? Expanded(flex: 1, child: Icon(AppIcons.basicCardGoToBack, color: Get.theme.primaryColor))
-                      : const SizedBox(),
-                  profileImage != null ? Expanded(flex: 1, child: profileImage!) : const SizedBox(),
-                  SizedBox(width: Utils.lowPadding),
-                  Expanded(
-                    flex: 8,
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
+              child: SizedBox(
+                width: Get.size.width,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Row(
                       children: [
-                        Text(title, style: AppTextStyle.basicCardTitleTextStyle),
-                        subtitle != null ? Text(subtitle!, style: AppTextStyle.basicCardSubTitleTextStyle) : const SizedBox(),
+                        backArrow ? Icon(AppIcons.basicCardGoToBack, color: Get.theme.primaryColor) : const SizedBox(),
+                        profileImage != null
+                            ? FittedBox(child: SizedBox.square(dimension: Get.size.width * 0.15, child: profileImage!))
+                            : const SizedBox(),
+                        SizedBox(width: Utils.normalPadding),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            CustomText(title, style: AppTextStyle.basicCardTitleTextStyle),
+                            subtitle != null
+                                ? CustomText(subtitle!, style: AppTextStyle.basicCardSubTitleTextStyle)
+                                : const SizedBox(),
+                          ],
+                        ),
                       ],
                     ),
-                  ),
-                  customLeadingWidget ?? const SizedBox(),
-                  goToCardDescription
-                      ? Expanded(
-                          flex: 1,
-                          child: Center(
-                              child: Icon(customLeadingIcon ?? AppIcons.basicCardGoToCardDescriptionIcon,
-                                  color: Get.theme.primaryColor)),
-                        )
-                      : const SizedBox()
-                ],
+                    customLeadingWidget ?? const SizedBox(),
+                    goToCardDescription
+                        ? Center(
+                            child: Icon(customLeadingIcon ?? AppIcons.basicCardGoToCardDescriptionIcon,
+                                color: Get.theme.primaryColor))
+                        : const SizedBox()
+                  ],
+                ),
               ),
             ),
             if (description != null || createdAt != null)
@@ -88,7 +91,7 @@ class BasicCard extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     description != null
-                        ? Text(
+                        ? CustomText(
                             description!,
                             style: AppTextStyle.basicCardDescriptionTextStyle,
                             maxLines: descriptionMaxLines,
@@ -99,7 +102,7 @@ class BasicCard extends StatelessWidget {
                         ? Container(
                             padding: description != null ? EdgeInsets.only(top: Utils.normalPadding) : EdgeInsets.zero,
                             alignment: description != null ? Alignment.centerLeft : Alignment.center,
-                            child: Text(createdAt.toString().substring(0, 10), style: AppTextStyle.basicCardTimeTextStyle),
+                            child: CustomText(createdAt.toString().substring(0, 10), style: AppTextStyle.basicCardTimeTextStyle),
                           )
                         : const SizedBox(),
                   ],

@@ -25,14 +25,15 @@ class CustomIconButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: onTap ?? () {},
-      child: Container(
-        margin: EdgeInsets.all(Utils.normalPadding),
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(borderRadius),
-          color: backgroundColor ?? Colors.transparent,
-        ),
+      child: Padding(
         padding: EdgeInsets.all(Utils.veryLowPadding),
-        child: Icon(icon, size: size ?? Utils.iconNormal, color: color ?? Get.theme.appBarTheme.titleTextStyle!.color),
+        child: DecoratedBox(
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(borderRadius),
+            color: backgroundColor ?? Colors.transparent,
+          ),
+          child: Icon(icon, size: size ?? Utils.iconHigh, color: color ?? Get.theme.appBarTheme.titleTextStyle!.color),
+        ),
       ),
     );
   }

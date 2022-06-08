@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import '../../../../common/widgets/custom_text.dart';
 
 import '../../../../../../core/utils/utils.dart';
 import '../../../../../../core/variables/style.dart';
@@ -11,43 +12,43 @@ class CustomProfileTopCard extends StatelessWidget {
   }) : super(key: key);
 
   //TODO Apiden gelen verilere göre model Oluşturulacak
-  final name = "Volkan Ket";
+
   final birthDate = "15 Nisan 2002";
   final country = "Bursa";
-  final bio = "Mobil Uygulama Geliştirici ";
+  final bio = "Mobil Uygulama Geliştirici";
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: [
-        Container(color: Get.theme.primaryColor),
-        Container(
-          padding: EdgeInsets.all(Utils.normalPadding),
-          width: Get.size.width,
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.start,
+    return SizedBox(
+      height: Get.size.height / 4,
+      child: Stack(
+        children: [
+          Container(color: Get.theme.primaryColor),
+          Column(
             children: [
-              Expanded(flex: 4, child: RandomCircleImage(height: Get.size.width)),
-              Expanded(
-                flex: 9,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Expanded(flex: 4, child: FittedBox(child: Text(name, style: AppTextStyle.profilPageAboutTextStyle))),
-                    const Spacer(flex: 1),
-                    Expanded(flex: 4, child: Text(birthDate, style: AppTextStyle.profilPageDateTimeTextStyle)),
-                    Expanded(flex: 2, child: Text(country, style: AppTextStyle.profilPageCountryTextStyle)),
-                    const Spacer(flex: 4),
-                    Expanded(
-                        flex: 4,
-                        child: FittedBox(fit: BoxFit.scaleDown, child: Text(bio, style: AppTextStyle.profilePageBioTextStyle))),
-                  ],
+              RandomCircleImage(height: Get.size.width / 3.5),
+              SizedBox(height: Utils.normalPadding),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  SizedBox(width: Utils.normalPadding),
+                  CustomText(birthDate, style: AppTextStyle.profilPageDateTimeTextStyle),
+                  SizedBox(width: Utils.normalPadding),
+                  CustomText(country, style: AppTextStyle.profilPageCountryTextStyle),
+                ],
+              ),
+              SizedBox(height: Utils.normalPadding),
+              FittedBox(
+                child: CustomText(
+                  bio,
+                  style: AppTextStyle.profilePageBioTextStyle,
+                  padding: EdgeInsets.symmetric(horizontal: Utils.highPadding),
                 ),
               ),
             ],
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }

@@ -1,8 +1,9 @@
 // ignore_for_file: constant_identifier_names
 
 import 'package:flutter/material.dart';
-import 'package:stajyerimibul/core/constants/app_constants.dart';
 import 'package:get/get.dart';
+import 'package:stajyerimibul/core/constants/app_constants.dart';
+
 import 'menu_button.dart';
 
 enum MenuEnums {
@@ -12,6 +13,7 @@ enum MenuEnums {
   ContactMore, //? Sosyal Kanallar
   AccountSetting //? Hesap Ayarları
 }
+
 enum BottomNavbars { Profile, Home, Search, Setting }
 
 //? Ayarlardaki Sayfalara Giden Butonlar Burdan Ayarlanır(Giticeği sayfa,açıcağı buton grubu vb)

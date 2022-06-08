@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '../../../../../../core/utils/utils.dart';
 import '../../../../common/widgets/body/custom_body.dart';
@@ -14,10 +15,13 @@ class CustomProfileBottomCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    //Todo height gelen veriler kadar uzun olacak
     return CustomBody(
+      height: Get.height * 1.5,
       child: Padding(
         padding: EdgeInsets.symmetric(horizontal: Utils.highPadding) + EdgeInsets.only(top: Utils.highPadding),
         child: ListView(
+          physics: const NeverScrollableScrollPhysics(),
           children: [
             SizedBox(height: Utils.normalPadding),
             const CvAboutCard(),

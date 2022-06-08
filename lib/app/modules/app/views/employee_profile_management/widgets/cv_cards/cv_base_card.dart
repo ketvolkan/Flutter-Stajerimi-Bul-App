@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import '../../../../../common/widgets/custom_text.dart';
 
 import '../../../../../../../core/utils/utils.dart';
 import '../../../../../../../core/variables/style.dart';
@@ -22,10 +23,9 @@ class CvBaseCard extends StatelessWidget {
       children: [
         Row(
           children: [
-            icon != null
-                ? Expanded(flex: 1, child: Icon(icon, color: Get.theme.primaryColor, size: Utils.iconNormal))
-                : const SizedBox(),
-            Expanded(flex: 4, child: Text(title, style: AppTextStyle.baseCvCardTextStyle)),
+            icon != null ? Icon(icon, color: Get.theme.primaryColor, size: Utils.iconNormal) : const SizedBox(),
+            SizedBox(width: Utils.normalPadding),
+            CustomText(title, style: AppTextStyle.baseCvCardTextStyle),
           ],
         ),
         const Divider(thickness: 3),

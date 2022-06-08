@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:stajyerimibul/app/modules/app/views/employee_profile_management/widgets/language_change_button.dart/language_change_button.dart';
-import 'package:stajyerimibul/app/modules/app/views/employee_profile_management/widgets/theme_change_button/theme_change_button.dart';
+import 'language_change_button.dart/language_change_button.dart';
+import 'theme_change_button/theme_change_button.dart';
+import '../../../../common/widgets/custom_text.dart';
 
 import '../../../../../../core/constants/app_constants.dart';
 
@@ -20,74 +21,38 @@ class ProfileDrawer extends StatelessWidget {
       child: Drawer(
         child: Column(
           children: [
-            Expanded(
-              flex: 2,
+            SizedBox(
+              height: Get.size.height * 0.13,
               child: DrawerHeader(
                 child: SizedBox(
                   width: Get.size.width,
-                  child: Text(AppConstants.updateProfileDrawer.tr, style: AppTextStyle.drawerTitleTextStyle),
+                  child: CustomText(AppConstants.updateProfileDrawer.tr, style: AppTextStyle.drawerTitleTextStyle),
                 ),
                 decoration: BoxDecoration(color: Get.theme.primaryColor),
               ),
             ),
-            Expanded(
-              flex: 13,
-              child: Padding(
-                padding: EdgeInsets.all(Utils.normalPadding),
-                child: ListView(
-                  children: [
-                    CustomTextButton(
-                      onTap: () {},
-                      text: AppConstants.profileAboutDrawer.tr,
-                      textColor: Get.theme.primaryColorDark,
-                      icon: AppIcons.bottomNavigationBarAccount,
-                      iconColor: Get.theme.primaryColor,
-                      backgroundColor: Colors.white,
-                    ),
-                    SizedBox(height: Utils.normalPadding),
-                    CustomTextButton(
-                      onTap: () {},
-                      text: AppConstants.aboutMeDrawer.tr,
-                      textColor: Get.theme.primaryColorDark,
-                      icon: AppIcons.aboutCvCardIcon,
-                      iconColor: Get.theme.primaryColor,
-                      backgroundColor: Colors.white,
-                    ),
-                    SizedBox(height: Utils.normalPadding),
-                    CustomTextButton(
-                      onTap: () {},
-                      text: AppConstants.schoolCvDrawer.tr,
-                      textColor: Get.theme.primaryColorDark,
-                      icon: AppIcons.schoolCvCardIcon,
-                      iconColor: Get.theme.primaryColor,
-                      backgroundColor: Colors.white,
-                    ),
-                    SizedBox(height: Utils.normalPadding),
-                    CustomTextButton(
-                      onTap: () {},
-                      text: AppConstants.jobCvDrawer.tr,
-                      textColor: Get.theme.primaryColorDark,
-                      icon: AppIcons.jobExperienceCvCardIcon,
-                      iconColor: Get.theme.primaryColor,
-                      backgroundColor: Colors.white,
-                    ),
-                    SizedBox(height: Utils.normalPadding),
-                    CustomTextButton(
-                      onTap: () {},
-                      text: AppConstants.languageCvDrawer.tr,
-                      textColor: Get.theme.primaryColorDark,
-                      icon: AppIcons.languageCvCardIcon,
-                      iconColor: Get.theme.primaryColor,
-                      backgroundColor: Colors.white,
-                    ),
-                    Row(
+            Padding(
+              padding: EdgeInsets.all(Utils.normalPadding),
+              child: Column(
+                children: [
+                  profileInfo,
+                  SizedBox(height: Utils.normalPadding),
+                  aboutMe,
+                  SizedBox(height: Utils.normalPadding),
+                  schoolInfo,
+                  SizedBox(height: Utils.normalPadding),
+                  jobInfo,
+                  SizedBox(height: Utils.normalPadding),
+                  languageInfo,
+                  FittedBox(
+                    child: Row(
                       children: [
-                        Expanded(child: LanguageChangeButton()),
-                        Expanded(child: ThemeChangeButton()),
+                        LanguageChangeButton(),
+                        ThemeChangeButton(),
                       ],
                     ),
-                  ],
-                ),
+                  ),
+                ],
               ),
             )
           ],
@@ -95,4 +60,48 @@ class ProfileDrawer extends StatelessWidget {
       ),
     );
   }
+
+  CustomTextButton get profileInfo => CustomTextButton(
+        onTap: () {},
+        text: AppConstants.profileAboutDrawer.tr,
+        textColor: Get.theme.primaryColorDark,
+        icon: AppIcons.bottomNavigationBarAccount,
+        iconColor: Get.theme.primaryColor,
+        backgroundColor: Colors.white,
+      );
+  CustomTextButton get aboutMe => CustomTextButton(
+        onTap: () {},
+        text: AppConstants.aboutMeDrawer.tr,
+        textColor: Get.theme.primaryColorDark,
+        icon: AppIcons.aboutCvCardIcon,
+        iconColor: Get.theme.primaryColor,
+        backgroundColor: Colors.white,
+      );
+
+  CustomTextButton get schoolInfo => CustomTextButton(
+        onTap: () {},
+        text: AppConstants.schoolCvDrawer.tr,
+        textColor: Get.theme.primaryColorDark,
+        icon: AppIcons.schoolCvCardIcon,
+        iconColor: Get.theme.primaryColor,
+        backgroundColor: Colors.white,
+      );
+
+  CustomTextButton get jobInfo => CustomTextButton(
+        onTap: () {},
+        text: AppConstants.jobCvDrawer.tr,
+        textColor: Get.theme.primaryColorDark,
+        icon: AppIcons.jobExperienceCvCardIcon,
+        iconColor: Get.theme.primaryColor,
+        backgroundColor: Colors.white,
+      );
+
+  CustomTextButton get languageInfo => CustomTextButton(
+        onTap: () {},
+        text: AppConstants.languageCvDrawer.tr,
+        textColor: Get.theme.primaryColorDark,
+        icon: AppIcons.languageCvCardIcon,
+        iconColor: Get.theme.primaryColor,
+        backgroundColor: Colors.white,
+      );
 }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import '../../../../../common/widgets/custom_text.dart';
 
 import '../../../../../../../core/constants/app_constants.dart';
 import '../../../../../../../core/variables/icons.dart';
@@ -23,11 +24,11 @@ class CustomJobSchoolListTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListTile(
       leading: Icon(AppIcons.cvCardLeadingIcon, color: Get.theme.primaryColor),
-      title: Text(title),
-      subtitle: Text(subtitle),
+      title: CustomText(title),
+      subtitle: CustomText(subtitle),
       trailing: Column(
         mainAxisAlignment: MainAxisAlignment.center,
-        children: [Text(start), end != null ? Text(end!) : Text(AppConstants.isNotComplated.tr)],
+        children: [CustomText(start), end != null ? CustomText(end!) : CustomText(AppConstants.isNotComplated.tr)],
       ),
     );
   }
