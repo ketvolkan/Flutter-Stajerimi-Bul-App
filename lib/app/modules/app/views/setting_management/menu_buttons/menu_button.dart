@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:stajyerimibul/core/utils/utils.dart';
 
 import '../../../../common/widgets/cards/basic_card.dart';
 import '../setting_management_controller.dart';
@@ -28,17 +29,21 @@ class MenuButton extends StatelessWidget {
   SettingManagementController settingManagementController = Get.find<SettingManagementController>();
   @override
   Widget build(BuildContext context) {
-    return BasicCard(
-      title: title,
-      backArrow: isBack,
-      onTap: onTap ??
-          () {
-            if (pageReferance != null) Get.toNamed(pageReferance!);
-            if (menuReferance != null) settingManagementController.selectedMenuListName = menuReferance!;
-          },
-      goToCardDescription: onLeading,
-      customLeadingIcon: customLeadingIcon,
-      customLeadingWidget: customLeadingWidget,
+    return FittedBox(
+      child: BasicCard(
+        cardOutPadding: EdgeInsets.symmetric(horizontal: Utils.normalPadding),
+        title: title,
+        borderRadius: Utils.normalBorderRadius,
+        backArrow: isBack,
+        onTap: onTap ??
+            () {
+              if (pageReferance != null) Get.toNamed(pageReferance!);
+              if (menuReferance != null) settingManagementController.selectedMenuListName = menuReferance!;
+            },
+        goToCardDescription: onLeading,
+        customLeadingIcon: customLeadingIcon,
+        customLeadingWidget: customLeadingWidget,
+      ),
     );
   }
 }

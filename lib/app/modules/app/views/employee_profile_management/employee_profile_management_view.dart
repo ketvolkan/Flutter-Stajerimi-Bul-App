@@ -38,6 +38,7 @@ class EmployeeProfileManagementView extends GetView<EmployeeProfileManagementCon
   CustomAppBar get _buildAppBar => CustomAppBar(
         automaticallyImplyLeading: controller.isJustShow.value,
         title: Text(controller.name),
+        centerTitle: true,
         showLeadingBackIcon: controller.isJustShow.value,
         actions: [!controller.isJustShow.value ? editCvButton : const SizedBox()],
       );

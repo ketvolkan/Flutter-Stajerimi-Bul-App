@@ -25,7 +25,7 @@ class SettingManagementView extends GetView<SettingManagementController> {
               return index == 0 ? SizedBox(height: Utils.normalPadding) : controller.selectedMenuItems[index - 1];
             },
             separatorBuilder: (context, index) {
-              return SizedBox(height: Utils.highPadding);
+              return SizedBox(height: Utils.lowPadding);
             },
             itemCount: controller.selectedMenuItems.length + 1,
           ),
