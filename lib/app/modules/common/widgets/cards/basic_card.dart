@@ -58,7 +58,7 @@ class BasicCard extends StatelessWidget {
                         children: [
                           backArrow ? Icon(AppIcons.basicCardGoToBack, color: Get.theme.primaryColor) : const SizedBox(),
                           profileImage != null
-                              ? FittedBox(child: SizedBox.square(dimension: Get.size.width * 0.15, child: profileImage!))
+                              ? FittedBox(child: SizedBox.square(dimension: Get.size.width * 0.1, child: profileImage!))
                               : const SizedBox(),
                           SizedBox(width: Utils.normalPadding),
                           Column(

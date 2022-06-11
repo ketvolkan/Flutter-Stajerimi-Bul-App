@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 
 class AppColor {
   //? Light
-  static Color primaryColor = Color.fromARGB(255, 236, 63, 63);
+  static Color primaryColor = Color.fromARGB(255, 196, 51, 51);
   static Color fabButtonColor = primaryColor;
   static Color backgroundColor = Color.fromARGB(255, 247, 247, 247);
   static Color bottomNavBarItemColor = Color.fromARGB(255, 255, 255, 255);

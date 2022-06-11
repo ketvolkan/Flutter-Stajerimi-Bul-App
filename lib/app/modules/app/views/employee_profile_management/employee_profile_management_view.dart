@@ -5,7 +5,6 @@ import '../../../../../core/variables/icons.dart';
 import '../../../common/widgets/appBar/custom_app_bar.dart';
 import '../../../common/widgets/bottomNavigationBar/custom_botton_navigation_bar.dart';
 import '../../../common/widgets/buttons/custom_icon_button.dart';
-import '../../../common/widgets/fabButton/custom_floating_action_button.dart';
 import '../../../common/widgets/scaffold/custom_scaffold.dart';
 import '../setting_management/menu_buttons/menu_enum.dart';
 import 'employee_profile_management_controller.dart';
@@ -31,7 +30,6 @@ class EmployeeProfileManagementView extends GetView<EmployeeProfileManagementCon
         ),
       ),
       bottomNavigationBar: _buildNavigationBar,
-      floatingActionButton: CustomFloatingActionButton(onPressed: () {}),
     );
   }
 

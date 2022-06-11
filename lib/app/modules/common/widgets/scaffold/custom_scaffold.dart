@@ -1,18 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:stajyerimibul/app/modules/common/widgets/bottomSheet/fab_bottom_sheet.dart';
+import 'package:stajyerimibul/app/modules/common/widgets/fabButton/custom_floating_action_button.dart';
 
 class CustomScaffold extends StatelessWidget {
   final PreferredSizeWidget? appBar;
   final Widget body;
   final Widget? drawer;
   final Key? globalKey;
-  final Widget? floatingActionButton;
+
   final FloatingActionButtonLocation? floatingActionButtonLocation;
   final PreferredSizeWidget? bottomNavigationBar;
   const CustomScaffold({
     Key? key,
     this.appBar,
     required this.body,
-    this.floatingActionButton,
     this.floatingActionButtonLocation = FloatingActionButtonLocation.centerDocked,
     this.bottomNavigationBar,
     this.drawer,
@@ -27,17 +28,17 @@ class CustomScaffold extends StatelessWidget {
             extendBody: true,
             appBar: appBar,
             drawer: drawer,
-            body: body,
-            floatingActionButton: floatingActionButton ?? const SizedBox(),
+            body: Stack(children: [body, const FabBottomSheet()]),
+            floatingActionButton: const CustomFloatingActionButton(),
             floatingActionButtonLocation: floatingActionButtonLocation,
             bottomNavigationBar: bottomNavigationBar ?? const SizedBox(),
           )
         : Scaffold(
             key: key,
             extendBody: true,
-            body: body,
+            body: Stack(children: [body, const FabBottomSheet()]),
             drawer: drawer,
-            floatingActionButton: floatingActionButton ?? const SizedBox(),
+            floatingActionButton: const CustomFloatingActionButton(),
             floatingActionButtonLocation: floatingActionButtonLocation,
             bottomNavigationBar: bottomNavigationBar ?? const SizedBox(),
           );

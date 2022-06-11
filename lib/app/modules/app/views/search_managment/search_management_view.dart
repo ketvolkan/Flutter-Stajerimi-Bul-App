@@ -10,7 +10,6 @@ import '../../../common/widgets/body/custom_body.dart';
 import '../../../common/widgets/bottomNavigationBar/custom_botton_navigation_bar.dart';
 import '../../../common/widgets/buttons/custom_icon_button.dart';
 import '../../../common/widgets/cards/basic_card.dart';
-import '../../../common/widgets/fabButton/custom_floating_action_button.dart';
 import '../../../common/widgets/image/random_circle_image.dart';
 import '../../../common/widgets/scaffold/custom_scaffold.dart';
 import '../setting_management/menu_buttons/menu_enum.dart';
@@ -88,7 +87,6 @@ class SearchManagementView extends GetView<SearchManagementController> {
         ),
       ),
       bottomNavigationBar: _buildNavigationBar,
-      floatingActionButton: const CustomFloatingActionButton(),
     );
   }
 

@@ -2,11 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../../../../core/constants/app_constants.dart';
-import '../../../../routes/app_routes.dart';
 import '../../../common/widgets/appBar/custom_app_bar.dart';
 import '../../../common/widgets/body/custom_body.dart';
 import '../../../common/widgets/bottomNavigationBar/custom_botton_navigation_bar.dart';
-import '../../../common/widgets/fabButton/custom_floating_action_button.dart';
 import '../../../common/widgets/scaffold/custom_scaffold.dart';
 import '../setting_management/menu_buttons/menu_enum.dart';
 import 'home_management_controller.dart';
@@ -20,10 +18,6 @@ class HomeManagementView extends GetView<HomeManagementController> {
       appBar: _buildAppBar,
       body: CustomBody(child: Container()),
       bottomNavigationBar: _buildNavigationBar,
-      //!Deneme Amaçlı Yazıldı Normalde Yok
-      floatingActionButton: CustomFloatingActionButton(
-        onPressed: () => Get.toNamed(AppRoutes.PROFILE, arguments: {'isJustShow': true}),
-      ),
     );
   }
 

@@ -1,17 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
 import 'package:get_storage/get_storage.dart';
-import 'generated/locales.g.dart';
 
 import 'app/modules/app/views/home_management/home_management_binding.dart';
+import 'app/modules/common/widgets/fabButton/custom_floating_action_button_controller.dart';
 import 'app/routes/app_pages.dart';
 import 'app/routes/app_routes.dart';
 import 'app/theme/app_theme.dart';
 import 'core/constants/app_constants.dart';
+import 'generated/locales.g.dart';
 
 void main() async {
   await GetStorage.init();
+  Get.put(CustomFloatingActionButtonController());
   runApp(const MyApp());
 }
 

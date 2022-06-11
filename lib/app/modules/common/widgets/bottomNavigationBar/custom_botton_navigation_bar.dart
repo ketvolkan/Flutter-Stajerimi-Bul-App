@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:stajyerimibul/app/modules/common/widgets/fabButton/custom_floating_action_button_controller.dart';
 
 import '../../../../../core/constants/app_constants.dart';
 import '../../../../../core/utils/utils.dart';
@@ -21,11 +22,13 @@ class CustomNavigationBar extends StatelessWidget implements PreferredSizeWidget
     this.selectedItemColor,
     this.unSelectedItemColor,
     this.onTap,
-    this.notchMargin = 5,
+    this.notchMargin = 0,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    CustomFloatingActionButtonController fabController = Get.find();
+
     return Padding(
       padding: EdgeInsets.only(bottom: Utils.normalPadding),
       child: ClipRRect(
@@ -49,30 +52,35 @@ class CustomNavigationBar extends StatelessWidget implements PreferredSizeWidget
               unselectedItemColor: unSelectedItemColor ?? Get.theme.appBarTheme.titleTextStyle!.color!.withOpacity(0.75),
               onTap: onTap ??
                   (value) {
-                    switch (value) {
-                      case 0:
-                        if (Get.currentRoute != AppRoutes.PROFILE) {
-                          Get.offAllNamed(AppRoutes.PROFILE);
-                        }
-                        break;
-                      case 1:
-                        if (Get.currentRoute != AppRoutes.HOME) {
+                    CustomFloatingActionButtonController fabController = Get.find();
+                    Duration waitForClose = fabController.isClicked ? fabController.duration : const Duration(seconds: 0);
+                    fabController.isClicked = false;
+                    Future.delayed(waitForClose).then((_) {
+                      switch (value) {
+                        case 0:
+                          if (Get.currentRoute != AppRoutes.PROFILE) {
+                            Get.offAllNamed(AppRoutes.PROFILE);
+                          }
+                          break;
+                        case 1:
+                          if (Get.currentRoute != AppRoutes.HOME) {
+                            Get.offAllNamed(AppRoutes.HOME);
+                          }
+                          break;
+                        case 2:
+                          if (Get.currentRoute != AppRoutes.SEARCH) {
+                            Get.offAllNamed(AppRoutes.SEARCH);
+                          }
+                          break;
+                        case 3:
+                          if (Get.currentRoute != AppRoutes.SETTING) {
+                            Get.offAllNamed(AppRoutes.SETTING);
+                          }
+                          break;
+                        default:
                           Get.offAllNamed(AppRoutes.HOME);
-                        }
-                        break;
-                      case 2:
-                        if (Get.currentRoute != AppRoutes.SEARCH) {
-                          Get.offAllNamed(AppRoutes.SEARCH);
-                        }
-                        break;
-                      case 3:
-                        if (Get.currentRoute != AppRoutes.SETTING) {
-                          Get.offAllNamed(AppRoutes.SETTING);
-                        }
-                        break;
-                      default:
-                        Get.offAllNamed(AppRoutes.HOME);
-                    }
+                      }
+                    });
                   },
               items: [
                 BottomNavigationBarItem(
