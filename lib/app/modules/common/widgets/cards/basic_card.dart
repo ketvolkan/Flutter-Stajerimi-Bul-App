@@ -4,7 +4,6 @@ import '../custom_text.dart';
 
 import '../../../../../core/utils/utils.dart';
 import '../../../../../core/variables/icons.dart';
-import '../../../../../core/variables/style.dart';
 
 class BasicCard extends StatelessWidget {
   final String title;
@@ -44,7 +43,7 @@ class BasicCard extends StatelessWidget {
       child: InkWell(
         onTap: onTap ?? () {},
         child: Card(
-          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(borderRadius ?? Utils.veryHighBorderRadius)),
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(borderRadius ?? Utils.normalRadius)),
           child: Column(
             children: [
               Padding(
@@ -54,71 +53,72 @@ class BasicCard extends StatelessWidget {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Row(
-                        children: [
-                          backArrow ? Icon(AppIcons.basicCardGoToBack, color: Get.theme.primaryColor) : const SizedBox(),
-                          profileImage != null
-                              ? FittedBox(child: SizedBox.square(dimension: Get.size.width * 0.1, child: profileImage!))
-                              : const SizedBox(),
-                          SizedBox(width: Utils.normalPadding),
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              CustomText(title, style: AppTextStyle.basicCardTitleTextStyle),
-                              subtitle != null
-                                  ? CustomText(subtitle!, style: AppTextStyle.basicCardSubTitleTextStyle)
-                                  : const SizedBox(),
-                            ],
-                          ),
-                        ],
-                      ),
+                      baseSideRow(),
                       customLeadingWidget ?? const SizedBox(),
-                      goToCardDescription
-                          ? Center(
-                              child: Icon(customLeadingIcon ?? AppIcons.basicCardGoToCardDescriptionIcon,
-                                  color: Get.theme.primaryColor))
-                          : const SizedBox()
+                      goToCardDescription ? goToDescriptionIcon() : const SizedBox()
                     ],
                   ),
                 ),
               ),
-              if (description != null || createdAt != null)
-                Container(
-                  padding: EdgeInsets.all(Utils.highPadding),
-                  width: Get.size.width,
-                  decoration: BoxDecoration(boxShadow: [
-                    BoxShadow(
-                      color: Get.theme.primaryColor,
-                      blurRadius: Utils.lowBorderRadius,
-                    ),
-                  ], color: Get.theme.primaryColor, borderRadius: BorderRadius.all(Radius.circular(Utils.highBorderRadius))),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      description != null
-                          ? CustomText(
-                              description!,
-                              style: AppTextStyle.basicCardDescriptionTextStyle,
-                              maxLines: descriptionMaxLines,
-                              overflow: TextOverflow.ellipsis,
-                            )
-                          : const SizedBox(),
-                      createdAt != null
-                          ? Container(
-                              padding: description != null ? EdgeInsets.only(top: Utils.normalPadding) : EdgeInsets.zero,
-                              alignment: description != null ? Alignment.centerLeft : Alignment.center,
-                              child:
-                                  CustomText(createdAt.toString().substring(0, 10), style: AppTextStyle.basicCardTimeTextStyle),
-                            )
-                          : const SizedBox(),
-                    ],
-                  ),
-                )
+              if (description != null || createdAt != null) descriptionAndCreatedAt()
             ],
           ),
           elevation: 8,
           shadowColor: Get.theme.primaryColorDark,
         ),
+      ),
+    );
+  }
+
+  Row baseSideRow() {
+    return Row(
+      children: [
+        backArrow ? Icon(AppIcons.basicCardGoToBack, color: Get.theme.primaryColor) : const SizedBox(),
+        profileImage != null ? profileImageWidget() : const SizedBox(),
+        SizedBox(width: Utils.normalPadding),
+        titleAndSubtitle(),
+      ],
+    );
+  }
+
+  FittedBox profileImageWidget() => FittedBox(child: SizedBox.square(dimension: Get.size.width * 0.1, child: profileImage!));
+
+  Column titleAndSubtitle() {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        CustomText.high(title),
+        subtitle != null ? CustomText.low(subtitle!) : const SizedBox(),
+      ],
+    );
+  }
+
+  Center goToDescriptionIcon() {
+    return Center(child: Icon(customLeadingIcon ?? AppIcons.basicCardGoToCardDescriptionIcon, color: Get.theme.primaryColor));
+  }
+
+  Container descriptionAndCreatedAt() {
+    return Container(
+      padding: EdgeInsets.all(Utils.highPadding),
+      width: Get.size.width,
+      decoration: BoxDecoration(boxShadow: [
+        BoxShadow(
+          color: Get.theme.primaryColor,
+          blurRadius: Get.width * 0.007,
+        ),
+      ], color: Get.theme.primaryColor, borderRadius: BorderRadius.all(Radius.circular(Utils.normalRadius))),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: [
+          description != null ? CustomText(description!, textColor: Colors.white) : const SizedBox(),
+          createdAt != null
+              ? Container(
+                  padding: description != null ? EdgeInsets.only(top: Utils.normalPadding) : EdgeInsets.zero,
+                  alignment: description != null ? Alignment.centerLeft : Alignment.center,
+                  child: CustomText(createdAt.toString().substring(0, 10)),
+                )
+              : const SizedBox(),
+        ],
       ),
     );
   }

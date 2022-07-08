@@ -26,13 +26,13 @@ class CustomIconButton extends StatelessWidget {
     return InkWell(
       onTap: onTap ?? () {},
       child: Padding(
-        padding: EdgeInsets.all(Utils.veryLowPadding),
+        padding: EdgeInsets.all(Utils.extraLowPadding),
         child: DecoratedBox(
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(borderRadius),
             color: backgroundColor ?? Colors.transparent,
           ),
-          child: Icon(icon, size: size ?? Utils.iconHigh, color: color ?? Get.theme.appBarTheme.titleTextStyle!.color),
+          child: Icon(icon, size: size ?? Utils.highIconSize, color: color ?? Get.theme.appBarTheme.titleTextStyle!.color),
         ),
       ),
     );

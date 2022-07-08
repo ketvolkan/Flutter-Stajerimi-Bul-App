@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:stajyerimibul/core/utils/utils.dart';
+import '../../../../../../core/utils/utils.dart';
 
 import '../../../../common/widgets/cards/basic_card.dart';
 import '../setting_management_controller.dart';
@@ -33,7 +33,7 @@ class MenuButton extends StatelessWidget {
       child: BasicCard(
         cardOutPadding: EdgeInsets.symmetric(horizontal: Utils.normalPadding),
         title: title,
-        borderRadius: Utils.normalBorderRadius,
+        borderRadius: Utils.normalRadius,
         backArrow: isBack,
         onTap: onTap ??
             () {

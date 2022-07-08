@@ -3,7 +3,6 @@ import 'package:get/get.dart';
 import '../../../../../common/widgets/custom_text.dart';
 
 import '../../../../../../../core/utils/utils.dart';
-import '../../../../../../../core/variables/style.dart';
 
 class CvBaseCard extends StatelessWidget {
   final String title;
@@ -20,16 +19,16 @@ class CvBaseCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      children: [titleRow(), const Divider(thickness: 3), child],
+    );
+  }
+
+  Row titleRow() {
+    return Row(
       children: [
-        Row(
-          children: [
-            icon != null ? Icon(icon, color: Get.theme.primaryColor, size: Utils.iconNormal) : const SizedBox(),
-            SizedBox(width: Utils.normalPadding),
-            CustomText(title, style: AppTextStyle.baseCvCardTextStyle),
-          ],
-        ),
-        const Divider(thickness: 3),
-        child
+        icon != null ? Icon(icon, color: Get.theme.primaryColor, size: Utils.highIconSize) : const SizedBox(),
+        SizedBox(width: Utils.normalPadding),
+        CustomText.high(title),
       ],
     );
   }

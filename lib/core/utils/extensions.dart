@@ -36,24 +36,9 @@ extension CustomToastExtension on GetInterface {
         msg: text,
         backgroundColor: backgroundColor,
         textColor: textColor,
-        fontSize: Utils.textSizeLow,
+        fontSize: Utils.lowTextSize,
         gravity: ToastGravity.BOTTOM,
       ),
-    );
-  }
-}
-
-extension CustomDialogExtension on GetInterface {
-  Future showProgressDialog() async {
-    await Get.dialog(
-      Center(
-        child: SizedBox.square(
-            dimension: Get.width * 0.2,
-            child: FittedBox(
-              child: CircularProgressIndicator(color: Get.theme.primaryColor, strokeWidth: 2),
-            )),
-      ),
-      barrierDismissible: false,
     );
   }
 }

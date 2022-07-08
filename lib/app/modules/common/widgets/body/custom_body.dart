@@ -18,7 +18,7 @@ class CustomBody extends StatelessWidget {
         child: DecoratedBox(
           decoration: BoxDecoration(
             color: Get.theme.backgroundColor,
-            borderRadius: BorderRadius.vertical(top: Radius.circular(Utils.veryHighBorderRadius)),
+            borderRadius: BorderRadius.vertical(top: Radius.circular(Utils.extraHighRadius)),
           ),
           child: child ?? const SizedBox(),
         ),

@@ -1,4 +1,4 @@
-import 'package:stajyerimibul/core/service/base_model.dart';
+import '../../service/base_model.dart';
 
 class EmployeeModel extends BaseModel {
   int? id;

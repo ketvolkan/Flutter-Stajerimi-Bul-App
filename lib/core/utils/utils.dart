@@ -2,39 +2,34 @@ import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 
 class Utils {
-  //? Icon Size
-  static double iconSmall = Get.height * 0.02;
-  static double iconNormal = Get.height * 0.03;
-  static double iconHigh = Get.height * 0.045;
+  static double get extraLowTextSize => Get.height * 0.012;
+  static double get lowTextSize => Get.height * 0.015;
+  static double get normalTextSize => Get.height * 0.018;
+  static double get highTextSize => Get.height * 0.022;
+  static double get extraHighTextSize => Get.height * 0.025;
 
-  //? Padding
-  static double veryLowPadding = Get.height * 0.003;
-  static double lowPadding = Get.height * 0.0075;
-  static double normalPadding = Get.height * 0.015;
-  static double highPadding = Get.height * 0.03;
-  static double veryHighPadding = Get.height * 0.09;
-  static double veryVeryHighPadding = Get.height * 0.15;
+  static double get extraLowPadding => Get.height * 0.005;
+  static double get lowPadding => Get.height * 0.01;
+  static double get normalPadding => Get.height * 0.015;
+  static double get highPadding => Get.height * 0.02;
+  static double get extraHighPadding => Get.height * 0.025;
 
-  //? Text Size
-  static double textSizeLow = Get.height * 0.015;
-  static double textSizeSubtitle = Get.height * 0.020;
-  static double textSizeTitle = Get.height * 0.024;
-  static double textSizeNormal = Get.height * 0.02;
-  static double textSizeHigh = Get.height * 0.036;
-  static double textSizeVeryHigh = Get.height * 0.045;
+  static double get extraLowRadius => Get.height * 0.01;
+  static double get lowRadius => Get.height * 0.015;
+  static double get normalRadius => Get.height * 0.02;
+  static double get highRadius => Get.height * 0.025;
+  static double get extraHighRadius => Get.height * 0.035;
 
-  //? BorderRadius
-  static double lowBorderRadius = Get.height * 0.005;
-  static double normalBorderRadius = Get.height * 0.015;
-  static double highBorderRadius = Get.height * 0.03;
-  static double veryHighBorderRadius = Get.height * 0.045;
+  static double get extraLowIconSize => Get.height * 0.015;
+  static double get lowIconSize => Get.height * 0.02;
+  static double get normalIconSize => Get.height * 0.025;
+  static double get highIconSize => Get.height * 0.033;
+  static double get extraHighIconSize => Get.height * 0.04;
 
-  //? FontWeight
   static FontWeight lowFontWeight = FontWeight.w300;
   static FontWeight normalFontWeight = FontWeight.normal;
   static FontWeight boldFontWeight = FontWeight.bold;
 
-  //? Durations
   static const lowDuration = 200;
   static const normalDuration = 400;
   static const highDuration = 600;

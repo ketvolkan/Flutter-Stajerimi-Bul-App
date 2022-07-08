@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:stajyerimibul/app/modules/common/widgets/fabButton/custom_floating_action_button_controller.dart';
+import 'custom_floating_action_button_controller.dart';
 
 import '../../../../../core/utils/utils.dart';
 import '../../../../../core/variables/icons.dart';
@@ -30,7 +30,7 @@ class CustomFloatingActionButton extends StatelessWidget {
           child: FloatingActionButton(
             onPressed: () => controller.isClicked = !controller.isClicked,
             backgroundColor: Get.theme.floatingActionButtonTheme.backgroundColor,
-            child: Icon(fabIcon, size: iconSize ?? Utils.iconHigh - 5, color: iconColor ?? Get.theme.iconTheme.color),
+            child: Icon(fabIcon, size: iconSize ?? Utils.highIconSize - 5, color: iconColor ?? Get.theme.iconTheme.color),
           ),
         ),
       ),

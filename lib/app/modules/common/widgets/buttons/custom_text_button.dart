@@ -3,7 +3,6 @@ import 'package:get/get.dart';
 import '../custom_text.dart';
 
 import '../../../../../core/utils/utils.dart';
-import '../../../../../core/variables/style.dart';
 
 class CustomTextButton extends StatelessWidget {
   final IconData? icon;
@@ -27,24 +26,18 @@ class CustomTextButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       color: backgroundColor ?? Colors.transparent,
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(Utils.veryHighBorderRadius)),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(Utils.normalRadius)),
       child: TextButton(
         onPressed: onTap ?? () {},
         child: Row(
           children: [
             icon != null
-                ? Icon(icon, color: iconColor ?? Get.theme.appBarTheme.titleTextStyle!.color, size: Utils.iconNormal)
+                ? Icon(icon, color: iconColor ?? Get.theme.appBarTheme.titleTextStyle!.color, size: Utils.normalIconSize)
                 : const SizedBox(),
             SizedBox(width: Utils.normalPadding),
             Align(
               alignment: Alignment.centerLeft,
-              child: FittedBox(
-                fit: BoxFit.scaleDown,
-                child: CustomText(text,
-                    style: textColor != null
-                        ? AppTextStyle.appBarCustomTextButtonTextStyle.copyWith(color: textColor, fontSize: Utils.textSizeNormal)
-                        : AppTextStyle.appBarCustomTextButtonTextStyle.copyWith(fontSize: Utils.textSizeNormal)),
-              ),
+              child: FittedBox(fit: BoxFit.scaleDown, child: CustomText(text, textColor: textColor)),
             ),
           ],
         ),

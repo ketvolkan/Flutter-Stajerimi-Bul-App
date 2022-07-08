@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
 import '../../../../../../../core/constants/app_constants.dart';
 import '../../../../../../../core/utils/utils.dart';
 import '../../../../../../../core/variables/icons.dart';
@@ -22,7 +23,7 @@ class CvLanguageCard extends StatelessWidget {
               return const ListTile(title: Text("Fransızca"), trailing: Text("Orta"));
             },
             separatorBuilder: (context, index) {
-              return SizedBox(height: Utils.veryLowPadding);
+              return SizedBox(height: Utils.extraLowPadding);
             },
             itemCount: 3),
       ),

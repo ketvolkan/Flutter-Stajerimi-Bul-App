@@ -3,7 +3,6 @@ import 'package:get/get.dart';
 import '../../../../../core/models/employee_models/employee_list_model.dart';
 import '../../../../../core/models/employee_models/employee_model.dart';
 import '../../../../../core/models/filter_models/filter_model.dart';
-import '../../../../../core/utils/extensions.dart';
 import '../../../common/widgets/bottomSheet/filter_bottom_sheet/filter_bottom_sheet_view.dart';
 import 'search_management_service.dart';
 
@@ -21,6 +20,10 @@ class SearchManagementController extends GetxController {
   bool get selectedCategory => _selectedCategory.value;
   set selectedCategory(bool val) => _selectedCategory.value = val;
 
+  final RxBool _isLoading = false.obs;
+  bool get isLoading => _isLoading.value;
+  set isLoading(bool val) => _isLoading.value = val;
+
   final RxList<EmployeeModel> _employeeList = <EmployeeModel>[].obs;
   List<EmployeeModel> get employeeList => _employeeList.value;
   set employeeList(List<EmployeeModel> val) => _employeeList.value = val;
@@ -30,16 +33,16 @@ class SearchManagementController extends GetxController {
     ever(_state, (state) {
       switch (state) {
         case SearchManagementState.Busy:
-          Get.showProgressDialog();
+          isLoading = true;
           break;
         case SearchManagementState.Initial:
-          Get.back();
+          isLoading = false;
           break;
         case SearchManagementState.Error:
-          Get.back();
+          isLoading = false;
           break;
         case SearchManagementState.Loaded:
-          Get.back();
+          isLoading = false;
           break;
         default:
       }

@@ -28,17 +28,19 @@ class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
       automaticallyImplyLeading: automaticallyImplyLeading ?? true,
       backgroundColor: Get.theme.primaryColor,
       title: title ?? const SizedBox(),
-      leading: showLeadingBackIcon
-          ? IconButton(
-              icon: Icon(AppIcons.appBarLeadingIcon, color: Get.theme.appBarTheme.titleTextStyle!.color),
-              onPressed: onLeadingPressed ??
-                  () {
-                    Get.back();
-                  },
-            )
-          : customLeadingButton,
+      leading: showLeadingBackIcon ? leadingIcon() : customLeadingButton,
       actions: actions ?? [],
       centerTitle: centerTitle,
+    );
+  }
+
+  IconButton leadingIcon() {
+    return IconButton(
+      icon: Icon(AppIcons.appBarLeadingIcon, color: Get.theme.appBarTheme.titleTextStyle!.color),
+      onPressed: onLeadingPressed ??
+          () {
+            Get.back();
+          },
     );
   }
 

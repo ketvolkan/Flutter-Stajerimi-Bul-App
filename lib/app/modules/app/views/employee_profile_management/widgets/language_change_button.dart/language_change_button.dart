@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../../employee_profile_management_controller.dart';
-import '../../../../../common/widgets/buttons/custom_toggle_button.dart';
 
 import '../../../../../../../../core/constants/app_constants.dart';
 import '../../../../../../../../core/variables/icons.dart';
+import '../../../../../common/widgets/buttons/custom_toggle_button.dart';
+import '../../employee_profile_management_controller.dart';
 
 class LanguageChangeButton extends StatelessWidget {
   LanguageChangeButton({Key? key}) : super(key: key);

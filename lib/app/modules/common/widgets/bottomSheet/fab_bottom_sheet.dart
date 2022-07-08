@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:stajyerimibul/app/modules/common/widgets/buttons/custom_text_button.dart';
-import 'package:stajyerimibul/app/modules/common/widgets/fabButton/custom_floating_action_button_controller.dart';
-import 'package:stajyerimibul/core/utils/utils.dart';
+
+import '../../../../../core/utils/utils.dart';
+import '../buttons/custom_text_button.dart';
+import '../fabButton/custom_floating_action_button_controller.dart';
 
 class FabBottomSheet extends StatelessWidget {
   const FabBottomSheet({
@@ -23,7 +24,7 @@ class FabBottomSheet extends StatelessWidget {
             child: Center(
               child: DecoratedBox(
                 decoration: BoxDecoration(
-                    color: Get.theme.primaryColor, borderRadius: BorderRadius.all(Radius.circular(Utils.veryHighBorderRadius))),
+                    color: Get.theme.primaryColor, borderRadius: BorderRadius.all(Radius.circular(Utils.extraHighRadius))),
                 child: SizedBox(
                   height: Get.width * 0.75,
                   width: Get.width * 0.9,
@@ -31,10 +32,10 @@ class FabBottomSheet extends StatelessWidget {
                       padding: EdgeInsets.all(Utils.normalPadding),
                       child: Column(
                         children: const [
-                          CustomTextButton(text: "İlan Ver"),
-                          CustomTextButton(text: "İlanlarımı Gör"),
-                          CustomTextButton(text: "Bekleyen İstekler"),
-                          CustomTextButton(text: "Rastgele Birşeyler")
+                          CustomTextButton(text: "İlan Ver", textColor: Colors.white),
+                          CustomTextButton(text: "İlanlarımı Gör", textColor: Colors.white),
+                          CustomTextButton(text: "Bekleyen İstekler", textColor: Colors.white),
+                          CustomTextButton(text: "Rastgele Birşeyler", textColor: Colors.white)
                         ],
                       )),
                 ),

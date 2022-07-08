@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:stajyerimibul/app/modules/common/widgets/bottomSheet/fab_bottom_sheet.dart';
-import 'package:stajyerimibul/app/modules/common/widgets/fabButton/custom_floating_action_button.dart';
+import '../bottomSheet/fab_bottom_sheet.dart';
+import '../fabButton/custom_floating_action_button.dart';
 
 class CustomScaffold extends StatelessWidget {
   final PreferredSizeWidget? appBar;

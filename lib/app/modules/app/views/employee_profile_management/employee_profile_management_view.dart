@@ -10,7 +10,7 @@ import '../setting_management/menu_buttons/menu_enum.dart';
 import 'employee_profile_management_controller.dart';
 import 'widgets/custom_profile_bottom_card.dart';
 import 'widgets/custom_profile_top_card.dart';
-import 'widgets/profile_drawer.dart';
+import 'widgets/drawer/profile_drawer.dart';
 
 class EmployeeProfileManagementView extends GetView<EmployeeProfileManagementController> {
   const EmployeeProfileManagementView({Key? key}) : super(key: key);

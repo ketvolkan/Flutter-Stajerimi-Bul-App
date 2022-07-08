@@ -2,7 +2,6 @@ import 'package:animated_toggle_switch/animated_toggle_switch.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../custom_text.dart';
-import '../../../../../core/utils/utils.dart';
 
 class CustomToggleButton extends StatelessWidget {
   final bool current;
@@ -42,16 +41,8 @@ class CustomToggleButton extends StatelessWidget {
             colorBuilder: (b) => Get.theme.primaryColor,
             iconBuilder: (value) => value ? Icon(firstIcon) : Icon(secondIcon),
             textBuilder: (value) => value
-                ? Center(
-                    child: CustomText(
-                    firstText,
-                    style: TextStyle(color: Get.theme.primaryColor, fontWeight: Utils.boldFontWeight),
-                  ))
-                : Center(
-                    child: CustomText(
-                    secondText,
-                    style: TextStyle(color: Get.theme.primaryColor, fontWeight: Utils.boldFontWeight),
-                  )),
+                ? Center(child: CustomText(firstText, textColor: Get.theme.primaryColor))
+                : Center(child: CustomText(secondText, textColor: Get.theme.primaryColor)),
           ),
         ),
       ),

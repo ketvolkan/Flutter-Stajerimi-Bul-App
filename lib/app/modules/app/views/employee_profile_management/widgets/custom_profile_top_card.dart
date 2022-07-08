@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../../../../common/widgets/custom_text.dart';
 
 import '../../../../../../core/utils/utils.dart';
-import '../../../../../../core/variables/style.dart';
+import '../../../../common/widgets/custom_text.dart';
 import '../../../../common/widgets/image/random_circle_image.dart';
 
 class CustomProfileTopCard extends StatelessWidget {
@@ -31,20 +30,13 @@ class CustomProfileTopCard extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
+                  CustomText(birthDate, textColor: Colors.white),
                   SizedBox(width: Utils.normalPadding),
-                  CustomText(birthDate, style: AppTextStyle.profilPageDateTimeTextStyle),
-                  SizedBox(width: Utils.normalPadding),
-                  CustomText(country, style: AppTextStyle.profilPageCountryTextStyle),
+                  CustomText(country, textColor: Colors.white),
                 ],
               ),
               SizedBox(height: Utils.normalPadding),
-              FittedBox(
-                child: CustomText(
-                  bio,
-                  style: AppTextStyle.profilePageBioTextStyle,
-                  padding: EdgeInsets.symmetric(horizontal: Utils.highPadding),
-                ),
-              ),
+              FittedBox(child: CustomText(bio, textColor: Colors.white)),
             ],
           ),
         ],
