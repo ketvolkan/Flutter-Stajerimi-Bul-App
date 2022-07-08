@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:stajyerimibul/app/modules/common/widgets/custom_text.dart';
+import 'package:stajyerimibul/core/models/employee_models/employee_model.dart';
 import '../../../common/widgets/buttons/custom_toggle_button.dart';
 
 import '../../../../../core/constants/app_constants.dart';
@@ -24,67 +26,29 @@ class SearchManagementView extends GetView<SearchManagementController> {
       appBar: _buildAppBar,
       body: CustomBody(
         child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: Utils.highPadding),
-          child: SingleChildScrollView(
-            child: Column(
-              children: [
-                SizedBox(height: Utils.lowPadding),
-                BasicCard(
-                  title: "Volkan Ket",
-                  subtitle: "Flutter Developer",
-                  description: "Flutter ile ilgili staj " * 5,
-                  profileImage: const RandomCircleImage(),
-                  goToCardDescription: true,
-                  onTap: () {},
-                ),
-                SizedBox(height: Utils.lowPadding),
-                BasicCard(
-                  title: "Merve Demirtaş",
-                  subtitle: "Tasarımcı",
-                  description: "Figma ile harika tasarımlar yapabiliyorum " * 3,
-                  profileImage: const RandomCircleImage(),
-                  goToCardDescription: true,
-                  onTap: () {},
-                ),
-                SizedBox(height: Utils.lowPadding),
-                BasicCard(
-                  title: "Baki Baran Özel",
-                  subtitle: "Frontend Developer",
-                  description: "Frontendim çok iyi " * 5,
-                  profileImage: const RandomCircleImage(),
-                  goToCardDescription: true,
-                  onTap: () {},
-                ),
-                SizedBox(height: Utils.lowPadding),
-                BasicCard(
-                  title: "Hanifi Can Seven",
-                  subtitle: "Backend Developer",
-                  description: "Php ile Mükkemmel Siteler Yapabilirim" * 7,
-                  profileImage: const RandomCircleImage(),
-                  goToCardDescription: true,
-                  onTap: () {},
-                ),
-                SizedBox(height: Utils.lowPadding),
-                BasicCard(
-                  title: "Utku Göneş",
-                  subtitle: "Tercuman",
-                  profileImage: const RandomCircleImage(),
-                  goToCardDescription: true,
-                  onTap: () {},
-                ),
-                SizedBox(height: Utils.lowPadding),
-                BasicCard(
-                  title: "Sude Taşoyan",
-                  subtitle: "Gazeteci",
-                  profileImage: const RandomCircleImage(),
-                  goToCardDescription: true,
-                  onTap: () {},
-                ),
-                SizedBox(height: Utils.veryVeryHighPadding),
-              ],
-            ),
-          ),
-        ),
+            padding: EdgeInsets.symmetric(horizontal: Utils.highPadding),
+            child: Obx(() {
+              if (controller.employeeList.isEmpty ||
+                  controller.employeeList is! List<EmployeeModel> ||
+                  controller.state == SearchManagementState.Busy) {
+                return const Center(child: CustomText("No Record"));
+              }
+              return ListView.separated(
+                itemBuilder: (context, index) {
+                  EmployeeModel employeeModel = controller.employeeList[index];
+                  return BasicCard(
+                    title: "${employeeModel.firstName} ${employeeModel.lastName}",
+                    subtitle: employeeModel.adress,
+                    description: employeeModel.aboutMe,
+                    profileImage: const RandomCircleImage(),
+                    goToCardDescription: true,
+                    onTap: () {},
+                  );
+                },
+                separatorBuilder: (context, index) => SizedBox(height: Utils.normalPadding),
+                itemCount: controller.employeeList.length,
+              );
+            })),
       ),
       bottomNavigationBar: _buildNavigationBar,
     );

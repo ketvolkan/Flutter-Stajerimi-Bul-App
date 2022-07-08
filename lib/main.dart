@@ -8,11 +8,13 @@ import 'app/routes/app_pages.dart';
 import 'app/routes/app_routes.dart';
 import 'app/theme/app_theme.dart';
 import 'core/constants/app_constants.dart';
+import 'core/service/base_service.dart';
 import 'generated/locales.g.dart';
 
 void main() async {
   await GetStorage.init();
   Get.put(CustomFloatingActionButtonController());
+  Get.put(BaseService());
   runApp(const MyApp());
 }
 

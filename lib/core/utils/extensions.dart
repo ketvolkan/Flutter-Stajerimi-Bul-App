@@ -42,3 +42,18 @@ extension CustomToastExtension on GetInterface {
     );
   }
 }
+
+extension CustomDialogExtension on GetInterface {
+  Future showProgressDialog() async {
+    await Get.dialog(
+      Center(
+        child: SizedBox.square(
+            dimension: Get.width * 0.2,
+            child: FittedBox(
+              child: CircularProgressIndicator(color: Get.theme.primaryColor, strokeWidth: 2),
+            )),
+      ),
+      barrierDismissible: false,
+    );
+  }
+}
