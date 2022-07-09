@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
 import '../../../../../../../core/constants/app_constants.dart';
 import '../../../../../../../core/utils/utils.dart';
 import '../../../../../../../core/variables/icons.dart';

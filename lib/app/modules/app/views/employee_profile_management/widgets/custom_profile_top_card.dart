@@ -1,6 +1,7 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:stajyerimibul/core/models/employee_models/employee_model.dart';
+import '../../../../../../core/models/employee_models/employee_model.dart';
 
 import '../../../../../../core/utils/utils.dart';
 import '../../../../common/widgets/custom_text.dart';
@@ -27,9 +28,19 @@ class CustomProfileTopCard extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  CustomText(employeeModel.dateOfBirth, textColor: Colors.white),
+                  AutoSizeText(
+                    employeeModel.dateOfBirth ?? "",
+                    minFontSize: 5,
+                    maxFontSize: 12,
+                    style: const TextStyle().copyWith(color: Colors.white),
+                  ),
                   SizedBox(width: Utils.normalPadding),
-                  CustomText(employeeModel.adress, textColor: Colors.white),
+                  AutoSizeText(
+                    (employeeModel.adress ?? ""),
+                    minFontSize: 2,
+                    maxFontSize: 12,
+                    style: const TextStyle().copyWith(color: Colors.white),
+                  ),
                 ],
               ),
               SizedBox(height: Utils.normalPadding),

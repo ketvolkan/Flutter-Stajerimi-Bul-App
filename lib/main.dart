@@ -14,6 +14,10 @@ import 'generated/locales.g.dart';
 
 void main() async {
   await GetStorage.init();
+  await initApp();
+}
+
+Future<void> initApp() async {
   Get.put(CustomFloatingActionButtonController());
   Get.put(BaseService());
   Get.put(AuthLoginController());

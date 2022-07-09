@@ -1,5 +1,5 @@
 import 'package:get/get.dart';
-import 'package:stajyerimibul/app/routes/app_routes.dart';
+import '../../../../routes/app_routes.dart';
 
 import '../../../../../core/models/employee_models/employee_list_model.dart';
 import '../../../../../core/models/employee_models/employee_model.dart';
@@ -52,8 +52,8 @@ class SearchManagementController extends GetxController {
   }
 
   @override
-  void onReady() {
-    getAllEmployee();
+  void onReady() async {
+    await getAllEmployee();
     super.onReady();
   }
 

@@ -40,6 +40,7 @@ dependencies:
   animated_toggle_switch: ^0.5.2
   get_storage: ^2.0.3
   fluttertoast: ^8.0.9
+  auto_size_text: ^3.0.0
 dev_dependencies:
   flutter_test:
     sdk: flutter

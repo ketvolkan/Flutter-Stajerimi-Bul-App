@@ -1,18 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
-import 'package:stajyerimibul/app/modules/controllers/auth_login_controller.dart';
-import 'package:stajyerimibul/core/models/employee_models/employee_model.dart';
+import '../../../controllers/auth_login_controller.dart';
+import '../../../../../core/models/employee_models/employee_model.dart';
 
 class EmployeeProfileManagementController extends GetxController {
   final AuthLoginController _authLoginController = Get.find<AuthLoginController>();
-  //TODO Eğer başkasının sayfası ise buraya o kullanıcının modeli yollanıcak ve isJustShow true olacak
+
   final RxBool isJustShow = false.obs;
   GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
   final box = GetStorage();
-
-  //Todo User Model den Gelice
-  final name = "Volkan Ket";
 
   final RxBool _currentThemeIsLight = true.obs;
   bool get currentThemeIsLight => _currentThemeIsLight.value;

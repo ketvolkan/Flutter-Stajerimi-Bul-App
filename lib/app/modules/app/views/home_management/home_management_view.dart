@@ -1,7 +1,9 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../../../../core/constants/app_constants.dart';
+import '../../../../../core/variables/style.dart';
 import '../../../common/widgets/appBar/custom_app_bar.dart';
 import '../../../common/widgets/body/custom_body.dart';
 import '../../../common/widgets/bottomNavigationBar/custom_botton_navigation_bar.dart';
@@ -22,7 +24,12 @@ class HomeManagementView extends GetView<HomeManagementController> {
   }
 
   CustomAppBar get _buildAppBar => CustomAppBar(
-        title: Text(AppConstants.homeAppBar.tr),
+        title: AutoSizeText(
+          AppConstants.homeAppBar.tr,
+          maxFontSize: 25,
+          minFontSize: 15,
+          style: AppTextStyle.appBarTextStyle,
+        ),
         showLeadingBackIcon: false,
         onLeadingPressed: () {},
         actions: const [],

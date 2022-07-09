@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../../../../../common/widgets/custom_text.dart';
 
 import '../../../../../../../core/utils/utils.dart';
+import '../../../../../common/widgets/custom_text.dart';
 
 class CvBaseCard extends StatelessWidget {
   final String title;

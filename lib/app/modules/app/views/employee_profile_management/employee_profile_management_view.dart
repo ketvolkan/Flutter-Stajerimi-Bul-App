@@ -1,8 +1,10 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:stajyerimibul/core/models/employee_models/employee_model.dart';
 
+import '../../../../../core/models/employee_models/employee_model.dart';
 import '../../../../../core/variables/icons.dart';
+import '../../../../../core/variables/style.dart';
 import '../../../common/widgets/appBar/custom_app_bar.dart';
 import '../../../common/widgets/bottomNavigationBar/custom_botton_navigation_bar.dart';
 import '../../../common/widgets/buttons/custom_icon_button.dart';
@@ -19,11 +21,11 @@ class EmployeeProfileManagementView extends GetView<EmployeeProfileManagementCon
   @override
   Widget build(BuildContext context) {
     return CustomScaffold(
-      drawer: const ProfileDrawer(),
+      drawer: ProfileDrawer(),
       globalKey: controller.scaffoldKey,
       appBar: _buildAppBar,
-      body: Expanded(
-        child: ListView(
+      body: SingleChildScrollView(
+        child: Column(
           children: [
             if (controller.employeeModel is EmployeeModel) CustomProfileTopCard(employeeModel: controller.employeeModel!),
             const CustomProfileBottomCard(),
@@ -36,7 +38,12 @@ class EmployeeProfileManagementView extends GetView<EmployeeProfileManagementCon
 
   CustomAppBar get _buildAppBar => CustomAppBar(
         automaticallyImplyLeading: controller.isJustShow.value,
-        title: Text("${controller.employeeModel?.firstName} ${controller.employeeModel?.lastName}"),
+        title: AutoSizeText(
+          "${controller.employeeModel?.firstName} ${controller.employeeModel?.lastName}",
+          maxFontSize: 25,
+          minFontSize: 15,
+          style: AppTextStyle.appBarTextStyle,
+        ),
         centerTitle: true,
         showLeadingBackIcon: controller.isJustShow.value,
         actions: [!controller.isJustShow.value ? editCvButton : const SizedBox()],

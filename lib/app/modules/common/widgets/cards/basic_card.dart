@@ -1,9 +1,10 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../custom_text.dart';
 
 import '../../../../../core/utils/utils.dart';
 import '../../../../../core/variables/icons.dart';
+import '../custom_text.dart';
 
 class BasicCard extends StatelessWidget {
   final String title;
@@ -87,7 +88,11 @@ class BasicCard extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        CustomText.high(title),
+        AutoSizeText(
+          title,
+          minFontSize: 5,
+          maxFontSize: 12,
+        ),
         subtitle != null ? CustomText.low(subtitle!) : const SizedBox(),
       ],
     );

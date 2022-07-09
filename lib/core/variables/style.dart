@@ -5,6 +5,5 @@ import '../utils/utils.dart';
 
 class AppTextStyle {
   //? AppBar Style
-  static TextStyle appBarTextStyle =
-      GoogleFonts.getFont('Josefin Sans').copyWith(fontSize: Utils.extraHighTextSize, fontWeight: Utils.boldFontWeight);
+  static TextStyle appBarTextStyle = const TextStyle().copyWith(fontWeight: Utils.boldFontWeight);
 }
