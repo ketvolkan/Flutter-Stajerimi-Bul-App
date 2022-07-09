@@ -4,6 +4,7 @@ import 'package:get_storage/get_storage.dart';
 
 import 'app/modules/app/views/home_management/home_management_binding.dart';
 import 'app/modules/common/widgets/fabButton/custom_floating_action_button_controller.dart';
+import 'app/modules/controllers/auth_login_controller.dart';
 import 'app/routes/app_pages.dart';
 import 'app/routes/app_routes.dart';
 import 'app/theme/app_theme.dart';
@@ -15,6 +16,7 @@ void main() async {
   await GetStorage.init();
   Get.put(CustomFloatingActionButtonController());
   Get.put(BaseService());
+  Get.put(AuthLoginController());
   runApp(const MyApp());
 }
 

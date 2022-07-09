@@ -47,7 +47,7 @@ class SearchManagementView extends GetView<SearchManagementController> {
                           description: employeeModel.aboutMe,
                           profileImage: const RandomCircleImage(),
                           goToCardDescription: true,
-                          onTap: () {},
+                          onTap: () => controller.basicCardOnTap(employeeModel),
                         );
                       },
                       separatorBuilder: (context, index) => SizedBox(height: Utils.normalPadding),

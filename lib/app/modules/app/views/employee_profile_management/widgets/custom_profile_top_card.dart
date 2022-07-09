@@ -1,20 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:stajyerimibul/core/models/employee_models/employee_model.dart';
 
 import '../../../../../../core/utils/utils.dart';
 import '../../../../common/widgets/custom_text.dart';
 import '../../../../common/widgets/image/random_circle_image.dart';
 
 class CustomProfileTopCard extends StatelessWidget {
+  final EmployeeModel employeeModel;
   const CustomProfileTopCard({
     Key? key,
+    required this.employeeModel,
   }) : super(key: key);
-
-  //TODO Apiden gelen verilere göre model Oluşturulacak
-
-  final birthDate = "15 Nisan 2002";
-  final country = "Bursa";
-  final bio = "Mobil Uygulama Geliştirici";
 
   @override
   Widget build(BuildContext context) {
@@ -30,13 +27,13 @@ class CustomProfileTopCard extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  CustomText(birthDate, textColor: Colors.white),
+                  CustomText(employeeModel.dateOfBirth, textColor: Colors.white),
                   SizedBox(width: Utils.normalPadding),
-                  CustomText(country, textColor: Colors.white),
+                  CustomText(employeeModel.adress, textColor: Colors.white),
                 ],
               ),
               SizedBox(height: Utils.normalPadding),
-              FittedBox(child: CustomText(bio, textColor: Colors.white)),
+              FittedBox(child: CustomText(employeeModel.aboutMe, textColor: Colors.white)),
             ],
           ),
         ],

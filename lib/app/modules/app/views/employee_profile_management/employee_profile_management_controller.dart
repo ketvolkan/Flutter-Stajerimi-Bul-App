@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
+import 'package:stajyerimibul/app/modules/controllers/auth_login_controller.dart';
+import 'package:stajyerimibul/core/models/employee_models/employee_model.dart';
 
 class EmployeeProfileManagementController extends GetxController {
+  final AuthLoginController _authLoginController = Get.find<AuthLoginController>();
   //TODO Eğer başkasının sayfası ise buraya o kullanıcının modeli yollanıcak ve isJustShow true olacak
   final RxBool isJustShow = false.obs;
   GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
@@ -18,6 +21,8 @@ class EmployeeProfileManagementController extends GetxController {
   final RxBool _currentLocal = true.obs;
   bool get currentLocal => _currentLocal.value;
   set currentLocal(bool val) => _currentLocal.value = val;
+
+  EmployeeModel? employeeModel;
 
   void openDrawer() {
     scaffoldKey.currentState!.openDrawer();
@@ -37,13 +42,24 @@ class EmployeeProfileManagementController extends GetxController {
 
   @override
   void onInit() {
+    fillStorage();
+    fillArguments();
+    super.onInit();
+  }
+
+  void fillStorage() {
     currentThemeIsLight = box.read("theme") ?? true;
     currentLocal = box.read('local') ?? true;
+  }
+
+  void fillArguments() {
     dynamic argumentData = Get.arguments;
-    final _data = argumentData?['isJustShow'];
+    final _data = argumentData?['employee'];
     if (_data != null) {
-      isJustShow.value = _data as bool;
+      employeeModel = _data;
+      isJustShow.value = true;
+      return;
     }
-    super.onInit();
+    employeeModel = _authLoginController.auth;
   }
 }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:stajyerimibul/core/models/employee_models/employee_model.dart';
 
 import '../../../../../core/variables/icons.dart';
 import '../../../common/widgets/appBar/custom_app_bar.dart';
@@ -23,9 +24,9 @@ class EmployeeProfileManagementView extends GetView<EmployeeProfileManagementCon
       appBar: _buildAppBar,
       body: Expanded(
         child: ListView(
-          children: const [
-            CustomProfileTopCard(),
-            CustomProfileBottomCard(),
+          children: [
+            if (controller.employeeModel is EmployeeModel) CustomProfileTopCard(employeeModel: controller.employeeModel!),
+            const CustomProfileBottomCard(),
           ],
         ),
       ),
@@ -35,7 +36,7 @@ class EmployeeProfileManagementView extends GetView<EmployeeProfileManagementCon
 
   CustomAppBar get _buildAppBar => CustomAppBar(
         automaticallyImplyLeading: controller.isJustShow.value,
-        title: Text(controller.name),
+        title: Text("${controller.employeeModel?.firstName} ${controller.employeeModel?.lastName}"),
         centerTitle: true,
         showLeadingBackIcon: controller.isJustShow.value,
         actions: [!controller.isJustShow.value ? editCvButton : const SizedBox()],

@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+import 'package:stajyerimibul/app/routes/app_routes.dart';
 
 import '../../../../../core/models/employee_models/employee_list_model.dart';
 import '../../../../../core/models/employee_models/employee_model.dart';
@@ -54,6 +55,10 @@ class SearchManagementController extends GetxController {
   void onReady() {
     getAllEmployee();
     super.onReady();
+  }
+
+  void basicCardOnTap(EmployeeModel employeeModel) async {
+    final result = await Get.toNamed(AppRoutes.PROFILE, arguments: {"employee": employeeModel});
   }
 
   Future<void> getAllEmployee() async {

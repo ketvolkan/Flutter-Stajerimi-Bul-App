@@ -101,12 +101,10 @@ class BasicCard extends StatelessWidget {
     return Container(
       padding: EdgeInsets.all(Utils.highPadding),
       width: Get.size.width,
-      decoration: BoxDecoration(boxShadow: [
-        BoxShadow(
-          color: Get.theme.primaryColor,
-          blurRadius: Get.width * 0.007,
-        ),
-      ], color: Get.theme.primaryColor, borderRadius: BorderRadius.all(Radius.circular(Utils.normalRadius))),
+      decoration: BoxDecoration(
+        color: Get.theme.primaryColor,
+        borderRadius: BorderRadius.all(Radius.circular(Utils.normalRadius)),
+      ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
