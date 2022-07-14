@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
+import 'app/modules/app/views/splash/splash_screen_binding.dart';
 
-import 'app/modules/app/views/home_management/home_management_binding.dart';
 import 'app/modules/common/widgets/fabButton/custom_floating_action_button_controller.dart';
 import 'app/modules/controllers/auth_login_controller.dart';
 import 'app/routes/app_pages.dart';
@@ -21,6 +22,10 @@ Future<void> initApp() async {
   Get.put(CustomFloatingActionButtonController());
   Get.put(BaseService());
   Get.put(AuthLoginController());
+  await SystemChrome.setPreferredOrientations([
+    DeviceOrientation.portraitUp,
+    DeviceOrientation.portraitDown,
+  ]);
   runApp(const MyApp());
 }
 
@@ -43,8 +48,8 @@ class MyApp extends StatelessWidget {
       defaultTransition: Transition.noTransition,
       translations: AppTranslation(),
       locale: currentLocal ? const Locale('tr', 'TR') : const Locale('en', 'US'),
-      initialRoute: AppRoutes.HOME,
-      initialBinding: HomeManagementBinding(),
+      initialRoute: AppRoutes.SPLASH,
+      initialBinding: SplashViewBinding(),
       getPages: AppPages.PAGES,
     );
   }

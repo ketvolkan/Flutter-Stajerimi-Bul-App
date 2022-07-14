@@ -1,6 +1,8 @@
+import 'package:vexana/vexana.dart';
+
 import '../../service/base_model.dart';
 
-class EmployeeModel extends BaseModel {
+class EmployeeModel extends BaseModel with INetworkModel {
   int? id;
   String? email;
   String? adress;

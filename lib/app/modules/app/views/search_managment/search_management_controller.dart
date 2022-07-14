@@ -1,7 +1,6 @@
 import 'package:get/get.dart';
 import '../../../../routes/app_routes.dart';
 
-import '../../../../../core/models/employee_models/employee_list_model.dart';
 import '../../../../../core/models/employee_models/employee_model.dart';
 import '../../../../../core/models/filter_models/filter_model.dart';
 import '../../../common/widgets/bottomSheet/filter_bottom_sheet/filter_bottom_sheet_view.dart';
@@ -66,8 +65,8 @@ class SearchManagementController extends GetxController {
       state = SearchManagementState.Busy;
       final result = await _searchManagementService.getAllEmployee();
       state = SearchManagementState.Loaded;
-      if (result is! EmployeeListModel) return;
-      employeeList = (result).employees ?? [];
+      if (result is! List<EmployeeModel>) return;
+      employeeList = result;
     } catch (e) {
       state = SearchManagementState.Error;
       Exception(e);

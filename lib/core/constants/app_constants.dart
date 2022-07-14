@@ -1,4 +1,5 @@
 class AppConstants {
+  static String logoPath = "assets/png/stajyerimiBulLogo.png";
   //? Conf
   static String appTitle = "Stajyerimi Bul";
 

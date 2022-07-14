@@ -1,16 +1,17 @@
-import 'package:dio/dio.dart';
 import 'package:get/get.dart';
+import 'package:stajyerimibul/core/models/employee_models/employee_model.dart';
+import 'package:vexana/vexana.dart';
 
-import '../../../../../core/models/employee_models/employee_list_model.dart';
 import '../../../../../core/service/base_service.dart';
 
 class SearchManagementService extends GetxService {
   final _networkService = Get.find<BaseService>();
-  Future<EmployeeListModel?> getAllEmployee() async {
-    final result = await _networkService.dio.get(
+  Future<List<EmployeeModel>?> getAllEmployee() async {
+    final result = await _networkService.networkManager.send<EmployeeModel, List<EmployeeModel>>(
       "0RxR0V/users",
-      options: Options(method: "GET", responseType: ResponseType.json),
+      method: RequestType.GET,
+      parseModel: EmployeeModel(),
     );
-    return EmployeeListModel.fromJson({'data': result.data});
+    return result.data;
   }
 }
