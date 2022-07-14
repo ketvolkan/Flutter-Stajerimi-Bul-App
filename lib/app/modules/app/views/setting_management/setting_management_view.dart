@@ -39,8 +39,8 @@ class SettingManagementView extends GetView<SettingManagementController> {
   CustomAppBar get _buildAppBar => CustomAppBar(
         title: AutoSizeText(
           AppConstants.settingAppBar.tr,
-          maxFontSize: 25,
-          minFontSize: 15,
+          maxFontSize: 35,
+          minFontSize: 25,
           style: AppTextStyle.appBarTextStyle,
         ),
         showLeadingBackIcon: false,

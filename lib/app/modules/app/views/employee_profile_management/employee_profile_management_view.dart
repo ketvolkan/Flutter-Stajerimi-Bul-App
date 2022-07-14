@@ -40,8 +40,8 @@ class EmployeeProfileManagementView extends GetView<EmployeeProfileManagementCon
         automaticallyImplyLeading: controller.isJustShow.value,
         title: AutoSizeText(
           "${controller.employeeModel?.firstName} ${controller.employeeModel?.lastName}",
-          maxFontSize: 25,
-          minFontSize: 15,
+          maxFontSize: 35,
+          minFontSize: 25,
           style: AppTextStyle.appBarTextStyle,
         ),
         centerTitle: true,

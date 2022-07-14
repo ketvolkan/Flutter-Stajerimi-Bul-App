@@ -84,17 +84,20 @@ class BasicCard extends StatelessWidget {
 
   FittedBox profileImageWidget() => FittedBox(child: SizedBox.square(dimension: Get.size.width * 0.1, child: profileImage!));
 
-  Column titleAndSubtitle() {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        AutoSizeText(
-          title,
-          minFontSize: 5,
-          maxFontSize: 12,
-        ),
-        subtitle != null ? CustomText.low(subtitle!) : const SizedBox(),
-      ],
+  Padding titleAndSubtitle() {
+    return Padding(
+      padding: goToCardDescription ? EdgeInsets.zero : EdgeInsets.symmetric(vertical: Utils.extraLowPadding),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          AutoSizeText(
+            title,
+            minFontSize: 8,
+            maxFontSize: 15,
+          ),
+          subtitle != null ? CustomText.low(subtitle!) : const SizedBox(),
+        ],
+      ),
     );
   }
 

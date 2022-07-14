@@ -69,8 +69,8 @@ class SearchManagementView extends GetView<SearchManagementController> {
   CustomAppBar get _buildAppBar => CustomAppBar(
         title: AutoSizeText(
           AppConstants.searchAppBar.tr,
-          maxFontSize: 25,
-          minFontSize: 15,
+          maxFontSize: 35,
+          minFontSize: 25,
           style: AppTextStyle.appBarTextStyle,
         ),
         showLeadingBackIcon: false,

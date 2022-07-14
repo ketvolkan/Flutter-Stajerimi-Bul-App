@@ -1,6 +1,8 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:stajyerimibul/app/modules/app/views/home_management/widgets/active_user_count_card.dart';
+import 'package:stajyerimibul/core/utils/utils.dart';
 
 import '../../../../../core/constants/app_constants.dart';
 import '../../../../../core/variables/style.dart';
@@ -18,16 +20,48 @@ class HomeManagementView extends GetView<HomeManagementController> {
   Widget build(BuildContext context) {
     return CustomScaffold(
       appBar: _buildAppBar,
-      body: CustomBody(child: Container()),
+      body: CustomBody(
+        child: Padding(
+          padding: EdgeInsets.all(Utils.normalPadding),
+          child: Column(
+            children: [
+              activeUserRow(),
+              SizedBox(height: Utils.normalPadding),
+              searchTextField(),
+              SizedBox(height: Utils.normalPadding),
+            ],
+          ),
+        ),
+      ),
       bottomNavigationBar: _buildNavigationBar,
+    );
+  }
+
+  TextFormField searchTextField() {
+    return TextFormField(
+      decoration: const InputDecoration(
+        labelText: "İş veya İş yeri Arayın",
+        hintText: 'Herhangi bir değer giriniz...',
+        prefixIcon: Icon(Icons.search),
+      ),
+    );
+  }
+
+  Row activeUserRow() {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        ActiveUserCountCard(text: "Aktif İş Veren Sayısı", count: 2133232, backgroundColor: Get.theme.primaryColor),
+        ActiveUserCountCard(text: "Aktif İş Arayan Sayısı", count: 23424242, backgroundColor: Get.theme.primaryColor),
+      ],
     );
   }
 
   CustomAppBar get _buildAppBar => CustomAppBar(
         title: AutoSizeText(
           AppConstants.homeAppBar.tr,
-          maxFontSize: 25,
-          minFontSize: 15,
+          maxFontSize: 35,
+          minFontSize: 25,
           style: AppTextStyle.appBarTextStyle,
         ),
         showLeadingBackIcon: false,

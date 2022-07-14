@@ -53,8 +53,8 @@ class SearchManagementController extends GetxController {
 
   @override
   void onReady() async {
-    await getAllEmployee();
     super.onReady();
+    await getAllEmployee();
   }
 
   void basicCardOnTap(EmployeeModel employeeModel) async {
